@@ -19,6 +19,10 @@ We will create our first runtime module function.
 
 <!-- tabs:start -->
 
+#### ** Hide Hints **
+
+Click the other tabs to view hints.
+
 #### ** Hint: Input **
 
 ```rust
@@ -35,37 +39,29 @@ fn create_claim(origin, proof: Vec<u8>) {
 > * `support::ensure`
 
 ```rust
-/// Allow a user to claim ownership of an unclaimed proof
-fn create_claim(origin, proof: Vec<u8>) {
-	// Verify that the incoming transaction is signed and store who the
-	// caller of this function is.
-	let sender = ensure_signed(origin)?;
+// Verify that the incoming transaction is signed and store who the
+// caller of this function is.
+let sender = ensure_signed(origin)?;
 
-	// Verify that the specified proof has not been claimed yet or error with the message
-	ensure!(!Proofs::<T>::exists(&proof), "This proof has already been claimed.");
-
-	// ...
-}
+// Verify that the specified proof has not been claimed yet or error with the message
+ensure!(!Proofs::<T>::exists(&proof), "This proof has already been claimed.");
 ```
 
 #### ** Hint: Logic **
 
 ```rust
-/// Allow a user to claim ownership of an unclaimed proof
-fn create_claim(origin, proof: Vec<u8>) {
-	// Verify that the incoming transaction is signed and store who the
-	// caller of this function is.
-	let sender = ensure_signed(origin)?;
+// Call the `system` runtime module to get the current block number
+let current_block = <system::Module<T>>::block_number();
 
-	// Verify that the specified proof has not been claimed yet or error with the message
-	ensure!(!Proofs::<T>::exists(&proof), "This proof has already been claimed.");
+// Store the proof with the sender and the current block number
+Proofs::<T>::insert(&proof, (sender.clone(), current_block));
+```
 
-	// Call the `system` runtime module to get the current block number
-	let current_block = <system::Module<T>>::block_number();
+#### ** Hint: Emit Event **
 
-	// Store the proof with the sender and the current block number
-	Proofs::<T>::insert(&proof, (sender.clone(), current_block));
-}
+```rust
+// Emit an event that the claim was created
+Self::deposit_event(RawEvent::ClaimCreated(sender, proof));
 ```
 
 #### ** Solution **
@@ -75,7 +71,16 @@ use support::{decl_storage, decl_module, ensure};
 use rstd::prelude::Vec;
 use system::ensure_signed;
 
-pub trait Trait: system::Trait {}
+pub trait Trait: system::Trait {
+	type Event: From<Event<Self>> + Into<<Self as system::Trait>::Event>;
+}
+
+decl_event! {
+	pub enum Event<T> where AccountId = <T as system::Trait>::AccountId {
+		ClaimCreated(AccountId, Vec<u8>),
+		ClaimRevoked(AccountId, Vec<u8>),
+	}
+}
 
 decl_storage! {
 	trait Store for Module<T: Trait> as TemplateModule {
@@ -87,6 +92,8 @@ decl_storage! {
 
 decl_module! {
 	pub struct Module<T: Trait> for enum Call where origin: T::Origin {
+		fn deposit_event() = default;
+
 		/// Allow a user to claim ownership of an unclaimed proof
 		fn create_claim(origin, proof: Vec<u8>) {
 			// Verify that the incoming transaction is signed and store who the
@@ -101,6 +108,9 @@ decl_module! {
 
 			// Store the proof with the sender and the current block number
 			Proofs::<T>::insert(&proof, (sender.clone(), current_block));
+
+			// Emit an event that the claim was created
+			Self::deposit_event(RawEvent::ClaimCreated(sender, proof));
 		}
 	}
 }

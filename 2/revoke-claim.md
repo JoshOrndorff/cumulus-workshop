@@ -17,6 +17,10 @@
 
 <!-- tabs:start -->
 
+#### ** Hide Hints **
+
+Click the other tabs to view hints.
+
 #### ** Hint: Input **
 
 ```rust
@@ -26,30 +30,33 @@ fn revoke_claim(origin, proof: Vec<u8>) {
 }
 ```
 
-#### ** Hint: Check and Logic **
-
-> **Note:** You need to import:
-> * `system::ensure_signed`
-> * `support::ensure`
+#### ** Hint: Check Sign and Exists **
 
 ```rust
-/// Allow the owner to revoke their claim
-fn revoke_claim(origin, proof: Vec<u8>) {
-	// Determine who is calling the function
-	let sender = ensure_signed(origin)?;
+let sender = ensure_signed(origin)?;
 
-	// Verify that the specified proof has been claimed
-	ensure!(Proofs::<T>::exists(&proof), "This proof has not been stored yet.");
+// Verify that the specified proof has been claimed
+ensure!(Proofs::<T>::exists(&proof), "This proof has not been stored yet.");
+```
 
-	// Get owner of the claim
-	let (owner, _) = Proofs::<T>::get(&proof);
+#### ** Hint: Check Owner **
 
-	// Verify that sender of the current call is the claim owner
-	ensure!(sender == owner, "You must own this claim to revoke it.");
+```rust
+// Get owner of the claim
+let (owner, _) = Proofs::<T>::get(&proof);
 
-	// Remove claim from storage
-	Proofs::<T>::remove(&proof);
-}
+// Verify that sender of the current call is the claim owner
+ensure!(sender == owner, "You must own this claim to revoke it.");
+```
+
+#### ** Hint: Remove Proof and Emit Event
+
+```rust
+// Remove claim from storage
+Proofs::<T>::remove(&proof);
+
+// Emit an event that the claim was erased
+Self::deposit_event(RawEvent::ClaimRevoked(sender, proof));
 ```
 
 #### ** Solution **
@@ -59,7 +66,16 @@ use support::{decl_storage, decl_module, ensure};
 use rstd::prelude::Vec;
 use system::ensure_signed;
 
-pub trait Trait: system::Trait {}
+pub trait Trait: system::Trait {
+	type Event: From<Event<Self>> + Into<<Self as system::Trait>::Event>;
+}
+
+decl_event! {
+	pub enum Event<T> where AccountId = <T as system::Trait>::AccountId {
+		ClaimCreated(AccountId, Vec<u8>),
+		ClaimRevoked(AccountId, Vec<u8>),
+	}
+}
 
 decl_storage! {
 	trait Store for Module<T: Trait> as TemplateModule {
@@ -83,6 +99,9 @@ decl_module! {
 
 			// Store the proof with the sender and the current block number
 			Proofs::<T>::insert(&proof, (sender.clone(), current_block));
+
+			// Emit an event that the claim was created
+			Self::deposit_event(RawEvent::ClaimCreated(sender, proof));
 		}
 
 		/// Allow the owner to revoke their claim
@@ -101,6 +120,9 @@ decl_module! {
 
 			// Remove claim from storage
 			Proofs::<T>::remove(&proof);
+
+			// Emit an event that the claim was erased
+			Self::deposit_event(RawEvent::ClaimRevoked(sender, proof));
 		}
 	}
 }

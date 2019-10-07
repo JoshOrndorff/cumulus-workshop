@@ -7,17 +7,13 @@ We need to create a storage item for our blockchain.
 		* Key: `Vec<u8>`
 		* Value: `(T::AccountId, T::BlockNumber)`
 
-> **Note:** To use `Vec<u8>` you need to import `rstd::prelude::Vec;`. 
-
 <!-- tabs:start -->
 
-#### ** Hint #1 **
+#### ** Hide Hints **
 
-```
-use rstd::prelude::Vec;
-```
+Click the other tabs to view hints.
 
-#### ** Hint #2 **
+#### ** Hint: Storage Item **
 
 ```rust
 /// The storage item for our proofs.
@@ -31,7 +27,16 @@ Proofs: map Vec<u8> => (T::AccountId, T::BlockNumber);
 use support::{decl_storage, decl_module};
 use rstd::prelude::Vec;
 
-pub trait Trait: system::Trait {}
+pub trait Trait: system::Trait {
+	type Event: From<Event<Self>> + Into<<Self as system::Trait>::Event>;
+}
+
+decl_event! {
+	pub enum Event<T> where AccountId = <T as system::Trait>::AccountId {
+		ClaimCreated(AccountId, Vec<u8>),
+		ClaimRevoked(AccountId, Vec<u8>),
+	}
+}
 
 decl_storage! {
 	trait Store for Module<T: Trait> as TemplateModule {
@@ -43,7 +48,7 @@ decl_storage! {
 
 decl_module! {
 pub struct Module<T: Trait> for enum Call where origin: T::Origin {
-	// Declare public functions here
+		fn deposit_event() = default;
 	}
 }
 ```
