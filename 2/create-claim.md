@@ -67,7 +67,7 @@ Self::deposit_event(RawEvent::ClaimCreated(sender, proof));
 #### ** Solution **
 
 ```rust
-use support::{decl_storage, decl_module, ensure};
+use support::{decl_storage, decl_module, decl_event, ensure};
 use rstd::prelude::Vec;
 use system::ensure_signed;
 
