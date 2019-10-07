@@ -10,3 +10,4 @@
 	* [Add Storage Item](2/add-storage.md)
 	* [Create Claim](2/create-claim.md)
 	* [Revoke Claim](2/revoke-claim.md)
+	* [Final Runtime](2/final.md)
