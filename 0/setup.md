@@ -1,5 +1,7 @@
 # Getting Started
 
+Please complete the instructions on this page before attending the [Parity Substrate](https://www.parity.io/substrate/) workshop. You only need to complete this one page, we will look at the other pages during the workshop.
+
 If you have any problems with the instructions on this page, feel free to send us an email at:
 
 * shawn@parity.io
