@@ -5,6 +5,9 @@
 	* [Setup](0/setup.md)
 
 * [Set Up a Network Together](1/README.md)
+	* [Connect to the Network](1/connect.md)
+	* [View Public Telemetry](1/telemetry.md)
+	* [Interact with Your Node](1/interact.md)
 
 * [Writing a Module](2/README.md)
 	* [Starting Point](2/starting-point.md)
@@ -13,3 +16,5 @@
 	* [Create Claim](2/create-claim.md)
 	* [Revoke Claim](2/revoke-claim.md)
 	* [Final Runtime](2/final.md)
+
+* [Upgrading Your Runtime](3/README.md)
