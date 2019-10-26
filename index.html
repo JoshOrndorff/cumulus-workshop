@@ -2,17 +2,22 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta charset="UTF-8">
   <link rel="stylesheet" href="//unpkg.com/docsify/themes/vue.css">
 </head>
-<body>
+
+<body class="close">
   <div id="app"></div>
   <script>
     window.$docsify = {
-      loadSidebar: true
+      loadSidebar: true,
+      pagination: {
+        crossChapter: true
+      }
     }
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
@@ -20,5 +25,9 @@
   <script src="//unpkg.com/prismjs/components/prism-rust.min.js"></script>
   <script src="//unpkg.com/prismjs/components/prism-bash.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <script src="custom/docsify-presentation.js"></script>
+  <link rel="stylesheet" href="./custom/presentation.css">
 </body>
+
 </html>

@@ -1,0 +1,25 @@
+/* Reduce spacing on sides, o.g. 800px */
+.markdown-section {
+	max-width: 90%;
+}
+
+/* Reduce spacing on top, o.g. 60px */
+.content {
+	padding-top: 10px;
+}
+
+/* Make Pagination Bottom Sticky */
+
+.pagination-item {
+	margin-top: 0;
+}
+
+.docsify-pagination-container {
+    position: fixed; 
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 4em;
+	background-color: #ffffff;
+	margin: 0 5em;
+}

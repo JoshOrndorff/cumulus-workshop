@@ -49,7 +49,7 @@ let (owner, _) = Proofs::<T>::get(&proof);
 ensure!(sender == owner, "You must own this claim to revoke it.");
 ```
 
-#### ** Hint: Remove Proof and Emit Event
+#### ** Hint: Remove Proof and Emit Event **
 
 ```rust
 // Remove claim from storage
