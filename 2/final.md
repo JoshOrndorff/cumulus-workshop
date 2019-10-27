@@ -30,7 +30,6 @@ decl_storage! {
     }
 }
 
-
 // The module's dispatchable functions.
 decl_module! {
     /// The module declaration.

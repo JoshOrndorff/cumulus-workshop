@@ -15,6 +15,8 @@
 * Logic
 	* Remove proof
 
+<!-- slide:break-30 -->
+
 <!-- tabs:start -->
 
 #### ** Hide Hints **
@@ -30,7 +32,7 @@ fn revoke_claim(origin, proof: Vec<u8>) {
 }
 ```
 
-#### ** Hint: Check Sign and Exists **
+#### ** Hint: Check Signed and Exists **
 
 ```rust
 let sender = ensure_signed(origin)?;

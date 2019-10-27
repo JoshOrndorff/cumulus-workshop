@@ -17,6 +17,8 @@ We will create our first runtime module function.
 	* Get block number from system module
 	* Insert proof with owner and block number data
 
+<!-- slide:break-40 -->
+
 <!-- tabs:start -->
 
 #### ** Hide Hints **

@@ -1,4 +1,4 @@
-## Proof Of Existence Chain
+# Proof Of Existence Chain
 
 The custom logic we will add to your Substrate runtime is a Proof of Existence
 module. From [Wikipedia](https://en.wikipedia.org/wiki/Proof_of_Existence): 
@@ -16,8 +16,6 @@ blockchain. Any user with the original file can prove that this file matches the
 one on the blockchain by simply recomputing the hash of the file and compare it
 with the hash stored on chain.
 
-![File Hash](assets/file-hash.png)
-
 To add to this, blockchain systems also provide a robust account system. So when
 a file digest is stored on the blockchain, we can also record which user
 uploaded that digest. This allows that user to later prove that they were the
@@ -33,3 +31,7 @@ Our Proof of Existence module will expose two callable functions:
 
 We will only need to store information about the proofs that have been claimed,
 and who made those claims.
+
+<!-- slide:break-60 -->
+
+![File Hash](assets/file-hash.png)
