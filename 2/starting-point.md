@@ -26,7 +26,7 @@ substrate-node-template
 +-- ...
 ```
 
-<!-- slide:break -->
+<!-- slide:break-40 -->
 
 Replace the content in this file with this starting point:
 
