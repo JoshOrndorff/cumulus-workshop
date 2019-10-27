@@ -26,16 +26,17 @@ window.$docsify.plugins.push(function(hook, vm) {
         console.log(width);
       }
       html =
-        "<div class='slide-container slide-left' style='width: " +
+        "<div class='slide-container'>" +
+        "<div class='slide-col slide-left' style='width: " +
         width +
         "%'>" +
         html.replace(
           /<!-- slide:break-?(\d+)? -->/g,
-          "</div><div class='slide-container slide-right' style='width: " +
+          "</div><div class='slide-col slide-right' style='width: " +
             (100 - width) +
             "%'>"
         ) +
-        '</div>';
+        '</div></div>';
     }
 
     return html;
