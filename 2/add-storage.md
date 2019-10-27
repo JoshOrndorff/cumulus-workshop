@@ -7,6 +7,8 @@ We need to create a storage item for our blockchain.
 		* Key: `Vec<u8>`
 		* Value: `(T::AccountId, T::BlockNumber)`
 
+<!-- slide:break-40 -->
+
 <!-- tabs:start -->
 
 #### ** Hide Hints **
