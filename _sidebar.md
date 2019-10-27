@@ -3,6 +3,7 @@
 * [Home](/)
 * [Getting Started](0/README.md)
 	* [Setup](0/setup.md)
+	* [Presentation](0/presentation.md)
 
 * [Set Up a Network Together](1/README.md)
 	* [Connect to the Network](1/connect.md)
@@ -18,4 +19,5 @@
 	* [Final Runtime](2/final.md)
 
 * [Upgrading Your Runtime](3/README.md)
-	* [Test](3/test.md)
+
+* [Notepad](notes.md)
