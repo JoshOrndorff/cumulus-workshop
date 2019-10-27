@@ -26,6 +26,8 @@ substrate-node-template
 +-- ...
 ```
 
+<!-- slide:break -->
+
 Replace the content in this file with this starting point:
 
 ```rust

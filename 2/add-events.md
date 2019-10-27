@@ -14,6 +14,8 @@ To use `Vec` you need to import `rstd::prelude::Vec`:
 use rstd::prelude::Vec;
 ```
 
+<!-- slide:break -->
+
 <!-- tabs:start -->
 
 #### ** Hide Hints **

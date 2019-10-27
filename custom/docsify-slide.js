@@ -14,6 +14,22 @@ function arrowChecker(e) {
 }
 
 window.$docsify.plugins.push(function(hook, vm) {
+  // Add left and right side of slide
+  hook.afterEach(function(html) {
+    if (html.includes('<!-- slide:break -->')) {
+      html =
+        "<div class='slide-container slide-left'>" +
+        html.replace(
+          '<!-- slide:break -->',
+          "</div><div class='slide-container slide-right'>"
+        ) +
+        '</div>';
+    }
+
+    return html;
+  });
+
+  // Make arrow keys go forward and backward
   hook.doneEach(function() {
     let next = document.getElementsByClassName(
       'pagination-item pagination-item--next'

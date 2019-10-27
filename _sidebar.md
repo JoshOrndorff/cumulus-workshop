@@ -18,3 +18,4 @@
 	* [Final Runtime](2/final.md)
 
 * [Upgrading Your Runtime](3/README.md)
+	* [Test](3/test.md)
