@@ -17,6 +17,9 @@
 	* [Revoke Claim](2/revoke-claim.md)
 	* [Final Runtime](2/final.md)
 
-* [Upgrading Your Runtime](3/)
+* [Using Currency](3/)
+	* 
+
+* [Upgrading Your Runtime](4/)
 
 * [Notepad](notes.md)
