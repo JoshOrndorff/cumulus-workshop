@@ -22,6 +22,8 @@ use rstd::prelude::Vec;
 
 Click the other tabs to view hints.
 
+![Image of Runtime Events](./assets/events.png ':size=300')
+
 #### ** Hint: Events **
 
 ```rust

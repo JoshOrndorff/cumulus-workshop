@@ -15,6 +15,8 @@ We need to create a storage item for our blockchain.
 
 Click the other tabs to view hints.
 
+![Runtime Storage](./assets/storage.png ':size=300')
+
 #### ** Hint: Storage Item **
 
 ```rust

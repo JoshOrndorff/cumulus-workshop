@@ -25,6 +25,9 @@ We will create our first runtime module function.
 
 Click the other tabs to view hints.
 
+![Claim](./assets/claim.png ':size=300')
+
+
 #### ** Hint: Input **
 
 ```rust
