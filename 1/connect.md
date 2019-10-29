@@ -3,7 +3,7 @@
 You can use the `substrate-node-template` and this node configuration file to
 connect to our network.
 
-1. Save the `spec.json` file in the `substrate-node-template` folder.
+1. Save the [`spec.json`](https://bootnodes.net/spec.json) file in the `substrate-node-template` folder.
 
 2. Run the following:
 
