@@ -16,8 +16,6 @@ function arrowChecker(e) {
 window.$docsify.plugins.push(function(hook, vm) {
   // Add left and right side of slide
   hook.afterEach(function(html) {
-    console.log(html);
-
     if (html.includes('<!-- slide:break')) {
       let width = 50;
       let matches = html.match(/<!-- slide:break-\d+ -->/g);
