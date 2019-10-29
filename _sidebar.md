@@ -17,8 +17,8 @@
 	* [Revoke Claim](2/revoke-claim.md)
 	* [Final Runtime](2/final.md)
 
-* [Using Currency](3/)
-	* 
+* [Using Traits](3/)
+	* [Final Runtime](3/final.md)
 
 * [Upgrading Your Runtime](4/)
 

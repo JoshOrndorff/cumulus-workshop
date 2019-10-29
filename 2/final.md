@@ -1,7 +1,7 @@
 # Final Runtime
 
 ```rust
-use support::{decl_module, decl_storage, decl_event, ensure, StorageMap};
+use support::{decl_module, decl_storage, decl_event, ensure};
 use rstd::vec::Vec;
 use system::ensure_signed;
 
