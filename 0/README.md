@@ -38,7 +38,7 @@ If you have any problems with the instructions on this page, feel free to send u
 
 	> **Note:** You can stop your node with `ctrl + c`.
 
-	If everything completed successfully, you should see your local node producing blocks:
+	If everything completed successfully, you should see your local development node producing blocks:
 
 	```bash
 	$ ./target/release/node-template --dev
