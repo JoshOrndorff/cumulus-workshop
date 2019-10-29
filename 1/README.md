@@ -18,3 +18,9 @@ Get that configuration file here:
 https://bootnodes.net/spec.json
 
 Take a look at the JSON!
+
+<!-- <button id="gen-button">Generate Keys</button>
+<div id="keygen">
+	<textarea id="ed25519"></textarea>
+	<textarea id="sr25519"></textarea>
+</div> -->
