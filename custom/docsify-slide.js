@@ -21,7 +21,6 @@ window.$docsify.plugins.push(function(hook, vm) {
       let matches = html.match(/<!-- slide:break-\d+ -->/g);
       if (matches) {
         width = matches[0].match(/(\d+)/g)[0];
-        console.log(width);
       }
       html =
         "<div class='slide-container'>" +
