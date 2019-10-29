@@ -4,10 +4,11 @@
 * [Getting Started](0/)
 	* [Presentation](0/presentation.md)
 
-* [Set Up a Network Together](1/)
-	* [Connect to the Network](1/connect.md)
-	* [View Public Telemetry](1/telemetry.md)
-	* [Interact with Your Node](1/interact.md)
+* [Start a Network Together](1/)
+	* [Use the Network](1/1use.md)
+	* [Join the Network](1/3join.md)
+	* [View Public Telemetry](1/5telemetry.md)
+	* [Interact with Your Node](1/7interact.md)
 
 * [Writing a Module](2/)
 	* [Starting Point](2/starting-point.md)

@@ -1,19 +1,18 @@
 # Connect to the Network
 
-You can use the `substrate-node-template` and this node configuration file to
-connect to our network.
+You can use the `substrate-node-template` you compiled earlier and this chain specification file to connect to our network.
 
 1. Save the [`spec.json`](https://bootnodes.net/spec.json) file in the `substrate-node-template` folder.
 
-2. Run the following:
+2. Launch your node:
 
 	```bash
 	./target/release/node-template \
-		--chain spec.json
-		--
+		--chain spec.json \
+		--name YourNodeName
 	```
 
-> **NOTE:** You can use the flag `--log sub-libp2p,sync` for verbose network logs useful for debugging.
+> You can use the flag `--log sub-libp2p,sync` for verbose network logs for debugging if you need it.
 
 It will use these bootstrap nodes:
 
@@ -27,4 +26,7 @@ It will use these bootstrap nodes:
 ## Discussion
 
 * Raw Spec
-* Boot Nodes
+* Node Roles
+	* Boot Nodes
+	* Validators
+	* Full Nodes
