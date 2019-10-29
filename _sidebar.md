@@ -17,9 +17,10 @@
 	* [Revoke Claim](2/revoke-claim.md)
 	* [Final Runtime](2/final.md)
 
-* [Using Traits](3/)
-	* [Final Runtime](3/final.md)
 
-* [Upgrading Your Runtime](4/)
+* [Upgrading Your Runtime](3/)
+
+* [Using Traits](4/)
+	* [Final Runtime](4/final.md)
 
 * [Notepad](notes.md)

@@ -1,3 +1,3 @@
-# Runtime Upgrade
+# Using Balances
 
-Now that we have created a new module, let's 
+The Rust programming language allows 
