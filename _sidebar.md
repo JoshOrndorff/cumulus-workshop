@@ -11,6 +11,7 @@
 	* [Interact with Your Node](1/7interact.md)
 
 * [Writing a Module](2/)
+	* [Presentation](2/presentation.md)
 	* [Starting Point](2/starting-point.md)
 	* [Add Events](2/add-events.md)
 	* [Add Storage Item](2/add-storage.md)
