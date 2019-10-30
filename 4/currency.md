@@ -20,6 +20,12 @@ The [`Currency` trait](https://substrate.dev/rustdocs/master/srml_support/traits
 
 * etc...
 
+## Use
+
+```rust
+use support::traits::Currency;
+```
+
 <!-- slide:break -->
 
 # Reserveable Currency Trait
@@ -35,3 +41,9 @@ The [`ReserveableCurrency` trait](https://substrate.dev/rustdocs/master/srml_sup
 * unreserve
 
 * etc...
+
+## Use
+
+```rust
+use support::traits::ReservableCurrency;
+```

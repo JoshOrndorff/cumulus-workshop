@@ -23,6 +23,7 @@
 
 * [Using Traits](4/)
 	* [Currency](4/currency.md)
+	* [Balances Module](4/balances.md)
 	* [Final Runtime](4/final.md)
 
 * [Notepad](notes.md)
