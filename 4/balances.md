@@ -2,7 +2,7 @@
 
 The [Balances module](https://substrate.dev/rustdocs/master/srml_balances/index.html) comes in the Substrate Runtime Module Library.
 
-It implements the `Currency` and `ReserveableCurrency` trait.
+It implements the `Currency` and `ReservableCurrency` trait.
 
 ## Directly Add Balances
 
@@ -41,7 +41,7 @@ pub trait Trait: system::Trait + balances::Trait {
 }
 ```
 
-#### ** Add Reserveable Currency Trait **
+#### ** Add Reservable Currency Trait **
 
 ```rust
 use support::traits::ReservableCurrency;

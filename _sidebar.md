@@ -24,7 +24,8 @@
 * [Using Traits](4/)
 	* [Currency](4/currency.md)
 	* [Balances Module](4/balances.md)
-	* [Use Traits](4/traits.md)
+	* [Configurable Traits](4/traits.md)
+	* [Configurable Constants](4/get.md)
 	* [Final Runtime](4/final.md)
 
 * [Notepad](notes.md)
