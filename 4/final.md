@@ -1,5 +1,10 @@
 # Final Code
 
+<!-- tabs:start -->
+
+#### ** runtime/src/template.rs **
+
+
 ```rust
 use support::{decl_module, decl_storage, decl_event, ensure};
 use rstd::vec::Vec;
@@ -92,3 +97,22 @@ decl_module! {
 	}
 }
 ```
+
+#### ** runtime/src/lib.rs **
+
+You need to update the `template::Trait` to use the new types we defined.
+
+```rust
+parameter_types! {
+	pub const Fee: Balance = 1000;
+}
+
+/// Used for the module template in `./template.rs`
+impl template::Trait for Runtime {
+	type Event = Event;
+	type Currency = Balances;
+	type Fee = Fee;
+}
+```
+
+<!-- tabs:end -->

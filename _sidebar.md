@@ -22,6 +22,7 @@
 * [Upgrading Your Runtime](3/)
 
 * [Using Traits](4/)
+	* [Currency](4/currency.md)
 	* [Final Runtime](4/final.md)
 
 * [Notepad](notes.md)
