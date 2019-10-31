@@ -23,6 +23,8 @@
 
 Click the other tabs to view hints.
 
+![Shred Paper](./assets/revoke.png ':size=300')
+
 #### ** Hint: Input **
 
 ```rust
