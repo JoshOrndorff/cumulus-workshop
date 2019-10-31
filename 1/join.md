@@ -23,6 +23,8 @@ It will use these bootstrap nodes:
   ],
 ```
 
+<!-- slide:break-70 -->
+
 ## Discussion
 
 * Raw Spec

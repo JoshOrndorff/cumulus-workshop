@@ -16,3 +16,7 @@ Your node connected to the telemetry server because of the `spec.json`:
 
 * Peer Discovery
 * Network Topology
+
+<!-- slide:break -->
+
+![Polkadot Telemetry](./assets/telemetry.png)

@@ -5,10 +5,10 @@
 	* [Presentation](0/presentation.md)
 
 * [Start a Network Together](1/)
-	* [Use the Network](1/1use.md)
-	* [Join the Network](1/3join.md)
-	* [View Public Telemetry](1/5telemetry.md)
-	* [Interact with Your Node](1/7interact.md)
+	* [Use the Network](1/use.md)
+	* [Join the Network](1/join.md)
+	* [View Public Telemetry](1/telemetry.md)
+	* [Interact with Your Node](1/interact.md)
 
 * [Writing a Module](2/)
 	* [Presentation](2/presentation.md)
