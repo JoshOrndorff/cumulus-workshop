@@ -5,10 +5,10 @@
 	* [Presentation](0/presentation.md)
 
 * [Start a Network Together](1/)
-	* [Use the Network](1/1use.md)
-	* [View Public Telemetry](1/2telemetry.md)
-	* [Join the Network](1/3join.md)
-	* [Interact with Your Node](1/7interact.md)
+	* [Use the Network](1/use.md)
+	* [View Public Telemetry](1/telemetry.md)
+	* [Join the Network](1/join.md)
+	* [Interact with Your Node](1/interact.md)
 
 * [Writing a Module](2/)
 	* [Presentation](2/presentation.md)
@@ -21,7 +21,7 @@
 
 
 * [Upgrading Your Runtime](3/)
-	* [Make a Claim](3/2make-claim.md)
+	* [Make a Claim](3/make-claim.md)
 
 * [Using Traits](4/)
 	* [Currency](4/currency.md)
