@@ -6,8 +6,8 @@
 
 * [Start a Network Together](1/)
 	* [Use the Network](1/1use.md)
+	* [View Public Telemetry](1/2telemetry.md)
 	* [Join the Network](1/3join.md)
-	* [View Public Telemetry](1/5telemetry.md)
 	* [Interact with Your Node](1/7interact.md)
 
 * [Writing a Module](2/)
@@ -20,6 +20,7 @@
 
 
 * [Upgrading Your Runtime](3/)
+	* [Make a Claim](3/2make-claim.md)
 
 * [Using Traits](4/)
 	* [Currency](4/currency.md)

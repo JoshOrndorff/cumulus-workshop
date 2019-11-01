@@ -4,7 +4,7 @@ You can take a look at the overall network using the telemetry website:
 
 [https://telemetry.polkadot.io/#list/SFBW](https://telemetry.polkadot.io/#list/SFBW)
 
-Your node connected to the telemetry server because of the `spec.json`:
+Your node will connect to the telemetry server because of the `spec.json`:
 
 ```json
 "telemetryEndpoints": [
