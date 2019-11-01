@@ -31,7 +31,7 @@ use support::traits::Currency;
 
 <!-- slide:break -->
 
-## Fee Trait
+## Fee Type
 
 ```rust
 pub trait Trait: system::Trait {

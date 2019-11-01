@@ -31,6 +31,8 @@ pub trait Trait: system::Trait + new_module::Trait {
 
 Click the other tabs to view hints.
 
+![Money Icon](./assets/balances.png ':size=300')
+
 #### ** Add Balances Module **
 
 ```rust
