@@ -13,13 +13,14 @@ For the upgrade, we need the compiled wasm runtime which lives in `target/releas
 ## Submit the Transaction
 Upgrading the runtime is serious and you can't just do it willy-nilly. Calling `set_code` directly fails. Instead we make a sudo call.
 
-![Apps Upgrade Call](assets/apps-upgrade.png)
-
-
 ## About the Sudo Module
 
 The `sudo` module is a _simple_ governance mechanism where one key gets to be dictator.
 
-It checks that nay call submitted to it comes from the authorized person, like your `revoke_claim` function.
+It checks that any call submitted to it comes from the authorized person, like your `revoke_claim` function.
 
 More advanced governance is possible. Consider the [Democracy module](https://substrate.dev/rustdocs/master/srml_democracy/index.html) or writing your own custom governance.
+
+<!-- slide:break-60 -->
+
+![Apps Upgrade Call](assets/apps-upgrade.png)

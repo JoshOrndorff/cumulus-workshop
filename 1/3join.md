@@ -24,7 +24,9 @@ It will use these bootstrap nodes:
 
 ```
 
+
 Notice that your node now appears on the telemetry page.
+
 
 ## Discussion
 

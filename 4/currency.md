@@ -20,11 +20,17 @@ The [`Currency` trait](https://substrate.dev/rustdocs/master/srml_support/traits
 
 * etc...
 
+## Use
+
+```rust
+use support::traits::Currency;
+```
+
 <!-- slide:break -->
 
-# Reserveable Currency Trait
+# Reservable Currency Trait
 
-The [`ReserveableCurrency` trait](https://substrate.dev/rustdocs/master/srml_support/traits/trait.ReservableCurrency.html) adds to `Currency` additional APis which allow for reserving funds from a user.
+The [`ReservableCurrency` trait](https://substrate.dev/rustdocs/master/srml_support/traits/trait.ReservableCurrency.html) adds to `Currency` additional APis which allow for reserving funds from a user.
 
 ## Additional Functions
 
@@ -35,3 +41,9 @@ The [`ReserveableCurrency` trait](https://substrate.dev/rustdocs/master/srml_sup
 * unreserve
 
 * etc...
+
+## Use
+
+```rust
+use support::traits::ReservableCurrency;
+```
