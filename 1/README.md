@@ -15,7 +15,7 @@ You will need:
 
 Get that configuration file here:
 
-https://bootnodes.net/spec.json
+https://sfbw.bootnodes.net/spec.json
 
 Take a look at the JSON!
 
