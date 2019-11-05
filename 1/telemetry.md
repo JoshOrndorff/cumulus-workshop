@@ -2,7 +2,7 @@
 
 You can take a look at the overall network using the telemetry website:
 
-[https://telemetry.polkadot.io/#list/SFBW](https://telemetry.polkadot.io/#list/SFBW)
+[https://telemetry.polkadot.io/#list/Retreat](https://telemetry.polkadot.io/#list/Retreat)
 
 Your node will connect to the telemetry server because of the `spec.json`:
 
