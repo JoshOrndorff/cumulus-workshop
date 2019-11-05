@@ -2,7 +2,7 @@
 
 You can use the `substrate-node-template` you compiled earlier and this chain specification file to connect to our network.
 
-1. Save the [`spec.json`](https://retreat.bootnodes.net/spec.json) file in the `substrate-node-template` folder.
+1. Save the [`spec.json`](http://167.172.206.230/spec.json) file in the `substrate-node-template` folder.
 
 2. Launch your node:
 
