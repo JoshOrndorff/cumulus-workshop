@@ -1,10 +1,7 @@
-# substrate-beginner-workshop
+# Cumulus Workshop
 
-A collaborative workshop to learn how to use Substrate
+Connect Substrate blockchains to Polkadot with Cumulus
 
-## Overview 
+In this hands-on workshop, participants will start a polkadot-like relay chain, connect a series of provided parachains, and practice installing cumulus consensus in Substrate-based blockchains with custom runtimes.
 
-1. Getting started with Substrate
-2. Running a local network
-3. Building a Proof-of-Existence (PoE) Blockchain
-4. Forkless upgrade of our local network
+To prepare and preview the workshop material, explore the [hosted version of these slides](joshorndorf.github.io/cumulus-workshop) or read the md files directly.
