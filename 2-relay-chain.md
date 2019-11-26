@@ -4,7 +4,7 @@ Before we can attach any cumulus-based parachains, we need to launch the relay-c
 
 
 ## Download the Chain Spec file
-By default your node will try to join the live Polkadot network (TODO Factcheck). To make it join the correct network, download the [WorkshopRelayChain.json]() chain spec file.
+By default your node will try to join the live Polkadot network (TODO Factcheck). To make it join the correct network, download the [WorkshopRelayChainRaw.json](WorkshopRelayChainRaw.json) chain spec file.
 ```bash
 TODO should we put a curl command here?
 pro: more likely to download the file into the pwd
@@ -16,7 +16,7 @@ con: do most OSes come with curl?
 ## Start Your Node
 ```bash
 ./target/release/polkadot \
-  --chain=WorkshopRelayChain.json \
+  --chain=WorkshopRelayChainRaw.json \
   --name
 ```
 
