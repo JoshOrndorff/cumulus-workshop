@@ -21,7 +21,7 @@ Observe the notes page at the end. We'll use it to coordinate throughout the wor
 Clone the Polkadot source code. We will be using a specific branch for this workshop.
 TODO should we choose a specific commit before sub0?
 ```bash
-git checkout -b bkchr-cumulus-branch https://github.com/paritytech/polkadot.git
+git clone -b bkchr-cumulus-branch https://github.com/paritytech/polkadot.git
 cd polkadot
 ```
 
