@@ -9,16 +9,20 @@ The roles are:
 * **Custom Parachain Authors** -- Install Cumulus on your already-written runtime. If you want to actually run your own chain, you should be prepared to collate it, or recruit peers to collate it for you.
 
 ## Shared Preparation Steps
-Install substrate prerequisites
-* TODO Insert instructions here
-* TODO Support Windows?
+Install Substrate prerequisites
+
+```bash
+curl https://getsubstrate.io -sSf | bash -s -- --fast
+```
+
+Manual [instructions for Windows](https://substrate.dev/docs/en/getting-started/installing-substrate#windows) are also available. Although Windows is a supported platform for Substrate and Polkadot, it will only be supported on a best-effort basis for this workshop.
 
 Pre-read the relevant sections of this write-up.
 
-Observe the notes page at the end. We'll use it to coordinate throughout the workshop.
+Notice the final [notes page](5-notes.md) on this walkthrough. We will use it to coordinate throughout the workshop.
 
 ## Preparing to Validate
-Clone the Polkadot source code. We will be using a specific branch for this workshop.
+Clone the Polkadot repository. We will be using a specific branch for this workshop.
 TODO should we choose a specific commit before sub0?
 ```bash
 git clone -b bkchr-cumulus-branch https://github.com/paritytech/polkadot.git
@@ -56,8 +60,13 @@ Starting BABE Authorship worker
 
 
 ## Preparing to Collate
-Clone cumulus project
+Clone Cumulus repository. As with Polkadot, we will be using a custom branch for this workshop. TODO what branch?
+```bash
+git clone -b TODO https://github.com/paritytech/cumulus.git
+```
+
 Build one (or a few)) of the parachains we have provided
+TODO
 start a dev chain (is that a thing?) to ensure it runs correctly
 
 ## Preparing a Custom Parachain
