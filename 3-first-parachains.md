@@ -9,6 +9,11 @@ To register a parachain, the relay chain needs to know the parachain's genesis s
 ./target/release/parachain-zero-collator export-genesis-state genesis-state-zero
 ```
 
+## Start the collator node
+```bash
+./target/release/parachain-zero-collator --base-path collator-zero --chain WorkshopRelayChainRaw.json
+```
+
 ## Registration Transaction
 When Polkadot is live parachain slots will be auctioned. For the purpose of this workshop, we will skip the overhead of the auction, and instead use sudo transactions to force parachain registration. The transaction can be made from `Apps > Sudo > Registrar > registerPara`.
 
