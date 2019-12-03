@@ -3,9 +3,9 @@
 Before we can attach any cumulus-based parachains, we need to launch the relay-chain. We've launched a basic two-node network in preparation for this workshop. Before joining the network yourself, check out the [Telemetry Page](https://telemetry.polkadot.io/#list/Cumulus%20Relay). If you're prepared to validate, begin these steps to join the network.
 
 ## Download the Chain Spec file
-By default your node will try to join the live Polkadot network (TODO Factcheck). To make it join the correct network, save this [WorkshopRelayChainRaw.json](https://raw.githubusercontent.com/JoshOrndorff/cumulus-workshop/master/WorkshopRelayChainRaw.json) chain spec file.
+By default your node will try to join the live Polkadot network (TODO Factcheck). To make it join the correct network, save this [WorkshopRelayChainRaw.json](.WorkshopRelayChainRaw.json) chain spec file.
 
-[WorkshopRelayChainRaw.json](https://raw.githubusercontent.com/JoshOrndorff/cumulus-workshop/master/WorkshopRelayChainRaw.json)
+[WorkshopRelayChainRaw.json](.WorkshopRelayChainRaw.json)
 
 ## Start Your Node
 ```bash
