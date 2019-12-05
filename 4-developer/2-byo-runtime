@@ -11,5 +11,6 @@ Overview:
 + parachain-runtime = { package = "my-runtime", git = <my-repo> }
 ```
 * Copy genesis configuration to collator template (or put it in it's own module)
+* Change the hard-coded parachain id in `src/main.rs`.
 
 The one big catch is getting the versions to match. To make this work with the current cumulus your runtime will have to build against the `bkchr-cumulus-branch` of Substrate.
