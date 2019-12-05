@@ -15,7 +15,8 @@ We can now start the collator node with the following command. Notice that we're
 ```bash
 ./target/release/parachain-zero-collator \
   --base-path collator-zero \
-  --chain WorkshopRelayChainRaw.json
+  --chain WorkshopRelayChainRaw.json \
+  --bootnodes --bootnodes /dns4/relaychain.bootnodes.net/tcp/30333/p2p/QmayQzZgh1t41b3ta5GSm6tKvV7gpWnBYfHrPAYh756vSH
 ```
 
 ## Registration Transaction

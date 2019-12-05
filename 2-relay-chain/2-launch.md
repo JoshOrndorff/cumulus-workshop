@@ -12,6 +12,7 @@ By default your node will try to join the live Polkadot network. To make it join
 ```bash
 ./target/release/polkadot \
   --chain=WorkshopRelayChainRaw.json \
+  --bootnodes --bootnodes /dns4/relaychain.bootnodes.net/tcp/30333/p2p/QmayQzZgh1t41b3ta5GSm6tKvV7gpWnBYfHrPAYh756vSH \
   --name MyNode
 ```
 
