@@ -27,7 +27,7 @@ ParaInfo: Always
 code: from wbuild directory
 initial_head_data: from previous step
 
-![Registration screenshot](assets/registration-screenshot.png)
+![Registration screenshot](../assets/registration-screenshot.png)
 
 ## Is It Working?
 Now that the parachain has been registered with the relay chain, we should see a few things start happening. Look for each of these signs that the parachain is live.
