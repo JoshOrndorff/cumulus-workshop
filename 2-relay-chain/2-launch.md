@@ -3,7 +3,7 @@
 Before we can attach any cumulus-based parachains, we need to launch the relay-chain.
 
 ## View Telemetry
-We've launched a basic two-node network in preparation for this workshop. Before joining the network yourself, check out the [Telemetry Page](https://telemetry.polkadot.io/#list/Cumulus%20Relay).
+We've launched a basic two-node network in preparation for this workshop. Before joining the network yourself, check out the [Telemetry Page](https://telemetry.polkadot.io/#list/Cumulus%20Testnet).
 
 ## Download the Chain Specification
 By default your node will try to join the live Polkadot network. To make it join the correct network, save this [WorkshopRelayChainRaw.json](WorkshopRelayChainRaw.json) chain spec file locally.
@@ -20,7 +20,7 @@ You must customize a few parameters in the command:
 * Use the correct path to where you saved the chain spec file
 * Choose a name you like for your node
 
-When your node appears to be running, look back at the [Telemetry page](https://telemetry.polkadot.io/#list/Cumulus%20Relay) and see if you can find it.
+When your node appears to be running, look back at the [Telemetry page](https://telemetry.polkadot.io/#list/Cumulus%20Testnet) and see if you can find it.
 
 ## Conenct Apps UI
 To explore and interact with the network, you can use the Polkadot JS Apps UI.
