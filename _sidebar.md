@@ -2,10 +2,10 @@
 
 * [Home](/)
 * Preparation
-  * [Overview and Shared Prep](prep/1-shared.md)
-  * [Relay Chain Node](prep/2-relay.md)
-  * [Parachain Collator](prep/3-collator.md)
-  * [Parachain Developer](prep/4-developer.md)
+  * [Overview and Shared Prep](1-prep/1-shared.md)
+  * [Relay Chain Node](1-prep/2-relay.md)
+  * [Parachain Collator](1-prep/3-collator.md)
+  * [Parachain Developer](1-prep/4-developer.md)
 * Launch Relay Chain
   * [Polkadot Architecture](2-relay-chain/1-architecture.md)
   * [Launch Relay Chain](2-relay-chain/2-launch.md)

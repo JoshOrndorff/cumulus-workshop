@@ -13,4 +13,4 @@ Change the name of the project in the `Cargo.toml` file. If you don't it will be
 
 Edit the runtime in the `runtime` directory as you would in any Substrate node. There are lots of docs in at https://substrate.dev and examples in the https://substrate.dev/recipes .
 
-You will not need consensus-related modules like grandpa or babe when using Cumulus.
+You will not need consensus-related pallets like `grandpa` or `babe` when using Cumulus.
