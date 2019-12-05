@@ -14,3 +14,7 @@ Overview:
 * Change the hard-coded parachain id in `src/main.rs`.
 
 The one big catch is getting the versions to match. To make this work with the current cumulus your runtime will have to build against the `bkchr-cumulus-branch` of Substrate.
+
+## Local Testnet
+
+When developing and testing a cumulus based node, one can reproduce a minimal version of the network we built in this workshop. Instructions are in the [cumulus readme](https://github.com/paritytech/cumulus/#cumulus).

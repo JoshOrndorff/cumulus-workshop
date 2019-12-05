@@ -16,5 +16,4 @@
 * Develop Parachains
   * [Collator Template](4-developer/1-collator-template.md)
   * [Bring Your Own Runtime](4-developer/2-byo-runtime.md)
-  * [Local Testnet](4-developer/3-local-testnet.md)
 * [Notepad](5-notes.md)
