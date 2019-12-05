@@ -1,0 +1,2 @@
+# Preparing to Develop a Parachain
+During the workshop we'll do a live coding example of turning an ordinary Substrate chain into a cumulus-based collator. The prep work for this portion is less clearly defined, and there in not a step-by-step path. Rather you should be generally familiar with Substrate runtime development. A good place to start is at the [Substrate developer hub](https://substrate.dev).
