@@ -1,2 +1,2 @@
 # Polkadot Architecture
-![Diagram](/assets/arch.png)
+![Diagram](assets/arch.png)
