@@ -7,7 +7,10 @@ Cumulus has come a long way over the past several months, but there are a few ro
 ## Start the Collators
 The command to run another parachain-zero collator is as follows. This command is nearly identical for other parachains; just be sure to run the correct collator binary.
 ```bash
-./target/release/parachain-zero-collator
+./target/release/parachain-zero-collator \
+  --chain=WorkshopRelayChainRaw.json \
+  --bootnodes <Alice, plus _both_ identities of your first collator> \
+  --base-path collator2
 ```
 
 ## Troubleshooting
