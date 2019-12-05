@@ -1,0 +1,1 @@
+# Collator Template
