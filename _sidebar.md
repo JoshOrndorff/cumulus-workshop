@@ -7,9 +7,13 @@
   * [Parachain Collator](prep/3-collator.md)
   * [Parachain Developer](prep/4-developer.md)
 * Launch Relay Chain
-  * [Relay Chain](/2-relay-chain.md)
+  * [Launch Relay Chain](relay-chain/original.md)
 * Launch Parachains
-  * [First Parachains](/3-first-parachains.md)
+  * [Parachain Zero](3-parachains/1-parachain-zero.md)
+  * [Parachains One & Two](3-parachains/2-parachains-one-two.md)
+  * [Adding More Collators](3-parachains/3-more-collators.md)
 * Develop Parachains
-  * [Custom Parachains](/4-custom-parachains.md)
+  * [Collator Template](4-developer/1-collator-template.md)
+  * [Bring Your Own Runtime](4-developer/2-byo-runtime.md)
+  * [Local Testnet](4-developer/3-local-testnet.md)
 * [Notepad](5-notes.md)
