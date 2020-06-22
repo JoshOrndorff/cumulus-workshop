@@ -1,6 +1,6 @@
 # Preparation
 
-This workshop covers the entire process of launching a relay chain, connecting parachains, transferring assets between chains, and developing your own parachain runtimes. Naturally, there will be some significant compiling if you intend to build everything yourself.
+This workshop covers the entire process of launching a relay chain, connecting parachains, transferring assets between chains, and developing your own parachain runtimes. Naturally, there will be some significant compiling if you intend to build everything yourself. Compiling the Polkadot and test collator nodes can be avoided if you prefer to use the docker image.
 
 ## Shortening the Workshop
 
@@ -8,9 +8,11 @@ If you intend to use this material for a live workshop you may shorten it by cut
 
 If you prefer to focus primarily on development in your workshop, you may also skip initial steps by performing those steps yourself in preparation for the workshop and making the network available to your participants. See [Setting Up The Bootnode](SettingUpTheBootnode.md) for notes on setting up a cloud-based relay chain.
 
-## Install a Rust Toolchain
+## Install Substrate Prerequisites
 
-Install Substrate prerequisites
+> You may skip this step if you will not develop your own runtimes, and prefer docker to locally built binaries.
+
+There is a script that will conveniently install a Rust toolchain, some other build tools, and git for you.
 
 ```bash
 curl https://getsubstrate.io -sSf | bash -s -- --fast
@@ -19,6 +21,8 @@ curl https://getsubstrate.io -sSf | bash -s -- --fast
 > This workshop is known to work on Linux, MacOS, and Windows Subsystem for Linux. It is recommended you use one of those platforms. If you must build naively on Windows, try the DevHub's [Windows Setup Instructions](https://substrate.dev/docs/en/knowledgebase/getting-started/windows-users). Support for executing this workshop on Windows will be made on a best-effort basis, but no guarantees are made.
 
 ## Building a Relay Chain Node
+
+> You may skip this step if you prefer to use docker to run nodes.
 
 Clone the Polkadot repository, and build the node. We are using a specific commit for this workshop. Perform these steps in your typical workspace directory.
 
@@ -42,6 +46,8 @@ cargo build --release
 If the help page prints, you have succeeded in building a Polkadot node. You may move the binary you just built to somewhere more convenient, or leave it where it is. For the rest of this workshop when we need to run this binary we will refer to it simply as `polkadot`. You will need to include the path as appropriate.
 
 ## Building the Test Parachain Collator
+
+> You may skip this step if you prefer to use docker to run nodes.
 
 The Cumulus repository ships with an example collator. We will use this collator to learn to register parachains and the do cross-chain asset transfers. Perform these steps in your typical workspace directory.
 
