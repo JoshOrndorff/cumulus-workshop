@@ -1,9 +1,5 @@
 # Preparation
 
-Follow along with this guide: https://bit.ly/2rXBh70
-
-![QR Code](../assets/qr.png)
-
 ## Overview
 You can participate in this workshop in any (or all) of three roles. To participate, complete the shared steps as well as the role-specific steps for each role that you intend to play.
 
