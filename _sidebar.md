@@ -14,9 +14,9 @@
   * [Interact](3-parachains/3-interact.md)
   * [More Collators (Broken)](3-parachains/3-more-collators.md)
 * Cross Chain Transfers
-  * [Downward Transfers]()
-  * [Upward Transfers]()
-  * [Lateral Transfers]()
+  * [Downward Transfers](4-cross-chain/1-downward.md)
+  * [Upward Transfers](4-cross-chain/2-upward.md)
+  * [Lateral Transfers](4-cross-chain/3-lateral.md)
 * Develop Parachains
   * [Collator Template](4-developer/1-collator-template.md)
   * [Bring Your Own Runtime](4-developer/2-byo-runtime.md)
