@@ -1,6 +1,6 @@
-# Preparation
+# Compilation
 
-This workshop covers the entire process of launching a relay chain, connecting parachains, transferring assets between chains, and developing your own parachain runtimes. Naturally, there will be some significant compiling if you intend to build everything yourself. Compiling the Polkadot and test collator nodes can be avoided if you prefer to use the docker image.
+This workshop covers the entire process of launching a relay chain, connecting parachains, transferring assets between chains, and developing your own parachain runtimes. Naturally, there will be some significant compiling if you intend to build everything yourself. (TODO: Compiling the Polkadot and test collator nodes can be avoided if you prefer to use the docker image.)
 
 ## Shortening the Workshop
 
@@ -75,23 +75,11 @@ If the help page prints, you have succeeded in building a Cumulus Collator. You 
 > You may skip this step if you have built the nodes locally
 
 TODO:
-* What is the image called,where can I get it
+* What is the image called, where can I get it
 * How do I get a terminal inside the container?
 * Do I need to mount any local volume? Maybe for a shared chainspec?
 
 All `polkadot` and `test-collator` commands are assumed to be run in this container.
-
-## Creating a Relay Chain Spec
-
-Each Substrate chain can be customized with a chain spec, and the relay chain is no different. We can configure who has tokens at genesis and who the validators are. In order to host `N` parachains, the relay chain must have at least `N + 1` validators. This repo includes two useful chain spec files that you may use or you may create your own.
-
-* Use `relay-spec-2.json` A Westend-like chainspec with two validators (Alice, and Bob)
-* Use `relay-spec-3.json` A Westend-like chainspec with three validators (Alice, Bob, and Charlie)
-* Create your own custom spec. This is not covered, but these docs may help. If you create your own spec you will need to understand how the commands in the remainder of the tutorial are modified.
-  * https://substrate.dev/docs/en/tutorials/start-a-private-network/customspec#create-a-chain-specification
-  * https://substrate.dev/docs/en/knowledgebase/integrate/chain-spec
-
-Whatever spec you choose to use, we will refer to it in future commands as `relay-spec.json`
 
 ## Building your Custom Collator
 

@@ -1,10 +1,13 @@
 <!-- docs/_sidebar.md -->
 
 * [Home](/)
-* [Preparation](/1-prep.md)
+* Preparation
+  * [Compiling](1-prep/1-compiling.md)
+  * [Chain Spec](1-prep/2-chain-spec.md)
 * Launch Relay Chain
   * [Polkadot Architecture](2-relay-chain/1-architecture.md)
   * [Launch Relay Chain](2-relay-chain/2-launch.md)
+  <!-- [Live Chain](3-live-chain.md) -->
 * Launch Parachains
   * [Parachain Zero](3-parachains/1-parachain-zero.md)
   * [Parachains One & Two](3-parachains/2-parachains-one-two.md)
