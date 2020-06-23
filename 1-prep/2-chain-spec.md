@@ -92,6 +92,13 @@ That file contains most of the information we need already. We just need to add 
 },
 ```
 
+The final change you need to make is to delete the `forkBlocks` and `badBlocks` fields. I'm not sure why this is necessary, but it avoids parsing errors. Remove these two lines:
+
+```json
+"forkBlocks": null,
+"badBlocks": null,
+```
+
 Now that you've created your spec, you need to convert it to a raw spec file.
 ```bash
 polkadot build-spec --chain plain-spec.json --raw --disable-default-bootnode > spec.json
