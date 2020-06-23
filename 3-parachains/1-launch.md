@@ -1,6 +1,6 @@
 # Launching a Parachain
 
-We'll begin by deploying the test parachain with parachain id 100. These instructions are written specifically for parachain ID 100, however you ca nre-use these instructions with any parachain ID adjusting occurrences of the number 100 accordingly.
+We'll begin by deploying the test parachain with parachain id 100. These instructions are written specifically for parachain ID 100, however you can re-use these instructions with any parachain ID adjusting occurrences of the number 100 accordingly.
 
 ## Generate Genesis State
 
