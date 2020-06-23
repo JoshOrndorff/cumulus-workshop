@@ -92,7 +92,7 @@ That file contains most of the information we need already. We just need to add 
 },
 ```
 
-The final change you need to make is to delete the `forkBlocks` and `badBlocks` fields. I'm not sure why this is necessary, but it avoids parsing errors. Remove these two lines:
+The final change you need to make is to delete the `forkBlocks` and `badBlocks` fields. I'm not sure why this is necessary, but it avoids parsing errors. See https://github.com/paritytech/cumulus/issues/126. Remove these two lines:
 
 ```json
 "forkBlocks": null,
