@@ -7,7 +7,7 @@ We'll begin by deploying the test parachain with parachain id 100. These instruc
 To register a parachain, the relay chain needs to know the parachain's genesis state. The collator node can export that state to a file for us. The following command will create a file containing the parachain's entire genesis state, hex-encoded.
 
 ```bash
-test-collator export-genesis-state para-100-genesis
+test-collator export-genesis-state --parachain-id 100 para-100-genesis
 ```
 
 > Creating this file is fast and easy, so this file is not included in the repository
