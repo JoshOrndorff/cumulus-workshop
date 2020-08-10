@@ -1,7 +1,7 @@
 name: Build (but don't publish) Polkadot Docker Image
 
 on:
-  pull-request:
+  pull_request:
     branches:
     - master
 
