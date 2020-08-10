@@ -1,0 +1,22 @@
+name: Build (but don't publish) Polkadot Docker Image
+
+on:
+  pull-request:
+    branches:
+    - master
+
+jobs:
+  build-push-template:
+    runs-on: ubuntu-18.04
+    steps:
+
+    - name: Build Polkadot Image
+      uses: docker/build-push-action@v1 # https://github.com/docker/build-push-action
+      with:
+        push: false # Don't push the image on PRs, only on merge
+        dockerfile: polkadot.Dockerfile
+        # repository: joshyorndorff/cumulus-workshop-polkadot
+        tags: latest
+        add_git_labels: true
+        tag_with_ref: true
+        tag_with_sha: true
