@@ -7,12 +7,11 @@
 * Launch Relay Chain
   * [Polkadot Architecture](2-relay-chain/1-architecture.md)
   * [Launch Relay Chain](2-relay-chain/2-launch.md)
-  <!-- [Live Chain](3-live-chain.md) -->
 * Launch Parachains
   * [Launch](3-parachains/1-launch.md)
   * [Register](3-parachains/2-register.md)
   * [Interact](3-parachains/3-interact.md)
-  * [More Collators (Broken)](3-parachains/3-more-collators.md)
+  * [More Parachain Nodes](3-parachains/4-more-nodes.md)
 * Cross Chain Transfers
   * [Downward Transfers](4-cross-chain/1-downward.md)
   * [Upward Transfers](4-cross-chain/2-upward.md)
