@@ -8,6 +8,26 @@ The similarities between these two templates should give you confidence, that if
 
 There are, however, a few important difference between the two templates that are worth observing at the outset.
 
+### Parachain Info Pallet
+
+This pallet is designed to inject information about the parachain's registration into its own runtime. Currently it just injects the parachain id that the chain is registered at. This allows the runtime to know which cross-chain messages are intended for it.
+
+### Message Broker Pallet
+
+This pallet is responsible for distributing cross-chain messages received over the network to the pallets that they are intended for. If you intend to receive cross chain messages, you should use this pallet.
+
+### Token Dealer Pallet
+
+This pallet serves as an example of both sending and receiving crosschain messages. It is the pallet that implements the [cross-chain token transfers](../4-cross-chain/1-downward.md) we saw earlier. If you want to accept DOTs or other assets from foreign chains, you should either use this pallet or use its code as inspiration.
+
+### `register_validate_block!` Macro
+
+Each parachain must supply a `validate_block` function, expressed as a wasm blob, to the relay chain when registering. The node template does not provide this function, but the parachain template provides does. Thanks to cumulus, creating this function for a Substrate runtime is as simple as adding one line of code at the bottom of your runtime:
+
+```rust
+cumulus_runtime::register_validate_block!(Block, Executive);
+```
+
 ### No Aura Pallet
 
 Many popular Substrate runtimes, such as Polkadot, include consensus-related pallets and runtime-apis. The node template features the Aura pallet and its associated runtime `AuraApi`. These are both missing from the parachain template.
@@ -23,18 +43,6 @@ This is because the collator authors blocks at a regular interval, rather than u
 Many popular Substrate runtimes including the node template feature a finality-related GRANDPA pallet and its associated `GrandpaApi`. These are both missing from the parachain template.
 
 This is because parachains follow the finality of the relay chain rather than running their own finality gadget. This is fundamental to Polkadot's architecture and will not change.
-
-### Parachain Info Pallet
-
-This pallet is designed to inject information about the parachain's registration into its own runtime. Currently it just injects the parachain id that the chain is registered at. This allows the runtime to know which cross-chain messages are intended for it.
-
-### Message Broker Pallet
-
-This pallet is responsible for distributing cross-chain messages received over the network to the pallets that they are intended for. If you intend to receive cross chain messages, you should use this pallet.
-
-### Token Dealer Pallet
-
-This pallet serves as an example of both sending and receiving crosschain messages. It is the pallet that implements the [cross-chain token transfers](../4-cross-chain/1-downward.md) we saw earlier. If you want to accept DOTs or other assets from foreign chains, you should either use this pallet or use its code as inspiration.
 
 ### Service
 The collator's service is entirely different from the node template's. While you can find similarities, the structure of the service is much different. This new service is the primary change that cumulus provides.
