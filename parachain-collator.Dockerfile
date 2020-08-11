@@ -16,7 +16,7 @@ RUN cargo build --release
 FROM debian:stretch-slim
 
 # Copy the node into the image
-COPY --from=builder /builds/polkadot/target/release/polkadot .
+COPY --from=builder /builds/substrate-parachain-template/target/release/parachain-collator .
 
 ## TODO Copy chainspecs into the image
 # COPY rococo-local-3.json .
@@ -26,4 +26,4 @@ COPY --from=builder /builds/polkadot/target/release/polkadot .
 # or using host or overlay networking.
 EXPOSE 30333 9933 9944
 
-ENTRYPOINT ["./utxo-workshop"]
+ENTRYPOINT ["./parachain-collator"]

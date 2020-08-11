@@ -34,4 +34,4 @@ COPY --from=builder target/release/polkadot .
 # or using host or overlay networking.
 EXPOSE 30333 9933 9944
 
-ENTRYPOINT ["./utxo-workshop"]
+ENTRYPOINT ["./polkadot"]
