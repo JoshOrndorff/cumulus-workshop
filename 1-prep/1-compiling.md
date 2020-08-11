@@ -74,26 +74,39 @@ If the help page prints, you have succeeded in building a Cumulus Collator.
 
 For the rest of this workshop when we need to run this binary we will refer to it simply as `parachain-collator`. You may move the binary you just built to somewhere more convenient, or leave it where it is.  You will need to type its path as appropriate.
 
-## Using the Docker Images
-
-> You may skip this step if you have built the nodes locally
-
-There are two docker images available for the nodes used in this workshop.
-
-* `joshyorndorff/cumulus-workshop-polkadot` is the polkadot node.
-* `joshyorndorff/cumulus-workshop-parachain-collator.`
-
-These docker images run the exact same binaries that we described building in the previous section.
-
-Because these containers will need to communicate with each other, you will need to handle networking. [Networking in Docker](https://docs.docker.com/network/) is beyond the scope of this tutorial, and there are many valid options. I'll briefly cover two simple options here that will help many beginners get up and running fast.
-
-* use host networking - TODO example command
-* use overlay networking - TODO example command
-
-Throughout this workshop when we need to run nodes we will refer to them simply as `polkadot` and `parachain-collator`. You will need to transform this command into an appropriate docker command.
-
 ## Building Your Custom Parachain
 
 > You must setup a local development environment and build the parachain template to complete this section of the workshop.
 
 Your custom parachain will be based on the template we compiled above. Building it will look the same, but you need to write your code before you can build it. We will repeat the build process in that section of the workshop.
+
+## Using the Docker Images
+
+> You may skip this step if you have built the nodes locally
+
+The two docker images available for this workshop run the exact same binaries that we described building in the previous section.
+
+* `joshyorndorff/cumulus-workshop-polkadot` is the relay chain node.
+* `joshyorndorff/cumulus-workshop-parachain-collator` is the parachain node.
+
+Because these containers will need to communicate with each other, you will need to handle networking. [Networking in Docker](https://docs.docker.com/network/) is beyond the scope of this tutorial, and there are many valid options. I'll briefly describe one simple option here that will help many beginners get up and running fast.
+
+"Host Networking" is the simplest technique and allows commands that look most similar to the ones given in the workshop. It tells docker to run the nodes without isolating the containers; just like if you were running local binaries.
+
+```bash
+# Instead of running
+polkadot --my-args
+
+# You should run
+docker run --network host joshyorndorff/cumulus-workshop-polkadot --my-args
+```
+
+```bash
+# Instead of running
+parachain-collator --para-args -- --relay-args
+
+# You should run
+docker run --network host joshyorndorff/cumulus-workshop-parachain-collator --para-args -- --relay-args
+```
+
+Throughout this workshop when we need to run nodes we will refer to them simply as `polkadot` and `parachain-collator`. You will need to transform these commands into appropriate docker commands.
