@@ -25,7 +25,7 @@ As with any Substrate chain, you can always create your own chain spec file. It 
 polkadot build-spec --chain rococo-local > plain-spec.json
 ```
 
-That file contains most of the information we need already. We just need to add an authority. Find the part of the part of the file shown part of the file shown below, and modify it. We will be adding validators by using the same account for stash and controller. This is how you should manage your funds on a live network, but it works fine for this experiment. You will need to make these specific modifications.
+That file contains most of the information we need already. We just need to add an authority. Find the part of the part of the file shown below, and modify it. We will be adding validators by using the same account for stash and controller. This is not how you should manage your funds on a live network, but it works fine for this experiment. You will need to make these specific modifications.
 
 1. Increase the validator count.
 2. Add your stash account as an invulnerable.
