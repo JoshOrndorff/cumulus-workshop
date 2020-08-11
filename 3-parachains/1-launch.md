@@ -1,39 +1,42 @@
 # Launching a Parachain
 
-We'll begin by deploying the test parachain with parachain id 100. These instructions are written specifically for parachain ID 100, however you can re-use these instructions with any parachain ID adjusting occurrences of the number 100 accordingly.
+We'll begin by deploying a parachain template with parachain id 200. These instructions are written specifically for parachain ID 200, however you can re-use these instructions with any parachain ID adjusting occurrences of the number 200 accordingly.
 
 ## Generate Genesis State
 
 To register a parachain, the relay chain needs to know the parachain's genesis state. The collator node can export that state to a file for us. The following command will create a file containing the parachain's entire genesis state, hex-encoded.
 
 ```bash
-test-collator export-genesis-state --parachain-id 100 para-100-genesis
+parachain-collator export-genesis-state --parachain-id 200 para-200-genesis
 ```
-
-> Creating this file is fast and easy, so this file is not included in the repository
 
 ## Obtaining the Wasm Validation Function
 
-The relay chain also needs the parachain-specific validation logic to validate parachain blocks. This validation logic was created and included with the Wasm runtime when you compiled the collator. You can find it at `target/release/wbuild/cumulus-test-parachain-collator/cumulus-test-parachain-collator.compact.wasm`.
+The relay chain also needs the parachain-specific validation logic to validate parachain blocks. The collator node also has a command to produce this wasm blob.
 
-In case you chose to use a pre-built collator (eg a docker container) this validation blob is also included with this repository at `assets/cumulus-test-parachain-collator.compact.wasm`.
+```bash
+parachain-collator export-genesis-state para-200-wasm
+```
+
+> The Wasm blob does not depend on the parachain id, so we do not provide that flag. If you are launching multiple parachains using the exact same runtime, you do not need to regenerate the Wasm blob each time (although it is fast and easy to do so).
 
 ## Start the Collator Node
 We can now start the collator node with the following command. Notice that we're supplying the same relay chain spec we used when launching relay chain nodes.
 
 ```bash
 test-collator \
-  --base-path collator-100 \
+  --base-path /tmp/para-200-collator-1 \
   --ws-port 9977 \
   --port 30336 \
   --parachain-id 100 \
+  --validator \
   -- \
   --chain spec.json \
   --bootnodes /ip4/<Alice IP>/tcp/30333/p2p/<Alice Peer ID> \
   --bootnodes <Other Relay Chain Node(s)
 ```
 
-The first thing to notice about this command is that several arguments are passed before the lone `--`, and several more agruments are passed after it. A cumulus collator contains the actually collator node, and also an embedded relay chain node. The arguments before the `--` are for the collator, and the arguments after the `--` are for the embedded relay chain node.
+The first thing to notice about this command is that several arguments are passed before the lone `--`, and several more agruments are passed after it. A cumulus collator contains the actual collator node, and also an embedded relay chain node. The arguments before the `--` are for the collator, and the arguments after the `--` are for the embedded relay chain node.
 
 We give the collator a base path and ports as we did for the relay chain node previously. We also specify the parachain ID. Remember to change these collator-specific values if you are executing these instructions a second time for a second parachain. Then we give the embedded relay chain node the relay chain spec we are using. Finally, we give the embedded relay chain node some peer addresses.
 

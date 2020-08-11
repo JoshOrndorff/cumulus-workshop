@@ -8,8 +8,8 @@ The transaction can be made from `Apps > Sudo > Registrar > registerPara` with t
 
 id: 0
 ParaInfo: Always
-code: cumulus-test-parachain-collator.compact.wasm (from the previous step)
-initial_head_data: para-100-genesis (from the previous step)
+code: para-200-wasm (from the previous step)
+initial_head_data: para-200-genesis (from the previous step)
 
 ![Registration screenshot](../assets/registration-screenshot.png)
 
