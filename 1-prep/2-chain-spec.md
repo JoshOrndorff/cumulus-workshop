@@ -4,23 +4,25 @@ You will need a chain specification for your relay chain network. There are thre
 
 Whichever spec you choose to use we will refer to it simply as `spec.json` in the upcoming instructions. You will need to supply the proper path to the spec file you are using.
 
-## The Spec that Ships with Cumulus
+## The `rococo-local` Spec
 
-The cumulus project itself contains one chain spec file. It lives in `cumulus/test/parachain/res/polkadot_chainspec.json`. This spec provides for two validators, Alice and Bob.
+The Polkadot project itself contains a built-in spec for a minimal relay chain called `rococo-local`. This spec provides for two validators, Alice and Bob. If you only want to test a single parachain, this is the fastest and easiest way to start. If you want to connect multiple parachains, you will need more validators, so continue to the next option.
 
-## The Spec in this Workshop Repo
+## The Specs in this Workshop Repo
 
-This workshop contains a file called `relay-spec-3.json`. It lives in `cumulus-workshop/assets/relay-spec-3.json`. It specifies three validators, Alice, Bob, and Charlie. Because this spec contains three validators, you can use it if you plan to register a second parachain.
+This workshop contains chain-spec files at `specs/rococo-3.json`, and `specs/rococo-4.json`. The `rococo-3.json` adds Charlie as a third validator and `rococo-r.json` adds Dave as a fourth. You may use these specs to register more parachains or experiment with more validators.
 
-This spec was created according to the steps in the next section.
+These specs were created according to the steps in the next section. If you would like even more validators, or to customize the relay chain in some other way, proceed to the final option.
+
+> These specs are also present in the Polkadot docker image and can be used when running in Docker.
 
 ## Create Your Own
 
-As with any Substrate chain, you can always create your own chain spec file. It is best to start from an existing file. We will start from a spec called "westend-local".
+As with any Substrate chain, you can always create your own chain spec file. It is best to start from an existing specification. We will use the built-in `rococo-local` as our starting point.
 
 ```bash
 # Create the starting point that we will modify
-polkadot build-spec --chain westend-local > plain-spec.json
+polkadot build-spec --chain rococo-local > plain-spec.json
 ```
 
 That file contains most of the information we need already. We just need to add an authority. Find the part of the part of the file shown part of the file shown below, and modify it. We will be adding validators by using the same account for stash and controller. This is how you should manage your funds on a live network, but it works fine for this experiment. You will need to make these specific modifications.
@@ -104,6 +106,6 @@ Now that you've created your spec, you need to convert it to a raw spec file.
 polkadot build-spec --chain plain-spec.json --raw --disable-default-bootnode > spec.json
 ```
 
-Here are some additional resources on understanding chain specs:
+To learn more about the process we just completed and other things that can be configured, check out these resources on understanding chain specs:
 * https://substrate.dev/docs/en/tutorials/start-a-private-network/customspec#create-a-chain-specification
 * https://substrate.dev/docs/en/knowledgebase/integrate/chain-spec
