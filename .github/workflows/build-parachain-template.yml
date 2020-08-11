@@ -1,7 +1,10 @@
 name: Build Parachain Template Docker Image
 
 on:
-  merge:
+  pull_request:
+    branches:
+    - master
+  push:
     branches:
     - master
 
