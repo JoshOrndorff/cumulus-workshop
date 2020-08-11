@@ -22,7 +22,7 @@ RUN cargo build --release
 FROM debian:stretch-slim
 
 # Copy the node into the image
-COPY --from=builder target/release/polkadot .
+COPY --from=builder /builds/polkadot/target/release/polkadot .
 
 ## TODO Copy chainspecs into the image
 # COPY rococo-local-2.json .
