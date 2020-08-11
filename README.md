@@ -7,7 +7,7 @@ In this hands-on workshop, participants will start a polkadot-like relay chain, 
 ## Versions
 
 This workshop targets:
-* Polkadot @ `bb02af4`
+* Polkadot @ `fd4b176`
 * Substrate Parachain Template @ `2710c42`
  Polkadot JS Apps @ `46734ee`
 

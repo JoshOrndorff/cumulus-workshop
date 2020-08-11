@@ -34,7 +34,7 @@ git clone https://github.com/paritytech/polkadot.git
 cd polkadot
 
 # Checkout the proper commit
-git checkout bb02af4
+git checkout fd4b176
 
 # Build the Relay Chain Node
 cargo build --release
