@@ -6,7 +6,7 @@ A parachain _can_ work with only a single collator as we've shown already. But t
 The command to run additional collators is as follows. This command is nearly identical to the one we used to start the first collator, but again we need to avoid conflicting ports and directories
 
 ```bash
-test-collator \
+parachain-collator \
   --bootnodes <Your first collator>
   --ws-port
   --port

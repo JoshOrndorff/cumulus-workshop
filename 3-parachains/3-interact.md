@@ -14,11 +14,6 @@ The Collator has introduced some custom data types that the front end does not k
 {
   "Address": "AccountId",
   "LookupSource": "AccountId",
-  "ValidationFunctionParams": {
-    "max_code_size": "u32",
-    "relay_chain_height": "BlockNumber",
-    "code_upgrade_allowed": "Option<BlockNumber>"
-  }
 }
 ```
 
