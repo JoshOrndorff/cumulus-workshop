@@ -6,7 +6,7 @@ We have our relay chain launched and our parachain collator ready to go. Now we 
 
 The transaction can be made from `Apps > Sudo > Registrar > registerPara` with the following parameters:
 
-id: 0
+id: 200
 ParaInfo: Always
 code: para-200-wasm (from the previous step)
 initial_head_data: para-200-genesis (from the previous step)

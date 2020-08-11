@@ -8,9 +8,9 @@ When sending DOTs from the relay chain to a parachain, we use a depository and m
 
 ## Sending Tokens Down
 
-To send tokens from Alice's account on the Relay chain to her own account on parachain 100, you submit a single transaction on the Relay chain. Return the the Apps instance that is connected to the relay chain and submit `Extrinsics` -> `Parachains` -> `transferToParachain` with the following parameters. (We continue using parachain 100 as the example.)
+To send tokens from Alice's account on the Relay chain to her own account on parachain 200, you submit a single transaction on the Relay chain. Return the the Apps instance that is connected to the relay chain and submit `Extrinsics` -> `Parachains` -> `transferToParachain` with the following parameters. (We continue using parachain 200 as the example.)
 
-to: 100
+to: 200
 amount: 123
 remark: 0xd43593c715fdd31c61141abd04a99fd6822c8558854ccde39a5684e7a56da27d
 
