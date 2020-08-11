@@ -21,5 +21,5 @@
   * [External Pallet](5-develop/2-external-pallet.md)
   * [Template Pallet](5-develop/3-template-pallet.md)
   * [Sending Messages](5-develop/4-sending-messages.md)
-  * [Receiving Messages](5-developer/5-receiving-messages.md)
+  * [Receiving Messages](5-develop/5-receiving-messages.md)
 * [Notepad](embedded-notes.md)

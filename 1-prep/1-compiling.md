@@ -6,7 +6,7 @@ This workshop covers the entire process of launching a relay chain, connecting p
 
 If you intend to use this material for a live workshop you may shorten it by cutting steps off of the end. If your workshop will not cover writing your own parachains, you may skip all the compilation by using the provided docker images.
 
-If you prefer to focus primarily on development in your workshop, you may also skip initial relay chain setup by performing those steps yourself in preparation for the workshop or using the public rococo testnet. See [Setting Up The Bootnode](SettingUpTheBootnode.md) for notes on setting up a cloud-based relay chain.
+If you prefer to focus primarily on development in your workshop, you may also skip initial relay chain setup by performing those steps yourself in preparation for the workshop or using the public rococo testnet. See [Setting Up The Bootnode](../SettingUpTheBootnode.md) for notes on setting up a cloud-based relay chain.
 
 ## Install Substrate Prerequisites
 
