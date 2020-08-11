@@ -17,6 +17,9 @@
   * [Upward Transfers](4-cross-chain/2-upward.md)
   * [Lateral Transfers](4-cross-chain/3-lateral.md)
 * Develop Parachains
-  * [Collator Template](4-developer/1-collator-template.md)
-  * [Bring Your Own Runtime](4-developer/2-byo-runtime.md)
+  * [Parachain Template Overview](4-develop/1-template-overview.md)
+  * [External Pallet](4-develop/2-external-pallet.md)
+  * [Template Pallet](4-develop/3-template-pallet.md)
+  * [Sending Messages](4-develop/4-sending-messages.md)
+  * [Receiving Messages](4-developer/5-receiving-messages.md)
 * [Notepad](embedded-notes.md)
