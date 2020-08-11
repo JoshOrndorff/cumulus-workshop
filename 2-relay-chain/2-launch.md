@@ -42,7 +42,9 @@ Bob's command is perfectly analogous to Alice's. It differs concretely from Alic
 
 ## Starting Additional Nodes (Optional)
 
-If you are using the `rococo-local` spec that ships with Polkadot, you do not need to start additional nodes. If you're using the `rococo-local-3.json` or `rococo-local-4.json` specs that ship with this workshop you will need to start one or two more nodes. Again, this command is entirely analogous. You just need to make sure that nodes on the same physical system do not have conflicting ports.
+> If you are using the `rococo-local` spec that ships with Polkadot, you do not need to start additional nodes.
+
+If you're using the `rococo-3.json` or `rococo-4.json` specs that ship with this workshop you will need to start one or two more nodes. Again, this command is entirely analogous. You just need to make sure that nodes on the same physical system do not have conflicting ports or base directories.
 
 ```bash
 polkadot \
