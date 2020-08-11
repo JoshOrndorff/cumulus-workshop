@@ -1,6 +1,6 @@
 # Parachain Registration
 
-We have our relay chain launched and our parachain collator ready to go. Now we have to register the parachain on the relay chain. In the live Polkadot network, this will be accomplished with parachain auctions. But today we will do it with Sudo.
+We have our relay chain launched and our parachain collator ready to go. Now we have to register the parachain on the relay chain. In the live Polkadot network, this will be accomplished with [parachain auctions](https://wiki.polkadot.network/docs/en/learn-auction). But today we will do it with Sudo.
 
 ## Registration Transaction
 
@@ -31,4 +31,4 @@ The collator should start producing parachain blocks (aka collating) once the re
 ```
 
 ### Updating Heads
-The relay chain tracks the latest heads of each parachain. When a relay chain block is finalized, any parachain blocks that are referenced from it or any of its parents are also finalized. This is how polkadot achieves shared security. We can check whether new parachain blocks are being referenced by the relay chain by querying the chain state in `Apps > Chain state > parachains > heads`. You should see the value change every few blocks.
+The relay chain tracks the latest heads of each parachain. When a relay chain block is finalized, any parachain blocks that have completed the [validation process](https://polkadot.network/the-path-of-a-parachain-block/). This is how Polkadot achieves shared security. We can check whether new parachain blocks are being referenced by the relay chain by querying the chain state in `Apps > Chain state > parachains > heads`. You should see the value change every few blocks.
