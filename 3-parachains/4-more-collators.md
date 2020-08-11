@@ -1,7 +1,5 @@
 # Adding More Collators
 
-**Warning this entire section is currently broken. See https://github.com/paritytech/cumulus/issues/113. Just stick with a single collator and skip this section entirely for now**
-
 A parachain _can_ work with only a single collator as we've shown already. But that configuration is not very decentralized. The adversary would only need to take down a single node to stall the parachain.
 
 ## This is Experimental
