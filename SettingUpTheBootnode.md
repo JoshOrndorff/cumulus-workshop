@@ -98,7 +98,7 @@ Use certbot to setup ssl
 `certbot --nginx -d sfbw.bootnodes.net --register-unsafely-without-email`
 You could also fork over your email. It only goes to EFF. I chose not to redirect http, but we should experiment with it. If it doesn't break anything, we should do it.
 
-Confirm your site loads with ssl https://sfbw.bootnodes.net
+Confirm your site loads with ssl by navigating to eg `https://sfbw.bootnodes.net`
 
 ## Install Node
 ```bash
@@ -234,6 +234,4 @@ build production release with `yarn build`
 then move build output directory inside of web root
 `mv build /var/www/html/front-end`
 
-This is where I'm stuck. Loading https://sfbw.bootnodes.net/front-end shows a blank page, and the console shows warnings about scripts that didn't load.
-
-I've failed many different ways at this point, and rarely even succeeded.
+You have to make sure the project name in the config file matches where you're serving it from.
