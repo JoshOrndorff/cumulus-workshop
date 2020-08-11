@@ -1,6 +1,9 @@
 # Downward Transfers
 
-Polkadot's XCMP (cross chain message passing) will allow transfer of arbitrary assets between different blockchains. The [XCMP spec](https://github.com/paritytech/xcm-format) is still being developed, and may change significantly, but it is already stable enough for some demonstrations.
+Polkadot's XCMP (cross chain message passing) will allow transfer of arbitrary assets between different blockchains. XCMP is still being developed, and may change significantly, but it is already stable enough for demonstrations and experimentation. This workshop focuses on the _process_ of transferring tokens across chains. You can learn more about message passing in general with these resources.
+
+* [Messaging overview](https://github.com/paritytech/polkadot/blob/master/roadmap/implementers-guide/src/messaging.md)
+* [Message format spec](https://github.com/paritytech/xcm-format)
 
 ## Depository and Mint Model
 
