@@ -8,7 +8,7 @@
 ### The Builder Stage Compiles the code
 FROM parity/rust-builder as builder
 
-# Clone the polkadot code adn checkout the right commit
+# Clone the polkadot code and checkout the right commit
 RUN git clone https://github.com/paritytech/polkadot.git
 WORKDIR /builds/polkadot
 RUN pwd
