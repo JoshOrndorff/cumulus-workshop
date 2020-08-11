@@ -7,7 +7,7 @@ We'll begin by deploying a parachain template with parachain id 200. These instr
 To register a parachain, the relay chain needs to know the parachain's genesis state. The collator node can export that state to a file for us. The following command will create a file containing the parachain's entire genesis state, hex-encoded.
 
 ```bash
-parachain-collator export-genesis-state --parachain-id 200 para-200-genesis
+parachain-collator export-genesis-state --parachain-id 200 > para-200-genesis
 ```
 
 ## Obtaining the Wasm Validation Function
@@ -15,7 +15,7 @@ parachain-collator export-genesis-state --parachain-id 200 para-200-genesis
 The relay chain also needs the parachain-specific validation logic to validate parachain blocks. The collator node has a command to produce this wasm blob.
 
 ```bash
-parachain-collator export-genesis-state para-200-wasm
+parachain-collator export-genesis-state > para-200-wasm
 ```
 
 > The Wasm blob does not depend on the parachain id, so we do not provide that flag. If you are launching multiple parachains using the exact same runtime, you do not need to regenerate the Wasm blob each time (although it is fast and harmless to do so).
