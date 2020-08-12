@@ -11,12 +11,9 @@ The transaction can be made from `Apps > Sudo > Registrar > registerPara` with t
 - id: `200`
 - ParaInfo: `Always`
 - code: upload the file `para-200-wasm` (from the previous step)
-- initial_head_data: copy-paste the contents of the file `para-200-genesis` (from the previous step)
+- initial_head_data: paste the genesis state (from the previous step)
 
 ![Registration screenshot](../assets/registration-screenshot.png)
-
-> You really do need to copy paste the contents for the initial head data. The file upload there is not working. Follow
-> https://github.com/polkadot-js/apps/issues/3396 for details.
 
 ### Block Production
 
