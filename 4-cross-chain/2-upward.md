@@ -1,24 +1,17 @@
 # Upward Transfers
 
-Previously we transferred DOTs to a parachain. Once they are on the parachain, you can do anything the parachain allows
-including transferring them to various parachain accounts. Ultimately you may want to transfer the DOTs back to the
+Previously we transferred DOTs to a parachain. While they are on the parachain, you can do anything the parachain allows with them. Ultimately you may want to transfer the DOTs back to the
 relay chain. This upward transfer can happen from any account with DOTs on the parachain regardless of whether it was
 the account that originally received the funds.
 
 ## Sending Tokens Up
 
-To send tokens from Alice's account on a Parachain to her own account on the Relay Chain, you submit a single
-transaction on the Parachain. In the Apps instance connected to the Parachain, submit `Extrinsics` -> `tokenDealer` ->
-`transferTokensToRelayChain` with the following parameters.
+To send tokens from Alice's account on a Parachain to Ferdie's account on the Relay Chain, you submit a single
+transaction on the Parachain. Return to the Apps instance that is connected to the relay chain, navigate to the Parachains tab, and click the lonely "Transfer to chain" button.
 
-dest: 5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY amount: 123
+Fill in the details as you desire and submit the transaction. Take careful note of the toggle switch in the bottom right. Make sure it is disable so the tokens go to the relay chain, not another parachain.
 
-There are two main differences from transferring downward:
-
-1. We do not need to specify a destination chain. There is only one relay chain hierarchically above this parachain and
-   that's where the tokens will go.
-2. Instead of an opaque remark field, we get a normal address field. This is because we know the account format of the
-   Relay Chain and do not need to be generic over it.
+![Sending tokens up](../assets/upward-transfer-screenshot.png)
 
 ## Confirming Receipt of DOTs
 
@@ -37,5 +30,4 @@ parachain's depository.
 
 ## Play More
 
-Try sending tokens from various accounts to various account. Try transferring more tokens out of a parachain than you
-transferred into it.
+Try transferring more tokens out of a parachain than you transferred into it. What happens?
