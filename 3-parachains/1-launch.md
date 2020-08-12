@@ -37,7 +37,7 @@ parachain-collator \
   --base-path /tmp/para-200-collator-1 \
   --ws-port 9977 \
   --port 30336 \
-  --parachain-id 100 \
+  --parachain-id 200 \
   --validator \
   -- \
   --chain spec.json \
