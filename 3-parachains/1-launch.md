@@ -23,7 +23,7 @@ The relay chain also needs the parachain-specific validation logic to validate p
 command to produce this wasm blob.
 
 ```bash
-parachain-collator export-genesis-state > para-200-wasm
+parachain-collator export-genesis-wasm > para-200-wasm
 ```
 
 > The Wasm blob does not depend on the parachain id, so we do not provide that flag. If you are launching multiple
