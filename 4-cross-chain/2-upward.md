@@ -1,15 +1,17 @@
 # Upward Transfers
 
-Previously we transferred DOTs to a parachain. While they are on the parachain, you can do anything the parachain allows with them. Ultimately you may want to transfer the DOTs back to the
-relay chain. This upward transfer can happen from any account with DOTs on the parachain regardless of whether it was
-the account that originally received the funds.
+Previously we transferred DOTs to a parachain. While they are on the parachain, you can do anything the parachain allows
+with them. Ultimately you may want to transfer the DOTs back to the relay chain. This upward transfer can happen from
+any account with DOTs on the parachain regardless of whether it was the account that originally received the funds.
 
 ## Sending Tokens Up
 
 To send tokens from Alice's account on a Parachain to Ferdie's account on the Relay Chain, you submit a single
-transaction on the Parachain. Return to the Apps instance that is connected to the relay chain, navigate to the Parachains tab, and click the lonely "Transfer to chain" button.
+transaction on the Parachain. Return to the Apps instance that is connected to the relay chain, navigate to the
+Parachains tab, and click the lonely "Transfer to chain" button.
 
-Fill in the details as you desire and submit the transaction. Take careful note of the toggle switch in the bottom right. Make sure it is disable so the tokens go to the relay chain, not another parachain.
+Fill in the details as you desire and submit the transaction. Take careful note of the toggle switch in the bottom
+right. Make sure it is disable so the tokens go to the relay chain, not another parachain.
 
 ![Sending tokens up](../assets/upward-transfer-screenshot.png)
 

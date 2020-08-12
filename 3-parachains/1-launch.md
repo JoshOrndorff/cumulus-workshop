@@ -60,7 +60,8 @@ relay chain node some peer addresses.
 
 ## Obtaining the Genesis State
 
-We will also need the genesis state of the parachain to register it. The running collator prints this information for you in a log message that looks as follows. **Take careful note** of this value. You will need it later.
+We will also need the genesis state of the parachain to register it. The running collator prints this information for
+you in a log message that looks as follows. **Take careful note** of this value. You will need it later.
 
 ```
 2020-08-11 13:58:06 Parachain genesis state: 0x00000000000000000000000000000000000000000000000000000000000000000097600fcfeeed0c7c2e7d922081a466c4c00f2af96ce17f4a07d59e7d47e8354b03170a2e7597b7b7e3d84c05391d139a62b157e78786d8c082f29dcf4c11131400

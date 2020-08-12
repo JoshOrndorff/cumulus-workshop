@@ -18,7 +18,8 @@ on the parachain.
 ## Sending Tokens Down
 
 To send tokens from Alice's account on the Relay chain to her own account on parachain 200, you submit a single
-transaction on the Relay chain. Return to the Apps instance that is connected to the relay chain, navigate to the Parachains tab, and click the "Transfer to chain" button.
+transaction on the Relay chain. Return to the Apps instance that is connected to the relay chain, navigate to the
+Parachains tab, and click the "Transfer to chain" button.
 
 Fill in the details as you desire and submit the transaction.
 
