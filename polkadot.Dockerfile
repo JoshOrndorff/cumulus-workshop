@@ -25,6 +25,7 @@ FROM debian:stretch-slim
 COPY --from=builder /builds/polkadot/target/release/polkadot .
 
 ## Copy chainspecs into the image
+COPY specs/rococo-local.json .
 COPY specs/rococo-3.json .
 COPY specs/rococo-4.json .
 
