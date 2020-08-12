@@ -1,5 +1,4 @@
 # Cumulus Workshop
-TODO Delete this line it was added to test CI rules.
 
 Connect Substrate blockchains to Polkadot with Cumulus
 

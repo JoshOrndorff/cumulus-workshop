@@ -2,8 +2,6 @@
 # https://docs.docker.com/get-started/part2/
 # https://blog.sedrik.se/posts/my-docker-setup-for-rust/
 
-#TODO Remove this line, it was added to test a CI rule
-
 ### The Builder Stage Compiles the code
 FROM parity/rust-builder as builder
 
