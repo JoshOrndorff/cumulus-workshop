@@ -4,6 +4,9 @@ on:
   pull_request:
     branches:
     - master
+  # Only run the build job when the dockerfile actually changes
+  paths:
+  - '*.Dockerfile'
 
 jobs:
   build-polkadot:
