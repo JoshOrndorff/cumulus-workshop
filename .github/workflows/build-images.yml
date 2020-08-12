@@ -6,7 +6,8 @@ on:
     - master
   # Only run the build job when the dockerfile actually changes
   paths:
-  - '*.Dockerfile'
+  - 'polkadot.Dockerfile'
+  - 'parachain-collator.Dockerfile'
 
 jobs:
   build-polkadot:
