@@ -1,0 +1,31 @@
+name: Build Docker Images
+
+on:
+  pull_request:
+    branches:
+    - master
+    # Only run the build job when the dockerfile actually changes
+    paths:
+    - 'polkadot.Dockerfile'
+    - 'parachain-collator.Dockerfile'
+
+jobs:
+  build-polkadot:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v2
+
+    - uses: docker/build-push-action@v1
+      with:
+        push: false
+        dockerfile: polkadot.Dockerfile
+
+  build-parachain:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v2
+
+    - uses: docker/build-push-action@v1
+      with:
+        push: false
+        dockerfile: parachain-collator.Dockerfile

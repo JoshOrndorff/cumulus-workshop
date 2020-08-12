@@ -2,9 +2,6 @@
 # https://docs.docker.com/get-started/part2/
 # https://blog.sedrik.se/posts/my-docker-setup-for-rust/
 
-# TODO This could be helpful for building and publishing the image from github actions
-# https://github.com/docker/build-push-action
-
 ### The Builder Stage Compiles the code
 FROM parity/rust-builder as builder
 
