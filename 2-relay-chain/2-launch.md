@@ -9,13 +9,13 @@ for starting additional nodes.
 ```bash
 polkadot \
   --chain spec.json \
-  --base-path /tmp/alice \
+  --tmp \
   --ws-port 9944 \
   --port 30333 \
   --alice
 ```
 
-The port and websocket part specified here are the defaults and thus those flags can be omitted. However I've chosen to
+The port and websocket port specified here are the defaults and thus those flags can be omitted. However I've chosen to
 leave them in the enforce the habit of checking their values. Because Alice is using the defaults, no other nodes on the
 relay chain or parachains can use these ports.
 
@@ -43,7 +43,7 @@ command above, you can access the node as https://polkadot.js.org/apps/#/?rpc=ws
 ```bash
 polkadot \
   --chain spec.json \
-  --base-path /tmp/bob \
+  --tmp \
   --ws-port 9955 \
   --port 30334 \
   --bob \
@@ -66,7 +66,7 @@ system do not have conflicting ports or base directories.
 ```bash
 polkadot \
   --chain spec.json \
-  --base-path /tmp/charlie \ # Any unused directory
+  --tmp \
   --ws-port 9966 \           # Any unused port
   --port 30335 \             # Any unused port
   --charlie \                # The appropriate key for your validator

@@ -4,6 +4,8 @@ We'll begin by deploying a parachain template with parachain id 200. These instr
 parachain id 200, however you can re-use these instructions with any parachain ID adjusting occurrences of the number
 200 accordingly.
 
+<!--
+TODO This subcommand is currently broken. See https://github.com/paritytech/cumulus/issues/196 To work around it for now we will instruct users to copy the genesis state from the running node's log.
 ## Generate Genesis State
 
 To register a parachain, the relay chain needs to know the parachain's genesis state. The collator node can export that
@@ -13,6 +15,7 @@ hex-encoded.
 ```bash
 parachain-collator export-genesis-state --parachain-id 200 > para-200-genesis
 ```
+-->
 
 ## Obtaining the Wasm Validation Function
 
@@ -34,10 +37,10 @@ used when launching relay chain nodes.
 
 ```bash
 parachain-collator \
-  --base-path /tmp/para-200-collator-1 \
+  --tmp \
   --ws-port 9977 \
   --port 30336 \
-  --parachain-id 100 \
+  --parachain-id 200 \
   --validator \
   -- \
   --chain spec.json \
@@ -54,6 +57,15 @@ We give the collator a base path and ports as we did for the relay chain node pr
 ID. Remember to change these collator-specific values if you are executing these instructions a second time for a second
 parachain. Then we give the embedded relay chain node the relay chain spec we are using. Finally, we give the embedded
 relay chain node some peer addresses.
+
+## Obtaining the Genesis State
+
+We will also need the genesis state of the parachain to register it. The running collator prints this information for
+you in a log message that looks as follows. **Take careful note** of this value. You will need it later.
+
+```
+2020-08-11 13:58:06 Parachain genesis state: 0x00000000000000000000000000000000000000000000000000000000000000000097600fcfeeed0c7c2e7d922081a466c4c00f2af96ce17f4a07d59e7d47e8354b03170a2e7597b7b7e3d84c05391d139a62b157e78786d8c082f29dcf4c11131400
+```
 
 ## Is It Working?
 

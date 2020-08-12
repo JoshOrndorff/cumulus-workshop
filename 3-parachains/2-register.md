@@ -8,10 +8,15 @@ relay chain. In the live Polkadot network, this will be accomplished with
 
 The transaction can be made from `Apps > Sudo > Registrar > registerPara` with the following parameters:
 
-id: 200 ParaInfo: Always code: para-200-wasm (from the previous step) initial_head_data: para-200-genesis (from the
-previous step)
+- id: `200`
+- ParaInfo: `Always`
+- code: upload the file `para-200-wasm` (from the previous step)
+- initial_head_data: copy-paste the contents of the file `para-200-genesis` (from the previous step)
 
 ![Registration screenshot](../assets/registration-screenshot.png)
+
+> You really do need to copy paste the contents for the initial head data. The file upload there is not working. Follow
+> https://github.com/polkadot-js/apps/issues/3396 for details.
 
 ### Block Production
 
@@ -36,6 +41,10 @@ should start producing log messages like the following:
 ### Updating Heads
 
 The relay chain tracks the latest heads of each parachain. When a relay chain block is finalized, any parachain blocks
-that have completed the [validation process](https://polkadot.network/the-path-of-a-parachain-block/). This is how
-Polkadot achieves shared security. We can check whether new parachain blocks are being referenced by the relay chain by
-querying the chain state in `Apps > Chain state > parachains > heads`. You should see the value change every few blocks.
+that have completed the [validation process](https://polkadot.network/the-path-of-a-parachain-block/) are also
+finalized. This is how Polkadot achieves shared security.
+
+We can keep track of what parachains are registered and what their latest head data is on the 'Parachains' tab in the
+Apps ui
+
+![Parachain Head Information](../assets/parachain-summary-screenshot.png)
