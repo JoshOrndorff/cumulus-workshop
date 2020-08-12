@@ -2,7 +2,7 @@
 
 This workshop covers the entire process of launching a relay chain, connecting parachains, transferring assets between
 chains, and developing your own parachain runtimes. Naturally, there will be some significant compiling if you intend to
-build everything yourself. (TODO: Compiling the Polkadot and test collator nodes can be avoided if you prefer to use the
+build everything yourself. (Compiling the Polkadot and test collator nodes can be avoided if you prefer to use the
 docker image.)
 
 ## Shortening the Workshop
