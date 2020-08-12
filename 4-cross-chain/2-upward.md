@@ -23,10 +23,10 @@ Back on the Relay Chain, check the Accounts tab to ensure the DOTs have arrived 
 
 As we mentioned in the previous section, this cross-chain transfer scheme uses a depository and mint model. The relay
 chain is ultimately responsible for controlling the Supply of DOTs. The relay chain cannot, however, control the
-semantics of the individual parachains. It is enitrely possible that a parachain allows users to mint tokens at will.
+semantics of the individual parachains. It is entirely possible that a parachain allows users to mint tokens at will.
 These tokens should not be able to be transferred back to the relay chain and dilute the DOT supply.
 
-The invariant that the relay chain enforces is that no more tokens may be trasferred out of the parachain than went into
+The invariant that the relay chain enforces is that no more tokens may be transferred out of the parachain than went into
 it. And the Relay Chain knows how many tokens went into the parachain because it is the number of tokens stored in the
 parachain's depository.
 
