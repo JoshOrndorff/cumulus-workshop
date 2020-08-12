@@ -41,6 +41,9 @@ should start producing log messages like the following:
 ### Updating Heads
 
 The relay chain tracks the latest heads of each parachain. When a relay chain block is finalized, any parachain blocks
-that have completed the [validation process](https://polkadot.network/the-path-of-a-parachain-block/). This is how
-Polkadot achieves shared security. We can check whether new parachain blocks are being referenced by the relay chain by
-querying the chain state in `Apps > Chain state > parachains > heads`. You should see the value change every few blocks.
+that have completed the [validation process](https://polkadot.network/the-path-of-a-parachain-block/) are also finalized. This is how
+Polkadot achieves shared security.
+
+We can keep track of what parachains are registered and what their latest head data is on the 'Parachains' tab in the Apps ui
+
+![Parachain Head Information](../assets/parachain-summary-screenshot.png)
