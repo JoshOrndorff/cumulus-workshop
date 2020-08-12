@@ -18,18 +18,18 @@ on the parachain.
 ## Sending Tokens Down
 
 To send tokens from Alice's account on the Relay chain to her own account on parachain 200, you submit a single
-transaction on the Relay chain. Return the the Apps instance that is connected to the relay chain and submit
-`Extrinsics` -> `Parachains` -> `transferToParachain` with the following parameters. (We continue using parachain 200 as
-the example.)
+transaction on the Relay chain. Return to the Apps instance that is connected to the relay chain, navigate to the Parachains tab, and click the "Transfer to chain" button.
 
-to: 200 amount: 123 remark: 0xd43593c715fdd31c61141abd04a99fd6822c8558854ccde39a5684e7a56da27d
+Fill in the details as you desire and submit the transaction.
 
-The first two fields are self-explanatory, and the amount can be customized as desired. The third field, although called
+![Sending tokens down](../assets/downward-transfer-screenshot.png)
+
+> Sumbitting this transaction throug hthe `Extrinsics` tab sheds light on a subtle detail.
+> The third field, although called
 `remark`, is used to indicate the receiving account on the Parachain. In general we cannot assume that the parachain
 uses the same account model as the relay chain, and thus this field must remain an opaque vector of bytes. However in
-this specific case, we know that the parachain uses the exact same account model as the relay chain. So we can enter
-Alice's public key. (When using Apps UI like we are, you can also enter Alice's regular old Address
-`5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY` and the UI will convert it to a public key for you.)
+many cases, the parachain does use the exact same account model as the relay chain.
+The Apps UI makes this often-true assumption and allows a nicer UI for inputting the destination when using the "transfer to chain" button
 
 ## Confirming Receipt of DOTs
 
