@@ -34,7 +34,7 @@ used when launching relay chain nodes.
 
 ```bash
 parachain-collator \
-  --base-path /tmp/para-200-collator-1 \
+  --tmp \
   --ws-port 9977 \
   --port 30336 \
   --parachain-id 200 \

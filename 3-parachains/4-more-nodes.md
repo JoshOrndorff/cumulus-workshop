@@ -10,6 +10,7 @@ first collator, but again we need to avoid conflicting ports and directories
 
 ```bash
 parachain-collator \
+  --tmp
   --bootnodes <Your first collator> \
   --ws-port <Your chosen websocket port> \
   --port <Your chosen libp2p port> \
@@ -17,8 +18,7 @@ parachain-collator \
   --validator \
   -- \ # Any flags after this -- go to the embedded polkadot node
   --chain spec.json \
-  --bootnodes <Alice, Bob, and other relay chain collators> \
-  --base-path <Your path>
+  --bootnodes <Alice, Bob, and other relay chain collators>
 ```
 
 ## Full Nodes
@@ -28,12 +28,12 @@ It is also possible to start non-collating full nodes in the parachain. For thes
 
 ```bash
 parachain-collator \
+  --tmp
   --bootnodes <Your first collator> \
   --ws-port <Your chosen websocket port> \
   --port <Your chosen libp2p port> \
   --parachain-id <Your ID> \
   -- \ # Any flags after this -- go to the embedded polkadot node
   --chain spec.json \
-  --bootnodes <Alice, Bob, and other relay chain collators> \
-  --base-path <Your path>
+  --bootnodes <Alice, Bob, and other relay chain collators>
 ```
