@@ -4,10 +4,10 @@ on:
   pull_request:
     branches:
     - master
-  # Only run the build job when the dockerfile actually changes
-  paths:
-  - 'polkadot.Dockerfile'
-  - 'parachain-collator.Dockerfile'
+    # Only run the build job when the dockerfile actually changes
+    paths:
+    - 'polkadot.Dockerfile'
+    - 'parachain-collator.Dockerfile'
 
 jobs:
   build-polkadot:
