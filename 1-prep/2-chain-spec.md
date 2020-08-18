@@ -12,12 +12,14 @@ to supply the proper path to the spec file you are using.
 
 This workshop contains three chain-spec files that you can use without modification:
 
-- [specs/rococo-local.json](../specs/rococo-local.json): A two-validator relay chain with Alice and Bob as authorities.
+<!-- for some reason these links can't be markdown. See https://github.com/substrate-developer-hub/cumulus-workshop/issues/16 -->
+
+- <a href="specs/rococo-local.json">specs/rococo-local.json</a>: A two-validator relay chain with Alice and Bob as authorities.
   Useful for registering a single parachain. This is a direct export of the `rococo-local` spec that is included in
   polkadot.
-- [specs/rococo-3.json](../specs/rococo-3.json): A three-validator relay chain identical to `rococo-local` but with
+- <a href="specs/rococo-3.json">specs/rococo-3.json</a>: A three-validator relay chain identical to `rococo-local` but with
   Charlie as a third validator.
-- [specs/rococo-4.json](../specs/rococo-4.json). A four-validator relay chain that adds Dave as a fourth validator.
+- <a href="specs/rococo-4.json">specs/rococo-4.json</a>. A four-validator relay chain that adds Dave as a fourth validator.
 
 These specs were created according to the steps in the next section. If you would like even more validators, or to
 customize the relay chain in some other way, proceed to the final option.
