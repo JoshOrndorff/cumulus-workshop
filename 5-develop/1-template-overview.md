@@ -1,6 +1,6 @@
 # Parachain Collator Template
 
-Substrate developers are familiar with the
+Substrate developers who are familiar with the
 [Substrate Node Template](https://github.com/substrate-developer-hub/substrate-node-template) will find the parachain
 template familiar. They have the same general structure featuring `node`, `runtime`, and `pallets` directories. Their
 runtimes are similar and feature many of the same pallets. And apart from a few new traits, the pallets themselves are
@@ -34,7 +34,7 @@ from foreign chains, you should either use this pallet or use its code as inspir
 ### `register_validate_block!` Macro
 
 Each parachain must supply a `validate_block` function, expressed as a wasm blob, to the relay chain when registering.
-The node template does not provide this function, but the parachain template provides does. Thanks to cumulus, creating
+The node template does not provide this function, but the parachain template does. Thanks to cumulus, creating
 this function for a Substrate runtime is as simple as adding one line of code at the bottom of your runtime:
 
 ```rust

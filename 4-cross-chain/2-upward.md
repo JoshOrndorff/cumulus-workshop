@@ -6,8 +6,8 @@ any account with DOTs on the parachain regardless of whether it was the account 
 
 ## Sending Tokens Up
 
-To send tokens from Alice's account on a Parachain to Ferdie's account on the Relay Chain, you submit a single
-transaction on the Parachain. Return to the Apps instance that is connected to the relay chain, navigate to the
+To send tokens from Alice's account on a parachain to Ferdie's account on the Relay Chain, you submit a single
+transaction on the parachain. Go to the Apps instance that is connected to the parachain, navigate to the
 Parachains tab, and click the lonely "Transfer to chain" button.
 
 Fill in the details as you desire and submit the transaction. Take careful note of the toggle switch in the bottom
