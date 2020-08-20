@@ -26,7 +26,7 @@ Id. We will need it when connecting other nodes to her.
 Local node identity is: 12D3KooWLRPJAA6CrXP14FRJztzCh4JmgtRzKWpiBjL3BtseEfyv
 ```
 
-### Conenct Apps UI
+### Connect Apps UI
 
 To explore and interact with the network, you can use the Polkadot JS Apps UI. If you've started this node using the
 command above, you can access the node as https://polkadot.js.org/apps/#/?rpc=ws://localhost:9944
