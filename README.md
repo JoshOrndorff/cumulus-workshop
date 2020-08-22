@@ -13,6 +13,11 @@ This workshop targets:
 - Substrate Parachain Template @ `2710c42`
 - Polkadot JS Apps @ `46734ee`
 
+## Learn More
+
+Read about [The Path of a Parachain Block](https://polkadot.network/the-path-of-a-parachain-block/) on the official
+Polkadot Blog.
+
 ## License
 
 MIT
