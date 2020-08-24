@@ -36,7 +36,7 @@ command above, you can access the node as https://polkadot.js.org/apps/#/?rpc=ws
 > [host this interface locally](https://github.com/polkadot-js/apps#development).
 
 > At time of writing, this demo works with the hosted version of Apps linked above. If something has changed in the
-> meantime, try to [host the interface locally](https://github.com/polkadot-js/apps#development) using commit `46734ee`.
+> meantime, try to [host the interface locally](https://github.com/polkadot-js/apps#development) using commit `c09f8c8`.
 
 ## Start Bob's Node
 

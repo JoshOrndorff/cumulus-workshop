@@ -4,7 +4,7 @@ FROM parity/rust-builder as builder
 # Clone the template code and checkout the right commit
 RUN git clone https://github.com/substrate-developer-hub/substrate-parachain-template.git
 WORKDIR /builds/substrate-parachain-template
-RUN git checkout 2710c42
+RUN git checkout df2cecc
 
 # Build the Parachain Collator node
 RUN cargo build --release
