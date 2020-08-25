@@ -54,7 +54,7 @@ register a parachain. The actual Rococo relay chain uses
 [the Propose Parachain pallet](https://github.com/paritytech/polkadot/blob/rococo-branch/runtime/rococo/src/propose_parachain.rs)
 to allow parachain developers to request parachain registration. Use the
 [Polkadot JS Apps UI Extrinsics app](https://polkadot.js.org/apps/#/extrinsics) to call the
-`proposeParachain.proposeParachain` dispatchable and provide the following parameters:
+`proposeParachain.proposeParachain` dispatchable on the Rococo relay chain and provide the following parameters:
 
 - `para_id`: the ID of your parachain
 - `name`: a hex-encoded name for your parachain
