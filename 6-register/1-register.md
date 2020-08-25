@@ -31,7 +31,7 @@ by running at least two Rococo validator nodes. Refer to the first chapter to le
 nodes, run the following command:
 
 ```shell
-./target/release/polkadot --chain rococo --validator
+./target/release/polkadot --chain rococo --validator --wasm-execution=Compiled
 ```
 
 You will need to generate session keys for each of your Rococo validator nodes. To generate keys for a node, use the
