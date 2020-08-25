@@ -22,4 +22,6 @@
   - [Template Pallet](5-develop/3-template-pallet.md)
   - [Sending Messages](5-develop/4-sending-messages.md)
   - [Receiving Messages](5-develop/5-receiving-messages.md)
+- Register a Rococo Parachain
+  - [Register a Rococo Parachain](6-register/1-register.md)
 - [Notepad](embedded-notes.md)
