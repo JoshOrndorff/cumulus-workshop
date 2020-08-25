@@ -19,13 +19,13 @@ sections.
 
 The symbol for the Rococo test network's native currency is ROC; you will need some ROC in order to register your Rococo
 parachain. Please use
-[our #Rococo Element chat room](https://app.element.io/#/room/!WuksvCDImqYSxvNmua:matrix.parity.io?via=matrix.org) to
+our [#Rococo Element chat room](https://app.element.io/#/room/!WuksvCDImqYSxvNmua:matrix.parity.io?via=matrix.org) to
 request ROC tokens.
 
 ## Launch Rococo Validators
 
-In order to register a parachain with the Rococo test network, it is necessary to support the central Rococo relay chain
-by running two Rococo validator nodes. Refer to the first chapter to learn how to
+In order to register a parachain with the Rococo test network, we require you to support the central Rococo relay chain
+by running at least two Rococo validator nodes. Refer to the first chapter to learn how to
 [build a Rococo validator node](../1-prep/1-compiling.md#building-a-relay-chain-node) and the second chapter to learn
 how to [launch the node you just built](../2-relay-chain/2-launch.md). Once you have launched your nodes, you will need
 to rotate your session keys and make note of the new keys.
