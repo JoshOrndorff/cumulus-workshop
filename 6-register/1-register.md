@@ -1,19 +1,20 @@
 # Register a Rococo Parachain
 
 Rococo is Parity's official test network for Cumulus-based parachains. The purpose of this document is to guide Cumulus
-parachain developers through the steps needed to register their parachain with the Rococo test network.
+parachain developers through the steps needed to register their parachain with the Rococo test network. This page is an
+_addendum_ to the main workshop. Before you attempt to register your parachain on a public testnet like Rococo, we
+expect that you have gone through the entire workshop and been in contact with us through our
+[#Rococo Element chat room](https://app.element.io/#/room/!WuksvCDImqYSxvNmua:matrix.parity.io?via=matrix.org)
 
 ## Write Your Parachain
 
-Follow the steps in the previous chapter to develop your parachain. In particular, refer to the
-[Parachain Template Overview](../5-develop/1-template-overview.md) and
+You covered this material in the [Parachain Template Overview](../5-develop/1-template-overview.md) and
 [Template Pallet](../5-develop/3-template-pallet.md) sections.
 
 ## Test Your Parachain
 
-Follow the steps in the previous section to test your parachain. In particular, refer to the
-[Sending Messages](../5-develop/4-sending-messages.md) and [Receiving Messages](../5-develop/5-receiving-messages.md)
-sections.
+You covered this material in the [Sending Messages](../5-develop/4-sending-messages.md) and
+[Receiving Messages](../5-develop/5-receiving-messages.md) sections.
 
 ## Request ROC Tokens
 
@@ -53,8 +54,8 @@ In [Chapter 3, Section 2](../3-parachains/2-register.md) we used the Sudo pallet
 register a parachain. The actual Rococo relay chain uses
 [the Propose Parachain pallet](https://github.com/paritytech/polkadot/blob/rococo-branch/runtime/rococo/src/propose_parachain.rs)
 to allow parachain developers to request parachain registration. Use the
-[Polkadot JS Apps UI Extrinsics app](https://polkadot.js.org/apps/#/extrinsics) to call the
-`proposeParachain.proposeParachain` dispatchable on the Rococo relay chain and provide the following parameters:
+[Polkadot JS Apps UI Extrinsics app](https://polkadot.js.org/apps/#/extrinsics?rpc=wss://rococo-rpc.polkadot.io) to call
+the `proposeParachain.proposeParachain` dispatchable on the Rococo relay chain and provide the following parameters:
 
 - `para_id`: the ID of your parachain
 - `name`: a hex-encoded name for your parachain
