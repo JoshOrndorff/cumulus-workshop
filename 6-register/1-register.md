@@ -27,12 +27,19 @@ request ROC tokens.
 ## Launch Rococo Validators
 
 In order to register a parachain with the Rococo test network, we require you to support the central Rococo relay chain
-by running at least two Rococo validator nodes. Refer to the first chapter to learn how to
-[build a Rococo validator node](../1-prep/1-compiling.md#building-a-relay-chain-node). To launch your Rococo validator
-nodes, run the following command:
+by running at least two Rococo validator nodes.
+
+### Building the Validator Node
+For the live testnet, you should build the tip of the `rococo-branch` rather than the fixed commit this workshop uses.
+
+Refer to the first chapter to learn how to
+[build a Rococo validator node](../1-prep/1-compiling.md#building-a-relay-chain-node). but make sure you `git checkout rococo-branch`.
+
+### Launching the Validators
+To launch each Rococo validator node, run the following command:
 
 ```shell
-./target/release/polkadot --chain rococo --validator --wasm-execution=Compiled
+polkadot --chain rococo --validator --wasm-execution=Compiled
 ```
 
 You will need to generate session keys for each of your Rococo validator nodes. To generate keys for a node, use the
