@@ -11,7 +11,7 @@ The transaction can be made from `Apps > Sudo > Registrar > registerPara` with t
 - id: `200`
 - ParaInfo: `Always`
 - code: upload the file `para-200-wasm` (from the previous step)
-- initial_head_data: paste the genesis state (from the previous step)
+- initial_head_data: upload the file `para-200-genesis` (from the previous step)
 
 ![Registration screenshot](../assets/registration-screenshot.png)
 
