@@ -1,12 +1,14 @@
 # Parachain Registration
 
-We have our relay chain launched and our parachain collator ready to go. Now we have to register the parachain on the
-relay chain. In the live Polkadot network, this will be accomplished with
-[parachain auctions](https://wiki.polkadot.network/docs/en/learn-auction). But today we will do it with Sudo.
+We have our relay chain launched and our parachain collator ready to go. Now we have to register the
+parachain on the relay chain. In the live Polkadot network, this will be accomplished with
+[parachain auctions](https://wiki.polkadot.network/docs/en/learn-auction). But today we will do it
+with Sudo.
 
 ## Registration Transaction
 
-The transaction can be made from `Apps > Sudo > Registrar > registerPara` with the following parameters:
+The transaction can be made from `Apps > Sudo > Registrar > registerPara` with the following
+parameters:
 
 - id: `200`
 - ParaInfo: `Always`
@@ -17,8 +19,8 @@ The transaction can be made from `Apps > Sudo > Registrar > registerPara` with t
 
 ### Block Production
 
-The collator should start producing parachain blocks (aka collating) once the registration is successful. The collator
-should start producing log messages like the following:
+The collator should start producing parachain blocks (aka collating) once the registration is
+successful. The collator should start producing log messages like the following:
 
 ```
 2020-08-11 14:00:06 ✨ [Relaychain] Imported #28 (0x639d…d95b)
@@ -37,11 +39,12 @@ should start producing log messages like the following:
 
 ### Updating Heads
 
-The relay chain tracks the latest heads of each parachain. When a relay chain block is finalized, any parachain blocks
-that have completed the [validation process](https://polkadot.network/the-path-of-a-parachain-block/) are also
-finalized. This is how Polkadot achieves shared security.
+The relay chain tracks the latest heads of each parachain. When a relay chain block is finalized,
+any parachain blocks that have completed the
+[validation process](https://polkadot.network/the-path-of-a-parachain-block/) are also finalized.
+This is how Polkadot achieves shared security.
 
-We can keep track of what parachains are registered and what their latest head data is on the 'Parachains' tab in the
-Apps ui
+We can keep track of what parachains are registered and what their latest head data is on the
+'Parachains' tab in the Apps ui
 
 ![Parachain Head Information](../assets/parachain-summary-screenshot.png)

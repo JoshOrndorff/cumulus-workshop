@@ -1,11 +1,12 @@
 # Obtaining a (Relay) Chain Specification
 
-You will need a chain specification for your relay chain network. You can use one that ships with this workshop, or create your own. An important requirement to keep in mind is that you must always have one more relay chain validator than
-you have connected parachains. For example, if you want to connect two parachains, you need at least three validators in the
-relay chain.
+You will need a chain specification for your relay chain network. You can use one that ships with
+this workshop, or create your own. An important requirement to keep in mind is that you must always
+have one more relay chain validator than you have connected parachains. For example, if you want to
+connect two parachains, you need at least three validators in the relay chain.
 
-Whichever spec you choose to use we will refer to it simply as `spec.json` in the upcoming instructions. You will need
-to supply the proper path to the spec file you are using.
+Whichever spec you choose to use we will refer to it simply as `spec.json` in the upcoming
+instructions. You will need to supply the proper path to the spec file you are using.
 
 ## The Specs in this Workshop Repo
 
@@ -13,30 +14,32 @@ This workshop contains three chain-spec files that you can use without modificat
 
 <!-- for some reason these links can't be markdown. See https://github.com/substrate-developer-hub/cumulus-workshop/issues/16 -->
 
-- <a href="specs/rococo-local.json">specs/rococo-local.json</a>: A two-validator relay chain with Alice and Bob as authorities.
-  Useful for registering a single parachain. This is a direct export of the `rococo-local` spec that is included in
-  polkadot.
-- <a href="specs/rococo-3.json">specs/rococo-3.json</a>: A three-validator relay chain identical to `rococo-local` but with
-  Charlie as a third validator.
-- <a href="specs/rococo-4.json">specs/rococo-4.json</a>. A four-validator relay chain that adds Dave as a fourth validator.
+- <a href="specs/rococo-local.json">specs/rococo-local.json</a>: A two-validator relay chain with
+  Alice and Bob as authorities. Useful for registering a single parachain. This is a direct export
+  of the `rococo-local` spec that is included in polkadot.
+- <a href="specs/rococo-3.json">specs/rococo-3.json</a>: A three-validator relay chain identical to
+  `rococo-local` but with Charlie as a third validator.
+- <a href="specs/rococo-4.json">specs/rococo-4.json</a>. A four-validator relay chain that adds Dave
+  as a fourth validator.
 
-These specs were created according to the steps in the next section. If you would like even more validators, or to
-customize the relay chain in some other way, proceed to the final option.
+These specs were created according to the steps in the next section. If you would like even more
+validators, or to customize the relay chain in some other way, proceed to the final option.
 
 > These specs are also present in the Polkadot docker image and can be used when running in Docker.
 
 ## Create Your Own
 
-As with any Substrate chain, you can always create your own chain spec file. It is best to start from an existing
-specification. We will use the built-in `rococo-local` as our starting point.
+As with any Substrate chain, you can always create your own chain spec file. It is best to start
+from an existing specification. We will use the built-in `rococo-local` as our starting point.
 
 ```bash
 # Create the starting point that we will modify
 polkadot build-spec --chain rococo-local --disable-default-bootnode > rococo-custom-plain.json
 ```
 
-That file contains most of the information we need already. Rococo is a Proof of Authority chain, so we just need to add
-an authority and its session keys. Find the part of the part of the file shown below, and modify it.
+That file contains most of the information we need already. Rococo is a Proof of Authority chain, so
+we just need to add an authority and its session keys. Find the part of the part of the file shown
+below, and modify it.
 
 ```json
 "session": {
@@ -67,13 +70,13 @@ an authority and its session keys. Find the part of the part of the file shown b
 },
 ```
 
-You will need to make these specific modifications. All the keys and addresses needed can be generated using
-[subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey).
+You will need to make these specific modifications. All the keys and addresses needed can be
+generated using [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey).
 
 1. Add your new authority's `AccountId` and `ValidatorId`.
 
-In this runtime configuration, both IDs are the same and are generated from the "stash" account. You can generate your
-own or inspect the well-known dev ids using subkey.
+In this runtime configuration, both IDs are the same and are generated from the "stash" account. You
+can generate your own or inspect the well-known dev ids using subkey.
 
 ```bash
 $ subkey -n polkadot inspect //Charlie//stash
@@ -109,8 +112,8 @@ Secret Key URI `//Charlie` is account:
   SS58 Address:       14Gjs1TD93gnwEBfDMHoCgsuf1s2TVKUP6Z1qKmAZnZ8cW5q
 ```
 
-4. The final change you should make is to delete the `forkBlocks` and `badBlocks` fields from the beginning. Remove
-   these two lines:
+4. The final change you should make is to delete the `forkBlocks` and `badBlocks` fields from the
+   beginning. Remove these two lines:
 
 ```json
 "forkBlocks": null,
@@ -126,10 +129,11 @@ Now that you've created your spec, you can generate the final raw spec file.
 polkadot build-spec --chain rococo-custom-plain.json --raw --disable-default-bootnode > rococo-custom.json
 ```
 
-> Your final spec _must_ start with the word `rococo` or the node will not know what runtime logic in include.
+> Your final spec _must_ start with the word `rococo` or the node will not know what runtime logic
+> in include.
 
-To learn more about the process we just completed and other things that can be configured, check out these resources on
-understanding chain specs:
+To learn more about the process we just completed and other things that can be configured, check out
+these resources on understanding chain specs:
 
 - https://substrate.dev/docs/en/tutorials/start-a-private-network/customspec#create-a-chain-specification
 - https://substrate.dev/docs/en/knowledgebase/integrate/chain-spec
