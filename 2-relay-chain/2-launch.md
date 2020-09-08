@@ -1,7 +1,7 @@
 # Starting the Relay Chain
 
 Before we can attach any cumulus-based parachains, we need to launch the relay-chain. This page describes in details how
-to start both nodes in the two-validator `rococo-local` spec that ships with Polkadot as well as general instructions
+to start both nodes in the two-validator `rococo-local.json` spec that ships with this workshop as well as general instructions
 for starting additional nodes.
 
 ## Start Alice's Node
@@ -16,7 +16,7 @@ polkadot \
 ```
 
 The port and websocket port specified here are the defaults and thus those flags can be omitted. However I've chosen to
-leave them in the enforce the habit of checking their values. Because Alice is using the defaults, no other nodes on the
+leave them in to enforce the habit of checking their values. Because Alice is using the defaults, no other nodes on the
 relay chain or parachains can use these ports.
 
 When the node starts you will see several log messages. Take note of one that looks as follows. This lists Alice's Peer
@@ -36,7 +36,7 @@ command above, you can access the node as https://polkadot.js.org/apps/#/?rpc=ws
 > [host this interface locally](https://github.com/polkadot-js/apps#development).
 
 > At time of writing, this demo works with the hosted version of Apps linked above. If something has changed in the
-> meantime, try to [host the interface locally](https://github.com/polkadot-js/apps#development) using commit `46734ee`.
+> meantime, try to [host the interface locally](https://github.com/polkadot-js/apps#development) using commit `28c3fb1`.
 
 ## Start Bob's Node
 
@@ -57,7 +57,7 @@ necessary when operating over the network, so I've chosen to leave it in.
 
 ## Starting Additional Nodes (Optional)
 
-> If you are using the `rococo-local` spec that ships with Polkadot, you do not need to start additional nodes.
+> If you are using the `rococo-local.json` spec, you do not need to start additional nodes.
 
 If you're using the `rococo-3.json` or `rococo-4.json` specs that ship with this workshop you will need to start one or
 two more nodes. Again, this command is entirely analogous. You just need to make sure that nodes on the same physical
