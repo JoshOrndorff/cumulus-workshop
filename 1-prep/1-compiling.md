@@ -2,8 +2,8 @@
 
 This workshop covers the entire process of launching a relay chain, connecting parachains, transferring assets between
 chains, and developing your own parachain runtimes. Naturally, there will be some significant compiling if you intend to
-build everything yourself. (Compiling the Polkadot and test collator nodes can be avoided if you prefer to use the
-docker image.)
+build everything yourself. (Compiling the Polkadot and parachain template nodes can be avoided if you prefer to use the
+docker images.)
 
 ## Shortening the Workshop
 
@@ -19,11 +19,7 @@ performing those steps yourself in preparation for the workshop or using the pub
 
 > You may skip this step if you will not develop your own runtimes, and prefer docker to locally built binaries.
 
-There is a script that will conveniently install a Rust toolchain, some other build tools, and git for you.
-
-```bash
-curl https://getsubstrate.io -sSf | bash -s -- --fast
-```
+The Substrate Developer Hub describes setting up a local development environment. Follow the instructions at https://substrate.dev/docs/en/knowledgebase/getting-started/
 
 > This workshop is known to work on Linux, MacOS, and Windows Subsystem for Linux. It is recommended you use one of
 > those platforms. If you must build naively on Windows, try the DevHub's
@@ -45,7 +41,7 @@ git clone https://github.com/paritytech/polkadot.git
 cd polkadot
 
 # Checkout the proper commit
-git checkout fd4b176
+git checkout 93f0029
 
 # Build the Relay Chain Node
 cargo build --release
@@ -67,9 +63,8 @@ appropriate.
 The Substrate DevHub team maintains a
 [parachain template](https://github.com/substrate-developer-hub/substrate-parachain-template) (very similar to the
 [node template](https://github.com/substrate-developer-hub/substrate-node-template)) that we will use to launch our
-first parachains, and as a starting point for developing our own parachains. We will use this parachain template when
-learning to register parachains and do cross-chain asset transfers. Perform these steps in your typical workspace
-directory.
+first parachains and make cross-chain asset transfers, and as a starting point for developing our own parachains.
+Perform these steps in your typical workspace directory.
 
 ```bash
 # Clone the Parachain Template
@@ -79,7 +74,7 @@ git clone https://github.com/substrate-developer-hub/substrate-parachain-templat
 cd substrate-parachain-template
 
 # Checkout the proper commit
-git checkout 2710c42
+git checkout 9506b93
 
 # Build the parachain template collator
 cargo build --release
@@ -88,7 +83,7 @@ cargo build --release
 ./target/release/parachain-collator --help
 ```
 
-If the help page prints, you have succeeded in building a Cumulus Collator.
+If the help page prints, you have succeeded in building a Cumulus-based parachain collator.
 
 For the rest of this workshop when we need to run this binary we will refer to it simply as `parachain-collator`. You
 may move the binary you just built to somewhere more convenient, or leave it where it is. You will need to type its path
