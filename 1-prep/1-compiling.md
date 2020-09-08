@@ -83,6 +83,8 @@ cargo build --release
 ./target/release/parachain-collator --help
 ```
 
+> Occasionally the build will fail with `error: package collision in the lockfile` In this case simply run the build command again and it will succeed. For more information, see https://github.com/paritytech/cumulus/issues/174
+
 If the help page prints, you have succeeded in building a Cumulus-based parachain collator.
 
 For the rest of this workshop when we need to run this binary we will refer to it simply as `parachain-collator`. You
