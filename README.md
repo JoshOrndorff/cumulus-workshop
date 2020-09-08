@@ -2,16 +2,16 @@
 
 Connect Substrate blockchains to Polkadot with Cumulus
 
-In this hands-on workshop, participants will start a polkadot-like relay chain, register a parachains, make cross-chain
-asset transfers, and convert their own Substrate Runtimes to Parachains using Cumulus.
+In this hands-on workshop, participants will start a Polkadot-like relay chain, register parachains, make cross-chain
+asset transfers, and convert their own Substrate runtimes to parachains using Cumulus.
 
 ## Versions
 
 This workshop targets:
 
-- Polkadot @ `fd4b176`
-- Substrate Parachain Template @ `2710c42`
-- Polkadot JS Apps @ `46734ee`
+- Polkadot @ `93f0029`
+- Substrate Parachain Template @ `9506b93`
+- Polkadot JS Apps @ `28c3fb1`
 
 ## Learn More
 
