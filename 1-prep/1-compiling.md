@@ -3,7 +3,7 @@
 This workshop covers the entire process of launching a relay chain, connecting parachains, transferring assets between
 chains, and developing your own parachain runtimes. Naturally, there will be some significant compiling if you intend to
 build everything yourself. (Compiling the Polkadot and parachain template nodes can be avoided if you prefer to use the
-docker images.)
+Docker images.)
 
 ## Shortening the Workshop
 
