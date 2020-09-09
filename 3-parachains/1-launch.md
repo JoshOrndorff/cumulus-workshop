@@ -1,39 +1,36 @@
 # Launching a Parachain
 
-We'll begin by deploying a parachain template with parachain id 200. These instructions are written specifically for
-parachain id 200, however you can re-use these instructions with any parachain ID adjusting occurrences of the number
-200 accordingly.
+We'll begin by deploying a parachain template with parachain id 200. These instructions are written
+specifically for parachain id 200, however you can re-use these instructions with any parachain ID
+adjusting occurrences of the number 200 accordingly.
 
-<!--
-TODO This subcommand is currently broken. See https://github.com/paritytech/cumulus/issues/196 To work around it for now we will instruct users to copy the genesis state from the running node's log.
 ## Generate Genesis State
 
-To register a parachain, the relay chain needs to know the parachain's genesis state. The collator node can export that
-state to a file for us. The following command will create a file containing the parachain's entire genesis state,
-hex-encoded.
+To register a parachain, the relay chain needs to know the parachain's genesis state. The collator
+node can export that state to a file for us. The following command will create a file containing the
+parachain's entire genesis state, hex-encoded.
 
 ```bash
 parachain-collator export-genesis-state --parachain-id 200 > para-200-genesis
 ```
--->
 
-## Obtaining the Wasm Validation Function
+## Obtain Wasm Validation Function
 
-The relay chain also needs the parachain-specific validation logic to validate parachain blocks. The collator node has a
-command to produce this wasm blob.
+The relay chain also needs the parachain-specific validation logic to validate parachain blocks. The
+collator node also has a command to produce this wasm blob.
 
 ```bash
 parachain-collator export-genesis-wasm > para-200-wasm
 ```
 
-> The Wasm blob does not depend on the parachain id, so we do not provide that flag. If you are launching multiple
-> parachains using the exact same runtime, you do not need to regenerate the Wasm blob each time (although it is fast
-> and harmless to do so).
+> The Wasm blob does not depend on the parachain id, so we do not provide that flag. If you are
+> launching multiple parachains using the exact same runtime, you do not need to regenerate the Wasm
+> blob each time (although it is fast and harmless to do so).
 
 ## Start the Collator Node
 
-We can now start the collator node with the following command. Notice that we're supplying the same relay chain spec we
-used when launching relay chain nodes.
+We can now start the collator node with the following command. Notice that we're supplying the same
+relay chain spec we used when launching relay chain nodes.
 
 ```bash
 parachain-collator \
@@ -48,30 +45,22 @@ parachain-collator \
   --bootnodes <Other Relay Chain Node(s)
 ```
 
-The first thing to notice about this command is that several arguments are passed before the lone `--`, and several more
-arguments are passed after it. A cumulus collator contains the actual collator node, and also an embedded relay chain
-node. The arguments before the `--` are for the collator, and the arguments after the `--` are for the embedded relay
-chain node.
+The first thing to notice about this command is that several arguments are passed before the lone
+`--`, and several more arguments are passed after it. A cumulus collator contains the actual
+collator node, and also an embedded relay chain node. The arguments before the `--` are for the
+collator, and the arguments after the `--` are for the embedded relay chain node.
 
-We give the collator a base path and ports as we did for the relay chain node previously. We also specify the parachain
-ID. Remember to change these collator-specific values if you are executing these instructions a second time for a second
-parachain. Then we give the embedded relay chain node the relay chain spec we are using. Finally, we give the embedded
-relay chain node some peer addresses.
-
-## Obtaining the Genesis State
-
-We will also need the genesis state of the parachain to register it. The running collator prints this information for
-you in a log message that looks as follows. **Take careful note** of this value. You will need it later.
-
-```
-2020-08-11 13:58:06 Parachain genesis state: 0x00000000000000000000000000000000000000000000000000000000000000000097600fcfeeed0c7c2e7d922081a466c4c00f2af96ce17f4a07d59e7d47e8354b03170a2e7597b7b7e3d84c05391d139a62b157e78786d8c082f29dcf4c11131400
-```
+We give the collator a base path and ports as we did for the relay chain node previously. We also
+specify the parachain ID. Remember to change these collator-specific values if you are executing
+these instructions a second time for a second parachain. Then we give the embedded relay chain node
+the relay chain spec we are using. Finally, we give the embedded relay chain node some peer
+addresses.
 
 ## Is It Working?
 
-At this point you should see your collator node running and peering with the relay-chain nodes. You should _not_ see it
-authoring parachain blocks yet. Authoring will begin when the collator is actually registered on the relay chain (the
-next step).
+At this point you should see your collator node running and peering with the relay-chain nodes. You
+should _not_ see it authoring parachain blocks yet. Authoring will begin when the collator is
+actually registered on the relay chain (the next step).
 
 At this point your collator's logs should look something like this:
 
