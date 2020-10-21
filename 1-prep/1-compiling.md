@@ -47,8 +47,13 @@ cd polkadot
 # Checkout the proper commit
 git checkout 93f0029
 
+# Setup proper Rust version for compiling this workshop
+rustup uninstall nightly
+rustup install nightly-2020-10-06
+rustup target add wasm32-unknown-unknown --toolchain nightly-2020-10-06
+
 # Build the Relay Chain Node
-cargo build --release
+cargo +nightly-2020-10-06 build --release
 
 # Print the help page to ensure the node build correctly
 ./target/release/polkadot --help
