@@ -48,7 +48,6 @@ cd polkadot
 git checkout 93f0029
 
 # Setup proper Rust version for compiling this workshop
-rustup uninstall nightly
 rustup install nightly-2020-10-06
 rustup target add wasm32-unknown-unknown --toolchain nightly-2020-10-06
 
