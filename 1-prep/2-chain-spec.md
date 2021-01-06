@@ -77,9 +77,11 @@ generated using [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/s
 In this runtime configuration, both IDs are the same and are generated from the "stash" account. You
 can generate your own or inspect the well-known dev ids using subkey.
 
-The following subkey commands demonstrate how the first part of the `session` section inside the spec file ccan be reproduced. The second part is obtained similarly with //Bob and //Bob//stash
+The following `subkey` commands demonstrate how the first part of the `session` section inside the 
+spec file ccan be reproduced. The second part is obtained similarly with `//Bob` and `//Bob//stash`.
 
-Polkadot address for //Alice//stash (`sr25519` cryptography)
+Polkadot address for `//Alice//stash` (`sr25519` cryptography).
+
 ```bash
 $ subkey inspect --scheme sr25519 --network polkadot //Alice//stash
 Secret Key URI `//Alice//stash` is account:
@@ -89,7 +91,8 @@ Secret Key URI `//Alice//stash` is account:
   SS58 Address:     15Jbynf3EcRqdHV1K14LXYh7PQFTbp5wiXfrc4kbMReR9KxA
 ```
 
-Polkadot grandpa session key for //Alice (`ed25519` cryptography).
+Polkadot grandpa session key for `//Alice` (`ed25519` cryptography).
+
 ```bash
 $ subkey inspect --scheme ed25519 --network polkadot //Alice
 Secret Key URI `//Alice` is account:
@@ -99,7 +102,8 @@ Secret Key URI `//Alice` is account:
   SS58 Address:     146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL
 ```
 
-Polkadot address for //Alice (`sr25519` cryptography)
+Polkadot address for `//Alice` (`sr25519` cryptography).
+
 ```bash
 $ subkey inspect --scheme sr25519 --network polkadot //Alice
 Secret Key URI `//Alice` is account:
@@ -109,7 +113,8 @@ Secret Key URI `//Alice` is account:
   SS58 Address:     15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5
 ```
 
-Add at least one more entry like this. You can either create new IDs or use other well known accounts. You can also proceed with the `spec.json` files mentioned above that include Charlie and Dave. 
+Add at least one more entry like this. You can either create new IDs or use other well known accounts. 
+You can also proceed with the `spec.json` files mentioned above that include Charlie and Dave. 
 
 2. The final change you should make is to delete the `forkBlocks` and `badBlocks` fields from the
    beginning. Remove these two lines:
