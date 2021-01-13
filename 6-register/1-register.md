@@ -3,19 +3,8 @@
 Rococo is Parity's official test network for Cumulus-based parachains. The purpose of this document
 is to guide Cumulus parachain developers through the steps needed to register their parachain with
 the Rococo test network. This page is an _addendum_ to the main workshop. Before you attempt to
-register your parachain on a public testnet like Rococo, we expect that you have gone through the
-entire workshop and been in contact with us through our
+register your parachain on a public testnet like Rococo, we expect that you have done the proper local testing.
 [#Rococo Element chat room](https://app.element.io/#/room/!WuksvCDImqYSxvNmua:matrix.parity.io?via=matrix.org)
-
-## Write Your Parachain
-
-You covered this material in the [Parachain Template Overview](../5-develop/1-template-overview.md)
-and [Template Pallet](../5-develop/3-template-pallet.md) sections.
-
-## Test Your Parachain
-
-You covered this material in the [Sending Messages](../5-develop/4-sending-messages.md) and
-[Receiving Messages](../5-develop/5-receiving-messages.md) sections.
 
 ## Request ROC Tokens
 
@@ -28,23 +17,22 @@ to request ROC tokens.
 ## Launch Rococo Validators
 
 In order to register a parachain with the Rococo test network, we require you to support the central
-Rococo relay chain by running at least two Rococo validator nodes.
+Rococo relay chain by running at least one Rococo validator nodes.
 
 ### Building the Validator Node
 
-For the live testnet, you should build the tip of the `rococo-branch` rather than the fixed commit
-this workshop uses.
-
-Refer to the first chapter to learn how to
-[build a Rococo validator node](../1-prep/1-compiling.md#building-a-relay-chain-node), but make sure
-you `git checkout rococo-branch`.
+For the live testnet, you should build the tip of the `rococo-v1` branch in the Polkadot repository.
+Compile it with the `real-overseer` feature.
+```shell
+cargo build --release --features=real-overseer
+```
 
 ### Launching the Validators
 
 To launch each Rococo validator node, run the following command:
 
 ```shell
-polkadot --chain rococo --validator --wasm-execution=Compiled
+polkadot --chain rococo --validator --name <your-node-name>
 ```
 
 You will need to generate session keys for each of your Rococo validator nodes. To generate keys for
@@ -57,16 +45,22 @@ curl http://<validator address>:<WebSocket port>\
 ```
 
 You can also use the [Polkadot JS Apps UI RPC app](https://polkadot.js.org/apps/#/rpc) to invoke the
-RPC method, just make sure you are connected to the correct node. Regardless of how you generate
-these keys, take note of them and treat them with care - you need to provide them when you submit
-your request for parachain registration.
+RPC method, just make sure you are connected to the correct node.
+
+You need to provide the **ValidatorId** when you submit your request for parachain registration.
+In order to generate a ValidatorId, you must call the `SetKeys` extrinsic from the **session** pallet.
+In the **keys** field you will provide the keys generated in the previous step.
+The **proof** field will be ignored so you can write any text you want.
+
+![session_keys](../assets/session-keys.png)
+
+The **AccountId** (address) that you used to make this call is going to become your **ValidatorId**.
 
 ## Request Parachain Registration
 
-In [Chapter 3, Section 2](../3-parachains/2-register.md) we used the Sudo pallet on a development
+In the workshop we used the Sudo wrapper pallet on a development
 relay chain to register a parachain. The actual Rococo relay chain uses
-[the Propose Parachain pallet](https://github.com/paritytech/polkadot/blob/rococo-branch/runtime/rococo/src/propose_parachain.rs)
-to allow parachain developers to request parachain registration. Use the
+[the Propose Parachain pallet](https://github.com/paritytech/polkadot/blob/rococo-v1/runtime/rococo/src/propose_parachain.rs)Use the
 [Polkadot JS Apps UI Extrinsics app](https://polkadot.js.org/apps/#/extrinsics?rpc=wss://rococo-rpc.polkadot.io)
 to call the `proposeParachain.proposeParachain` dispatchable on the Rococo relay chain and provide
 the following parameters:
@@ -75,7 +69,7 @@ the following parameters:
 - `name`: a hex-encoded name for your parachain
 - `validation_function`: the Wasm runtime for your parachain
 - `initial_head_state`: your parachain's genesis state
-- `validators`: two validators from the previous step
+- `validators`: one validator from the previous step
 - `balance`: the constant value `1000`
 
 Let us know when you have submitted this request (use the Element chat room), and we will do our
