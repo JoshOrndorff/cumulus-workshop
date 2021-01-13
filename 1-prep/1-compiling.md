@@ -7,9 +7,9 @@ Polkadot and parachain template nodes can be avoided if you prefer to use the Do
 
 ## Shortening the Workshop
 
-If you intend to use this material for a live workshop you may shorten it by cutting steps off of
+<!-- If you intend to use this material for a live workshop you may shorten it by cutting steps off of
 the end. If your workshop will not cover writing your own parachains, you may skip all the
-compilation by using the provided docker images.
+compilation by using the provided docker images. -->
 
 If you prefer to focus primarily on development in your workshop, you may also skip initial relay
 chain setup by performing those steps yourself in preparation for the workshop or using the public
@@ -45,14 +45,10 @@ git clone https://github.com/paritytech/polkadot.git
 cd polkadot
 
 # Checkout the proper commit
-git checkout 93f0029
-
-# Setup proper Rust version for compiling this workshop
-rustup install nightly-2020-10-06
-rustup target add wasm32-unknown-unknown --toolchain nightly-2020-10-06
+git checkout 0022f1f
 
 # Build the Relay Chain Node
-cargo +nightly-2020-10-06 build --release
+cargo build --release --features=real-overseer
 
 # Print the help page to ensure the node build correctly
 ./target/release/polkadot --help
@@ -77,19 +73,19 @@ workspace directory.
 
 ```bash
 # Clone the Parachain Template
-git clone https://github.com/substrate-developer-hub/substrate-parachain-template.git
+git clone  https://github.com/paritytech/cumulus
 
 # Switch into the Parachain Template directory
-cd substrate-parachain-template
+cd cumulus
 
 # Checkout the proper commit
-git checkout 9506b93
+git checkout 4786231
 
 # Build the parachain template collator
 cargo build --release
 
 # Print the help page to ensure the node built correctly
-./target/release/parachain-collator --help
+./target/release/rococo-collator --help
 ```
 
 > Occasionally the build will fail with `error: package collision in the lockfile` In this case
@@ -99,7 +95,7 @@ cargo build --release
 If the help page prints, you have succeeded in building a Cumulus-based parachain collator.
 
 For the rest of this workshop when we need to run this binary we will refer to it simply as
-`parachain-collator`. You may move the binary you just built to somewhere more convenient, or leave
+`rococo-collator`. You may move the binary you just built to somewhere more convenient, or leave
 it where it is. You will need to type its path as appropriate.
 
 ## Building Your Custom Parachain
@@ -111,7 +107,7 @@ Your custom parachain will be based on the template we compiled above. Building 
 same, but you need to write your code before you can build it. We will repeat the build process in
 that section of the workshop.
 
-## Using the Docker Images
+<!-- ## Using the Docker Images
 
 > You may skip this step if you have built the nodes locally
 
@@ -119,7 +115,7 @@ The two docker images available for this workshop run the exact same binaries th
 building in the previous section.
 
 - `joshyorndorff/cumulus-workshop-polkadot` is the relay chain node.
-- `joshyorndorff/cumulus-workshop-parachain-collator` is the parachain node.
+- `joshyorndorff/cumulus-workshop-rococo-collator` is the parachain node.
 
 Because these containers will need to communicate with each other, you will need to handle
 networking. [Networking in Docker](https://docs.docker.com/network/) is beyond the scope of this
@@ -140,11 +136,11 @@ docker run --network host joshyorndorff/cumulus-workshop-polkadot --my-args
 
 ```bash
 # Instead of running
-parachain-collator --para-args -- --relay-args
+rococo-collator --para-args -- --relay-args
 
 # You should run
-docker run --network host joshyorndorff/cumulus-workshop-parachain-collator --para-args -- --relay-args
+docker run --network host joshyorndorff/cumulus-workshop-rococo-collator --para-args -- --relay-args
 ```
 
 Throughout this workshop when we need to run nodes we will refer to them simply as `polkadot` and
-`parachain-collator`. You will need to transform these commands into appropriate docker commands.
+`rococo-collator`. You will need to transform these commands into appropriate docker commands. -->

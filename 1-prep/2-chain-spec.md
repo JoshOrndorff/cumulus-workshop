@@ -25,7 +25,7 @@ This workshop contains three chain-spec files that you can use without modificat
 These specs were created according to the steps in the next section. If you would like even more
 validators, or to customize the relay chain in some other way, proceed to the final option.
 
-> These specs are also present in the Polkadot docker image and can be used when running in Docker.
+<!-- > These specs are also present in the Polkadot docker image and can be used when running in Docker. -->
 
 ## Create Your Own
 
