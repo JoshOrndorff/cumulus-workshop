@@ -1,6 +1,6 @@
 # Send messages from your parachain
 
-TODO turn this from notes into finished content
+**Note:** Work in progress section that needs fleshing out.
 
 Send upward messages to transfer tokens out of your chain like the token dealer example does. See
 [this code](https://github.com/paritytech/cumulus/blob/2c63ccb9eb7d065038e53231c379a82a509acf37/rococo-parachains/pallets/token-dealer/src/lib.rs#L92)

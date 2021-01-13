@@ -1,6 +1,6 @@
 # Adding an External Pallet
 
-TODO turn this from notes into finished content
+**Note:** Work in progress section that needs fleshing out.
 
 Add substrate's `nicks` pallet to your runtime.
 
