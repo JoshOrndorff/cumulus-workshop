@@ -1,8 +1,8 @@
 # Launching a Parachain
 
-We'll begin by deploying a parachain template with parachain id 200. These instructions are written
-specifically for parachain id 200, however you can re-use these instructions with any parachain ID
-adjusting occurrences of the number 200 accordingly.
+We'll begin by deploying a parachain template with parachain id `200`. These instructions are written
+specifically for parachain id 200, however you can re-use these instructions with any parachain id
+by adjusting occurrences of the number 200 accordingly.
 
 ## Generate Genesis State
 
@@ -29,20 +29,21 @@ rococo-collator export-genesis-wasm > para-200-wasm
 
 ## Start the Collator Node
 
-We can now start the collator node with the following command. Notice that we're supplying the same
+We can now start the collator node with the following command. Notice that we need to supply the same
 relay chain spec we used when launching relay chain nodes.
 
 ```bash
 rococo-collator \
-  --collator
+  --collator \
   --tmp \
-  --parachain-id \
-  --port 40335 \
-  --ws-port 9946 \
+  --parachain-id 200 \
+  --port 30433 \
+  --ws-port 9855 \
   -- \
   --execution wasm \
-  --chain --chain rococo-local.json \
-  --port 30335 \
+  --chain <relay chain spec json> \
+  --port 30343 \
+  --ws-port 9977 \
   --bootnodes /ip4/<Alice IP>/tcp/30333/p2p/<Alice Peer ID> \
   --bootnodes <Other Relay Chain Node(s)
 ```
@@ -53,7 +54,7 @@ collator node, and also an embedded relay chain node. The arguments before the `
 collator, and the arguments after the `--` are for the embedded relay chain node.
 
 We give the collator a base path and ports as we did for the relay chain node previously. We also
-specify the parachain ID. Remember to change these collator-specific values if you are executing
+specify the parachain id. Remember to change these collator-specific values if you are executing
 these instructions a second time for a second parachain. Then we give the embedded relay chain node
 the relay chain spec we are using. Finally, we give the embedded relay chain node some peer
 addresses.
