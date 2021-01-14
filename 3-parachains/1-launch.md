@@ -36,7 +36,7 @@ relay chain spec we used when launching relay chain nodes.
 rococo-collator \
   --collator
   --tmp \
-  --parachain-id \
+  --parachain-id 200 \
   --port 40335 \
   --ws-port 9946 \
   -- \
