@@ -37,32 +37,34 @@ from an existing specification. We will use the built-in `rococo-local` as our s
 polkadot build-spec --chain rococo-local --disable-default-bootnode > rococo-custom-plain.json
 ```
 
-That file contains most of the information we need already. Rococo is a Proof of Authority chain, so
-we just need to add an authority and its session keys. The snippet below shows the relevant part of the generated spec file. All keys in the generated file belong to the usual well known accounts used in other tutorials. 
+That file contains most of the information we need already. Rococo is a permissioned chain, so
+we just need to add an authority and its session keys. The snippet below shows the relevant part of the generated spec file. All keys in the generated file belong to the usual well known accounts used in other tutorials.
 
 ```json
-"session": {
+"palletSession": {
   "keys": [
     [
-      "15Jbynf3EcRqdHV1K14LXYh7PQFTbp5wiXfrc4kbMReR9KxA", 
-      "15Jbynf3EcRqdHV1K14LXYh7PQFTbp5wiXfrc4kbMReR9KxA",
+      "5GNJqTPyNqANBkUVMN1LPPrxXnFouWXoe2wNSmmEoLctxiZY",
+      "5GNJqTPyNqANBkUVMN1LPPrxXnFouWXoe2wNSmmEoLctxiZY",
       {
-	"grandpa": "146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL",
-	"babe": "15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5",
-	"im_online": "15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5",
-	"parachain_validator": "15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5",
-	"authority_discovery": "15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5"
+        "grandpa": "5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu",
+        "babe": "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY",
+        "im_online": "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY",
+        "para_validator": "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY",
+        "para_assignment": "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY",
+        "authority_discovery": "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY"
       }
     ],
     [
-      "16kZJGPJ37uYxjs7adswyEHbPYeHS9jQHSaSUJhkfvWPcoeF",
-      "16kZJGPJ37uYxjs7adswyEHbPYeHS9jQHSaSUJhkfvWPcoeF",
+      "5HpG9w8EBLe5XCrbczpwq5TSXvedjrBGCwqxK1iQ7qUsSWFc",
+      "5HpG9w8EBLe5XCrbczpwq5TSXvedjrBGCwqxK1iQ7qUsSWFc",
       {
-	"grandpa": "15jftzMaVPDfhKQ98RbYZ82t1wNxNdw6cS8E6kgSmMhcrxVz",
-	"babe": "14E5nqKAp3oAJcmzgZhUD2RcptBeUBScxKHgJKU4HPNcKVf3",
-	"im_online": "14E5nqKAp3oAJcmzgZhUD2RcptBeUBScxKHgJKU4HPNcKVf3",
-	"parachain_validator": "14E5nqKAp3oAJcmzgZhUD2RcptBeUBScxKHgJKU4HPNcKVf3",
-	"authority_discovery": "14E5nqKAp3oAJcmzgZhUD2RcptBeUBScxKHgJKU4HPNcKVf3"
+        "grandpa": "5GoNkf6WdbxCFnPdAnYYQyCjAKPJgLNxXwPjwTh6DGg6gN3E",
+        "babe": "5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty",
+        "im_online": "5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty",
+        "para_validator": "5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty",
+        "para_assignment": "5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty",
+        "authority_discovery": "5FHneW46xGXgs5mUiveU4sbTyGBzmstUspZC92UhjJM694ty"
       }
     ]
   ]
@@ -115,17 +117,6 @@ Secret Key URI `//Alice` is account:
 
 Add at least one more entry like this. You can either create new IDs or use other well known accounts. 
 You can also proceed with the `spec.json` files mentioned above that include Charlie and Dave. 
-
-2. The final change you should make is to delete the `forkBlocks` and `badBlocks` fields from the
-   beginning. Remove these two lines:
-
-```json
-"forkBlocks": null,
-"badBlocks": null,
-```
-
-> This fourth step should not be necessary, but it avoids parsing errors. See
-> https://github.com/paritytech/cumulus/issues/126 for details.
 
 Now that you've created your spec, you can generate the final raw spec file.
 

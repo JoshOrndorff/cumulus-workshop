@@ -79,7 +79,7 @@ git clone  https://github.com/paritytech/cumulus
 cd cumulus
 
 # Checkout the proper commit
-git checkout 4786231
+git checkout xxxxxxx
 
 # Build the parachain template collator
 cargo build --release
