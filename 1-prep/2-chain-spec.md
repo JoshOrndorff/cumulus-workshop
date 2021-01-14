@@ -32,13 +32,16 @@ validators, or to customize the relay chain in some other way, proceed to the fi
 As with any Substrate chain, you can always create your own chain spec file. It is best to start
 from an existing specification. We will use the built-in `rococo-local` as our starting point.
 
+### Generate a Plain Chain Spec
 ```bash
 # Create the starting point that we will modify
 polkadot build-spec --chain rococo-local --disable-default-bootnode > rococo-custom-plain.json
 ```
 
 That file contains most of the information we need already. Rococo is a permissioned chain, so
-we just need to add an authority and its session keys. The snippet below shows the relevant part of the generated spec file. All keys in the generated file belong to the usual well known accounts used in other tutorials.
+we just need to add an authority and its session keys. The snippet below shows the relevant part of 
+the generated spec file. All keys in the generated file belong to the usual well known accounts used
+in other tutorials.
 
 ```json
 "palletSession": {
@@ -71,21 +74,23 @@ we just need to add an authority and its session keys. The snippet below shows t
 },
 ```
 
-You will need to make these specific modifications. All the keys and addresses needed can be
-generated using [subkey](https://substrate.dev/docs/en/knowledgebase/integrate/subkey).
-
-1. Add your new authority's `AccountId` and `ValidatorId`.
+### Adjust the Chain Spec
+Add your new authority's `AccountId` and `ValidatorId`.
 
 In this runtime configuration, both IDs are the same and are generated from the "stash" account. You
-can generate your own or inspect the well-known dev ids using subkey.
+can generate your own or inspect the well-known dev ids.
 
-The following `subkey` commands demonstrate how the first part of the `session` section inside the 
-spec file ccan be reproduced. The second part is obtained similarly with `//Bob` and `//Bob//stash`.
+The following commands demonstrate how the first part of the `palletSession` section inside the 
+spec file can be reproduced. The second part is obtained similarly with `//Bob` and `//Bob//stash`.
+
+> All the keys and addresses needed can be generated using either:
+> + the [`subkey` tool](https://substrate.dev/docs/en/knowledgebase/integrate/subkey)
+> + or the `polkadot key` subcommand.
 
 Polkadot address for `//Alice//stash` (`sr25519` cryptography).
 
 ```bash
-$ subkey inspect --scheme sr25519 --network substrate //Alice//stash
+$ polkadot key inspect --scheme sr25519 --network substrate //Alice//stash
 Secret Key URI `//Alice//stash` is account:
   Secret seed:      0x3c881bc4d45926680c64a7f9315eeda3dd287f8d598f3653d7c107799c5422b3
   Public key (hex): 0xbe5ddb1579b72e84524fc29e78609e3caf42e85aa118ebfe0b0ad404b5bdd25f
@@ -96,7 +101,7 @@ Secret Key URI `//Alice//stash` is account:
 Polkadot grandpa session key for `//Alice` (`ed25519` cryptography).
 
 ```bash
-$ subkey inspect --scheme ed25519 --network substrate //Alice
+$ polkadot key inspect --scheme ed25519 --network substrate //Alice
 Secret Key URI `//Alice` is account:
   Secret seed:      0xabf8e5bdbe30c65656c0a3cbd181ff8a56294a69dfedd27982aace4a76909115
   Public key (hex): 0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee
@@ -107,7 +112,7 @@ Secret Key URI `//Alice` is account:
 Polkadot address for `//Alice` (`sr25519` cryptography).
 
 ```bash
-$ subkey inspect --scheme sr25519 --network substrate //Alice
+$ polkadot key inspect --scheme sr25519 --network substrate //Alice
 Secret Key URI `//Alice` is account:
   Secret seed:      0xe5be9a5092b81bca64be81d212e7f2f9eba183bb7a90954f7b76361f6edb5c0a
   Public key (hex): 0xd43593c715fdd31c61141abd04a99fd6822c8558854ccde39a5684e7a56da27d
@@ -118,6 +123,7 @@ Secret Key URI `//Alice` is account:
 Add at least one more entry like this. You can either create new IDs or use other well known accounts. 
 You can also proceed with the `spec.json` files mentioned above that include Charlie and Dave. 
 
+### Convert to Raw Chain Spec
 Now that you've created your spec, you can generate the final raw spec file.
 
 ```bash
@@ -125,7 +131,7 @@ polkadot build-spec --chain rococo-custom-plain.json --raw --disable-default-boo
 ```
 
 > Your final spec _must_ start with the word `rococo` or the node will not know what runtime logic
-> in include.
+> it includes.
 
 To learn more about the process we just completed and other things that can be configured, check out
 these resources on understanding chain specs:
