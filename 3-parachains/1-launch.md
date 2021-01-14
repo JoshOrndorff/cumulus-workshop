@@ -37,8 +37,8 @@ rococo-collator \
   --collator \
   --tmp \
   --parachain-id 200 \
-  --port 30433 \
-  --ws-port 9855 \
+  --port 40333 \
+  --ws-port 9844 \
   -- \
   --execution wasm \
   --chain <relay chain spec json> \
