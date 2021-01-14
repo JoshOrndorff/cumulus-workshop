@@ -85,34 +85,34 @@ spec file ccan be reproduced. The second part is obtained similarly with `//Bob`
 Polkadot address for `//Alice//stash` (`sr25519` cryptography).
 
 ```bash
-$ subkey inspect --scheme sr25519 --network polkadot //Alice//stash
+$ subkey inspect --scheme sr25519 --network substrate //Alice//stash
 Secret Key URI `//Alice//stash` is account:
   Secret seed:      0x3c881bc4d45926680c64a7f9315eeda3dd287f8d598f3653d7c107799c5422b3
   Public key (hex): 0xbe5ddb1579b72e84524fc29e78609e3caf42e85aa118ebfe0b0ad404b5bdd25f
   Account ID:       0xbe5ddb1579b72e84524fc29e78609e3caf42e85aa118ebfe0b0ad404b5bdd25f
-  SS58 Address:     15Jbynf3EcRqdHV1K14LXYh7PQFTbp5wiXfrc4kbMReR9KxA
+  SS58 Address:     5GNJqTPyNqANBkUVMN1LPPrxXnFouWXoe2wNSmmEoLctxiZY
 ```
 
 Polkadot grandpa session key for `//Alice` (`ed25519` cryptography).
 
 ```bash
-$ subkey inspect --scheme ed25519 --network polkadot //Alice
+$ subkey inspect --scheme ed25519 --network substrate //Alice
 Secret Key URI `//Alice` is account:
   Secret seed:      0xabf8e5bdbe30c65656c0a3cbd181ff8a56294a69dfedd27982aace4a76909115
   Public key (hex): 0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee
   Account ID:       0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee
-  SS58 Address:     146SvjUZXoMaemdeiecyxgALeYMm8ZWh1yrGo8RtpoPfe7WL
+  SS58 Address:     5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu
 ```
 
 Polkadot address for `//Alice` (`sr25519` cryptography).
 
 ```bash
-$ subkey inspect --scheme sr25519 --network polkadot //Alice
+$ subkey inspect --scheme sr25519 --network substrate //Alice
 Secret Key URI `//Alice` is account:
   Secret seed:      0xe5be9a5092b81bca64be81d212e7f2f9eba183bb7a90954f7b76361f6edb5c0a
   Public key (hex): 0xd43593c715fdd31c61141abd04a99fd6822c8558854ccde39a5684e7a56da27d
   Account ID:       0xd43593c715fdd31c61141abd04a99fd6822c8558854ccde39a5684e7a56da27d
-  SS58 Address:     15oF4uVJwmo4TdGW7VfQxNLavjCXviqxT9S1MgbjMNHr6Sp5
+  SS58 Address:     5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY
 ```
 
 Add at least one more entry like this. You can either create new IDs or use other well known accounts. 
