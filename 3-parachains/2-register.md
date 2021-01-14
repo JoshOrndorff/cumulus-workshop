@@ -49,6 +49,6 @@ any parachain blocks that have completed the
 This is how Polkadot achieves shared security.
 
 We can keep track of what parachains are registered and what their latest head data is on the
-`Network > Parachains` tab in the Apps ui.
+`Network > Parachains` tab in the Apps UI.
 
 ![Parachain Head Information](../assets/parachain-summary-screenshot.png)
