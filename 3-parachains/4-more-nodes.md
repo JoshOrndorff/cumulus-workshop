@@ -10,7 +10,7 @@ The command to run additional collators is as follows. This command is nearly id
 we used to start the first collator, but again we need to avoid conflicting ports and directories
 
 ```bash
-parachain-collator \
+rococo-collator \
   --collator \
   --tmp
   --parachain-id <Your ID> \
@@ -30,7 +30,7 @@ It is also possible to start non-collating full nodes in the parachain. For thes
 leave out the `--collator` flag.
 
 ```bash
-parachain-collator \
+rococo-collator \
   --tmp
   --bootnodes <Your first collator> \
   --ws-port <Your chosen websocket port> \

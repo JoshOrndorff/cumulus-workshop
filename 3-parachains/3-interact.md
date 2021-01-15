@@ -15,5 +15,5 @@ parachain node at https://polkadot.js.org/apps/#/?rpc=ws://localhost:9855
 You can make some simple token transfers to ensure that the parachain is operating normally. You can
 also make some on-chain remarks by submitting `Extrinsics` -> `System` -> `remark`.
 
-If transactions go through as expected, you have a working parachain! In the next section we'll
-learn about cross-chain transfers.
+If transactions go through as expected, you have a working parachain!
+<!-- In the next section we'll learn about cross-chain transfers. -->
