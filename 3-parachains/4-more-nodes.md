@@ -10,25 +10,27 @@ The command to run additional collators is as follows. This command is nearly id
 we used to start the first collator, but again we need to avoid conflicting ports and directories
 
 ```bash
-parachain-collator \
+rococo-collator \
+  --collator \
   --tmp
-  --bootnodes <Your first collator> \
-  --ws-port <Your chosen websocket port> \
-  --port <Your chosen libp2p port> \
   --parachain-id <Your ID> \
-  --validator \
+  --port <Your chosen libp2p port> \
+  --ws-port <Your chosen websocket port> \
+  --bootnodes <Your first collator> \
   -- \ # Any flags after this -- go to the embedded polkadot node
-  --chain spec.json \
+  --chain <relay chain spec json> \
+  --port <Your chosen libp2p port> \
+  --ws-port <Your chosen websocket port> \
   --bootnodes <Alice, Bob, and other relay chain collators>
 ```
 
 ## Full Nodes
 
 It is also possible to start non-collating full nodes in the parachain. For these options, simply
-leave out the `--validator` flag.
+leave out the `--collator` flag.
 
 ```bash
-parachain-collator \
+rococo-collator \
   --tmp
   --bootnodes <Your first collator> \
   --ws-port <Your chosen websocket port> \

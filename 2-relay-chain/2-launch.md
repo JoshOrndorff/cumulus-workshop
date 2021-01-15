@@ -1,14 +1,14 @@
 # Starting the Relay Chain
 
 Before we can attach any cumulus-based parachains, we need to launch the relay-chain. This page
-describes in details how to start both nodes in the two-validator `rococo-local.json` spec that
+describes in detail how to start both nodes in the two-validator `rococo-local.json` spec that
 ships with this workshop as well as general instructions for starting additional nodes.
 
 ## Start Alice's Node
 
 ```bash
 polkadot \
-  --chain spec.json \
+  --chain <path to spec json> \
   --tmp \
   --ws-port 9944 \
   --port 30333 \
@@ -44,7 +44,7 @@ https://polkadot.js.org/apps/#/?rpc=ws://localhost:9944
 
 ```bash
 polkadot \
-  --chain spec.json \
+  --chain <path to spec json> \
   --tmp \
   --ws-port 9955 \
   --port 30334 \
@@ -68,7 +68,7 @@ make sure that nodes on the same physical system do not have conflicting ports o
 
 ```bash
 polkadot \
-  --chain spec.json \
+  --chain <path to spec json> \
   --tmp \
   --ws-port 9966 \           # Any unused port
   --port 30335 \             # Any unused port
@@ -80,6 +80,6 @@ polkadot \
 As before it is not necessary to specify the bootnodes if you are running on a local system. Further
 it is never necessary to specify both bootnodes, although doing so may help the nodes peer faster.
 
-If your custom chainspec has includes self-generated keys, see the
+If your custom chainspec includes self-generated keys, see the
 [Substrate private network tutorial](https://substrate.dev/docs/en/tutorials/start-a-private-network/customchain#add-keys-to-keystore)
 for details on inserting these keys.
