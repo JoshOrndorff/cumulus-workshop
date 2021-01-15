@@ -21,7 +21,7 @@ Rococo relay chain by running at least one Rococo validator nodes.
 
 ### Building the Validator Node
 
-For the live testnet, you should build the tip of the `rococo-v1` branch in the Polkadot repository.
+For the live testnet, you should build the tip of the `rococo-v1` branch in the [Polkadot repository](https://github.com/paritytech/polkadot).
 Compile it with the `real-overseer` feature.
 ```shell
 cargo build --release --features=real-overseer
@@ -39,7 +39,7 @@ You will need to generate session keys for each of your Rococo validator nodes. 
 a node, use the `author.rotateKeys` RPC call. One way to invoke this RPC method is by using `curl`:
 
 ```shell
-curl http://<validator address>:<WebSocket port>\
+curl http://<validator address>:<HTTP port>\
   -H "Content-Type:application/json;charset=utf-8"\
   -d '{ "jsonrpc":"2.0", "id":1, "method":"author_rotateKeys" }'
 ```
