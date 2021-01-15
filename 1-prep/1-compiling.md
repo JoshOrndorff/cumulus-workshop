@@ -45,7 +45,7 @@ git clone https://github.com/paritytech/polkadot.git
 cd polkadot
 
 # Checkout the proper commit
-git checkout 0022f1f
+git checkout a3e1113
 
 # Build the Relay Chain Node
 cargo build --release --features=real-overseer
@@ -62,14 +62,14 @@ it is. You will need to type its full path as appropriate.
 
 ## Building the Collator Template
 
-> You may skip this step if you prefer to use docker to run nodes.
+<!-- > You may skip this step if you prefer to use docker to run nodes.
 
 The Substrate DevHub team maintains a
 [parachain template](https://github.com/substrate-developer-hub/substrate-parachain-template) (very
 similar to the [node template](https://github.com/substrate-developer-hub/substrate-node-template))
 that we will use to launch our first parachains and make cross-chain asset transfers. Later, we will
 use it as a starting point for developing our own parachains. Perform these steps in your typical
-workspace directory.
+workspace directory. -->
 
 ```bash
 # Clone the Parachain Template
@@ -79,7 +79,7 @@ git clone  https://github.com/paritytech/cumulus
 cd cumulus
 
 # Checkout the proper commit
-git checkout xxxxxxx
+git checkout 7277f7a
 
 # Build the parachain template collator
 cargo build --release
