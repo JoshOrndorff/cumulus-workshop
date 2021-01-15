@@ -39,13 +39,12 @@ rococo-collator \
   --parachain-id 200 \
   --port 40333 \
   --ws-port 9844 \
+  --alice \
   -- \
   --execution wasm \
   --chain <relay chain spec json> \
   --port 30343 \
-  --ws-port 9977 \
-  --bootnodes /ip4/<Alice IP>/tcp/30333/p2p/<Alice Peer ID> \
-  --bootnodes <Other Relay Chain Node(s)
+  --ws-port 9977
 ```
 
 The first thing to notice about this command is that several arguments are passed before the lone
@@ -72,8 +71,8 @@ At this point your collator's logs should look something like this:
 2021-01-14 15:47:03  ✌️  version 0.1.0-4786231-x86_64-linux-gnu
 2021-01-14 15:47:03  ❤️  by Parity Technologies <admin@parity.io>, 2017-2021
 2021-01-14 15:47:03  📋 Chain specification: Local Testnet
-2021-01-14 15:47:03  🏷 Node name: oafish-slope-6826
-2021-01-14 15:47:03  👤 Role: FULL
+2021-01-14 15:47:03  🏷 Node name: Alice
+2021-01-14 15:47:03  👤 Role: AUTHORITY
 2021-01-14 15:47:03  💾 Database: RocksDb at /tmp/substrateIZ0HQm/chains/local_testnet/db
 2021-01-14 15:47:03  ⛓  Native runtime: cumulus-test-parachain-3 (cumulus-test-parachain-1.tx1.au1)
 2021-01-14 15:47:03  Parachain id: Id(200)

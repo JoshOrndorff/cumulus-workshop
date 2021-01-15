@@ -17,11 +17,12 @@ rococo-collator \
   --port <Your chosen libp2p port> \
   --ws-port <Your chosen websocket port> \
   --bootnodes <Your first collator> \
+  --alice \
   -- \ # Any flags after this -- go to the embedded polkadot node
   --chain <relay chain spec json> \
   --port <Your chosen libp2p port> \
   --ws-port <Your chosen websocket port> \
-  --bootnodes <Alice, Bob, and other relay chain collators>
+  --bootnodes <Bob, and other relay chain collators>
 ```
 
 ## Full Nodes

@@ -72,13 +72,8 @@ polkadot \
   --tmp \
   --ws-port 9966 \           # Any unused port
   --port 30335 \             # Any unused port
-  --charlie \                # The appropriate key for your validator
-  --bootnodes /ip4/<Alice IP>/tcp/30333/p2p/<Alice Peer ID> \
-  --bootnodes /ip4/<Bob IP>/tcp/30334/p2p/<Bob Peer ID>
+  --charlie                  # The appropriate key for your validator
 ```
-
-As before it is not necessary to specify the bootnodes if you are running on a local system. Further
-it is never necessary to specify both bootnodes, although doing so may help the nodes peer faster.
 
 If your custom chainspec includes self-generated keys, see the
 [Substrate private network tutorial](https://substrate.dev/docs/en/tutorials/start-a-private-network/customchain#add-keys-to-keystore)
