@@ -7,10 +7,10 @@ asset transfers, and convert their own Substrate runtimes to parachains using Cu
 
 ## Versions
 
-This workshop targets:
+This workshop has been tested on commits:
 
 - Polkadot @ `a3e1113`
-- Cumulus @ `7277f7a`
+- Parachain Template @ `cdf1729`
 - Polkadot JS Apps @ `fe560f4`
 
 ## Learn More

@@ -11,7 +11,7 @@ node can export that state to a file for us. The following command will create a
 parachain's entire genesis state, hex-encoded.
 
 ```bash
-rococo-collator export-genesis-state --parachain-id 200 > para-200-genesis
+parachain-collator export-genesis-state --parachain-id 200 > para-200-genesis
 ```
 
 ## Obtain Wasm Validation Function
@@ -20,7 +20,7 @@ The relay chain also needs the parachain-specific validation logic to validate p
 collator node also has a command to produce this wasm blob.
 
 ```bash
-rococo-collator export-genesis-wasm > para-200-wasm
+parachain-collator export-genesis-wasm > para-200-wasm
 ```
 
 > The Wasm blob does not depend on the parachain id, so we do not provide that flag. If you are
@@ -33,7 +33,7 @@ We can now start the collator node with the following command. Notice that we ne
 relay chain spec we used when launching relay chain nodes.
 
 ```bash
-rococo-collator \
+parachain-collator \
   --collator \
   --tmp \
   --parachain-id 200 \

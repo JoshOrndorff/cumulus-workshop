@@ -62,40 +62,36 @@ it is. You will need to type its full path as appropriate.
 
 ## Building the Collator Template
 
-<!-- > You may skip this step if you prefer to use docker to run nodes.
+<!-- > You may skip this step if you prefer to use docker to run nodes. -->
 
 The Substrate DevHub team maintains a
 [parachain template](https://github.com/substrate-developer-hub/substrate-parachain-template) (very
 similar to the [node template](https://github.com/substrate-developer-hub/substrate-node-template))
 that we will use to launch our first parachains and make cross-chain asset transfers. Later, we will
 use it as a starting point for developing our own parachains. Perform these steps in your typical
-workspace directory. -->
+workspace directory.
 
 ```bash
 # Clone the Parachain Template
-git clone  https://github.com/paritytech/cumulus
+git clone  https://github.com/substrate-developer-hub/substrate-parachain-template
 
 # Switch into the Parachain Template directory
-cd cumulus
+cd substrate-parachain-template
 
 # Checkout the proper commit
-git checkout 7277f7a
+git checkout cdf1729
 
 # Build the parachain template collator
 cargo build --release
 
 # Print the help page to ensure the node built correctly
-./target/release/rococo-collator --help
+./target/release/parachain-collator --help
 ```
-
-> Occasionally the build will fail with `error: package collision in the lockfile` In this case
-> simply run the build command again and it will succeed. For more information, see
-> https://github.com/paritytech/cumulus/issues/174
 
 If the help page prints, you have succeeded in building a Cumulus-based parachain collator.
 
 For the rest of this workshop when we need to run this binary we will refer to it simply as
-`rococo-collator`. You may move the binary you just built to somewhere more convenient, or leave
+`parachain-collator`. You may move the binary you just built to somewhere more convenient, or leave
 it where it is. You will need to type its path as appropriate.
 
 ## Building Your Custom Parachain
@@ -115,7 +111,7 @@ The two docker images available for this workshop run the exact same binaries th
 building in the previous section.
 
 - `joshyorndorff/cumulus-workshop-polkadot` is the relay chain node.
-- `joshyorndorff/cumulus-workshop-rococo-collator` is the parachain node.
+- `joshyorndorff/cumulus-workshop-parachain-collator` is the parachain node.
 
 Because these containers will need to communicate with each other, you will need to handle
 networking. [Networking in Docker](https://docs.docker.com/network/) is beyond the scope of this
@@ -136,11 +132,11 @@ docker run --network host joshyorndorff/cumulus-workshop-polkadot --my-args
 
 ```bash
 # Instead of running
-rococo-collator --para-args -- --relay-args
+parachain-collator --para-args -- --relay-args
 
 # You should run
-docker run --network host joshyorndorff/cumulus-workshop-rococo-collator --para-args -- --relay-args
+docker run --network host joshyorndorff/cumulus-workshop-parachain-collator --para-args -- --relay-args
 ```
 
 Throughout this workshop when we need to run nodes we will refer to them simply as `polkadot` and
-`rococo-collator`. You will need to transform these commands into appropriate docker commands. -->
+`parachain-collator`. You will need to transform these commands into appropriate docker commands. -->
