@@ -1,0 +1,14 @@
+{
+  "name": "cumulus-workshop",
+  "version": "1.0.0",
+  "private": false,
+  "author": "Parity Technologies <admin@parity.io>",
+  "license": "Unlicense",
+  "scripts": {
+    "docsify": "docsify",
+    "start": "docsify serve"
+  },
+  "dependencies": {
+    "docsify-cli": "^4.4.2"
+  }
+}
