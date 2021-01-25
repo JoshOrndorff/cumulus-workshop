@@ -7,7 +7,7 @@ with Sudo.
 
 ## Registration Transaction
 
-The transaction can be submitted from `Apps > Sudo > parasSudoWrapper > sudoScheduleParaInitialize` 
+The transaction can be submitted from `Apps > Sudo > parasSudoWrapper > sudoScheduleParaInitialize`
 with the following parameters:
 
 - id: `200`
@@ -15,7 +15,7 @@ with the following parameters:
 - validationCode: upload the file `para-200-wasm` (from the previous step)
 - parachain: Yes
 
-![Registration screenshot](../assets/registration-screenshot.png)
+![Registration screenshot](../../../assets/img/registration-screenshot.png)
 
 If you are running a network with more than two validators you can add more parachains through the
 same interface with the parameters adjusted accordingly.
@@ -51,4 +51,4 @@ This is how Polkadot achieves shared security.
 We can keep track of what parachains are registered and what their latest head data is on the
 `Network > Parachains` tab in the Apps UI.
 
-![Parachain Head Information](../assets/parachain-summary-screenshot.png)
+![Parachain Head Information](../../../assets/img/parachain-summary-screenshot.png)
