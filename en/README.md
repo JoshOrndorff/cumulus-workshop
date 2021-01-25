@@ -1,4 +1,4 @@
-# Cumulus Workshop
+# Substrate Cumulus Workshop
 
 Connect Substrate blockchains to Polkadot with Cumulus
 
