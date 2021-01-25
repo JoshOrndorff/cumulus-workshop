@@ -16,6 +16,10 @@
 
 在官方波卡博客阅读关于 [The Path of a Parachain Block](https://polkadot.network/the-path-of-a-parachain-block/)
 
+## 鸣谢与贡献
+
+參看 [鸣谢与贡献](acknowledgement-contribution)
+
 ## 特许
 
 MIT

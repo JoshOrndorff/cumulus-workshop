@@ -18,6 +18,10 @@ This workshop has been tested on commits:
 Read about [The Path of a Parachain Block](https://polkadot.network/the-path-of-a-parachain-block/) on the official
 Polkadot Blog.
 
+## Acknowledgement & Contribution
+
+Refer to [Acknowledgement & Contribution](acknowledgement-contribution)
+
 ## License
 
 MIT
