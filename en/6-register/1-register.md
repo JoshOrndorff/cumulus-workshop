@@ -52,7 +52,7 @@ In order to generate a ValidatorId, you must call the `SetKeys` extrinsic from t
 In the **keys** field you will provide the keys generated in the previous step.
 The **proof** field will be ignored so you can write any text you want.
 
-![session_keys](../assets/session-keys.png)
+![session_keys](../../../assets/img/session-keys.png)
 
 The **AccountId** (address) that you used to make this call is going to become your **ValidatorId**.
 

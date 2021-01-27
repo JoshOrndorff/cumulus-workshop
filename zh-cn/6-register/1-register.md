@@ -2,7 +2,7 @@
 
 Rococo是基于Cumulus的平行链，是Parity的官方测试网。这篇文档的目的是引导Cumulus平行链开发者在Rococo测试网通过必要的步骤去注册他们的平行链。
 本页在主要工作间商是一个 _addendum_。在您想要在公共的测试网，像Rococo，去注册您自己的平行链时，我们希望您已经走完了全部的工作间，而且可以通过我们的
-[#Rococo Element chat room](https://app.element.io/#/room/!WuksvCDImqYSxvNmua:matrix.parity.io?via=matrix.org)联系我们。 
+[#Rococo Element chat room](https://app.element.io/#/room/!WuksvCDImqYSxvNmua:matrix.parity.io?via=matrix.org)联系我们。
 
 
 ## 编写您的平行链
@@ -12,7 +12,7 @@ Rococo是基于Cumulus的平行链，是Parity的官方测试网。这篇文档�
 
 ## 测试您的平行链
 
-您已经在[Sending Messages](../5-develop/4-sending-messages.md)和[Receiving Messages](../5-develop/5-receiving-messages.md)部分包含了这份材料。  
+您已经在[Sending Messages](../5-develop/4-sending-messages.md)和[Receiving Messages](../5-develop/5-receiving-messages.md)部分包含了这份材料。
 
 
 ## 索要ROC代币
@@ -54,6 +54,12 @@ curl http://<validator address>:<WebSocket port>\
 您也可以使用 [Polkadot JS Apps UI RPC app](https://polkadot.js.org/apps/#/rpc)去调用RPC方法。只是要确保您连接到了正确的节点。
 不管您是生成这些keys的，注意它们和小心对待它们 - 当您给平行链注册提交您的请求时，您需要提供它们。
 
+You need to provide the **ValidatorId** when you submit your request for parachain registration.
+In order to generate a ValidatorId, you must call the `SetKeys` extrinsic from the **session** pallet.
+In the **keys** field you will provide the keys generated in the previous step.
+The **proof** field will be ignored so you can write any text you want.
+
+![session_keys](../../../assets/img/session-keys.png)
 
 ## 请求平行链注册
 

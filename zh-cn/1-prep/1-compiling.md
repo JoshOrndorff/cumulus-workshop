@@ -10,14 +10,14 @@
 ## 安装Substrate的前提条件
 
 > 如果您不想开发您自己的运行时逻辑，以及更喜欢用docker而不是本地构建的二进制文件，
-> 那么您可以跳过此步骤。 
+> 那么您可以跳过此步骤。
 
-这个 Substrate Developer Hub 描述了如何创建一个本地的开发环境。请按照https://substrate.dev/docs/en/knowledgebase/getting-started/的说明进行操作。
+这个 Substrate Developer Hub 描述了如何创建一个本地的开发环境。请按照这里的指示： https://substrate.dev/docs/en/knowledgebase/getting-started/ 。
 
 
 > 这个工作间众所周知可以运行在Linux，MacOS,以及Windows子系统中的Linux。
 > 建议您可以使用其中的一个平台。如果您必须在Windows本地构建，请尝试DevHub的[Windows安装说明](https://substrate.dev/docs/en/knowledgebase/getting-started/windows-users)。
-> 将尽最大的努力支持这个工作间在Windows运行，但是不能保证。 
+> 将尽最大的努力支持这个工作间在Windows运行，但是不能保证。
 
 ## 构建一个中继链节点
 
@@ -88,10 +88,9 @@ cargo build --release
 
 > 您必须配置一个本地的开发黄静以及构建平行链模板来编译这个工作间的这个部分。
 
-
 您自定义的平行链将基于我们上面编译的模板。构建它看起来是一样的，但是您必须在构建它之前需要写好您自己的代码。我们将在这个工作间的这一部分重复构建过程。
 
-## 使用Docker镜像
+<!-- ## 使用Docker镜像
 
 > 如果您已经构建了本地的节点，则可以跳过此步骤
 
@@ -125,3 +124,4 @@ docker run --network host joshyorndorff/cumulus-workshop-parachain-collator --pa
 
 通过这个工作间，当我们需要去构建节点时，我们更喜欢它们被称之为`polkadot`和`parachain-collator`。您只需要将这些命令转换为合适的docker命令。
 
+-->
