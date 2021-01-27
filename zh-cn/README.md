@@ -1,4 +1,4 @@
-# Cumulus 工作坊
+# Substrate Cumulus 工作坊
 
 通过 Cumulus 连接 Substrate 区块链到波卡。
 
