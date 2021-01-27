@@ -16,7 +16,7 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        dockerfile: polkadot.Dockerfile
+        dockerfile: Dockerfile/polkadot.Dockerfile
         repository: joshyorndorff/cumulus-workshop-polkadot
         tags: latest
         add_git_labels: true
@@ -33,7 +33,7 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        dockerfile: parachain-collator.Dockerfile
+        dockerfile: Dockerfile/parachain-collator.Dockerfile
         repository: joshyorndorff/cumulus-workshop-parachain-collator
         tags: latest
         add_git_labels: true

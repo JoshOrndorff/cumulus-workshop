@@ -49,14 +49,14 @@ You can learn your own parachain's depository address by looking for a log like 
 Using a UI connected to Parachain 300 (the recipient) make a regular balance transfer from any
 account into the depository account.
 
-![Funding the depository account](../assets/fund-depository-screenshot.png)
+![Funding the depository account](../../../assets/img/fund-depository-screenshot.png)
 
 ## Sending Tokens Sideways
 
 On Parachain 200 (the source) Submit the extrinsic return to the `Parachains` tab and the lonely
 "transfer to chain" button.
 
-![Making a lateral transfer](../assets/lateral-transfer-screenshot.png)
+![Making a lateral transfer](../../../assets/img/lateral-transfer-screenshot.png)
 
 ## Confirming Receipt of Tokens
 

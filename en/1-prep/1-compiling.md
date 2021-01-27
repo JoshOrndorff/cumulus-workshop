@@ -139,4 +139,6 @@ docker run --network host joshyorndorff/cumulus-workshop-parachain-collator --pa
 ```
 
 Throughout this workshop when we need to run nodes we will refer to them simply as `polkadot` and
-`parachain-collator`. You will need to transform these commands into appropriate docker commands. -->
+`parachain-collator`. You will need to transform these commands into appropriate docker commands.
+
+-->
