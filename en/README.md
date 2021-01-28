@@ -20,7 +20,7 @@ Polkadot Blog.
 
 ## Acknowledgement & Contribution
 
-Refer to [Acknowledgement & Contribution](acknowledgement-contribution)
+Refer to [Acknowledgement & Contribution](acknowledgement-contribution.md)
 
 ## License
 
