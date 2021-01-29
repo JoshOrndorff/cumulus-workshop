@@ -12,10 +12,10 @@
   - [注册](zh-cn/3-parachains/2-register.md)
   - [交互](zh-cn/3-parachains/3-interact.md)
   - [更多平行链节点](zh-cn/3-parachains/4-more-nodes.md)
-- 不同链之间转帐
-  - [下行转帐](zh-cn/4-cross-chain/1-downward.md)
-  - [上行转帐](zh-cn/4-cross-chain/2-upward.md)
-  - [平行转帐](zh-cn/4-cross-chain/3-lateral.md)
+<!-- - 不同链之间转帐 -->
+  <!-- - [下行转帐](zh-cn/4-cross-chain/1-downward.md) -->
+  <!-- - [上行转帐](zh-cn/4-cross-chain/2-upward.md) -->
+  <!-- - [平行转帐](zh-cn/4-cross-chain/3-lateral.md) -->
 - 开发平行链
   - [平行链模版概覧](zh-cn/5-develop/1-template-overview.md)
   - [External 模块](zh-cn/5-develop/2-external-pallet.md)

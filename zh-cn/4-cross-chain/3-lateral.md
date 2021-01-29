@@ -44,14 +44,14 @@
 Using a UI connected to Parachain 300 (the recipient) make a regular balance transfer from any
 account into the depository account.
 
-![Funding the depository account](../../../assets/img/fund-depository-screenshot.png)
+![Funding the depository account](../../assets/img/fund-depository-screenshot.png)
 
 ## 横向发送代币
 
 在平行链200(源)上提交外部消息返回到 `平行链` 标签和单击"给链转账"的按钮。
 
 
-![Making a lateral transfer](../../../assets/img/lateral-transfer-screenshot.png)
+![Making a lateral transfer](../../assets/img/lateral-transfer-screenshot.png)
 
 ## 确认收到代币
 

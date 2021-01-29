@@ -24,7 +24,7 @@ relay chain, navigate to the Parachains tab, and click the "Transfer to chain" b
 
 Fill in the details as you desire and submit the transaction.
 
-![Sending tokens down](../../../assets/img/downward-transfer-screenshot.png)
+![Sending tokens down](../../assets/img/downward-transfer-screenshot.png)
 
 ## Confirming Receipt of DOTs
 

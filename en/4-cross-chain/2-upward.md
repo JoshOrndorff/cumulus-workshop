@@ -15,7 +15,7 @@ Fill in the details as you desire and submit the transaction. Take careful note 
 in the bottom right. Make sure it is disable so the tokens go to the relay chain, not another
 parachain.
 
-![Sending tokens up](../../../assets/img/upward-transfer-screenshot.png)
+![Sending tokens up](../../assets/img/upward-transfer-screenshot.png)
 
 ## Confirming Receipt of DOTs
 

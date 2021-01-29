@@ -17,7 +17,7 @@ with Sudo.
 - code: upload the file `para-200-wasm` (from the previous step)
 - initial_head_data: upload the file `para-200-genesis` (from the previous step)
 
-![Registration screenshot](../../../assets/img/registration-screenshot.png)
+![Registration screenshot](../../assets/img/registration-screenshot.png)
 
 ### 区块生产
 
@@ -49,4 +49,4 @@ with Sudo.
 我们可以跟踪哪些平行链被注册了，以及它们的最新的头部数据在Apps ui里的'Parachains'标签上是什么
 
 
-![Parachain Head Information](../../../assets/img/parachain-summary-screenshot.png)
+![Parachain Head Information](../../assets/img/parachain-summary-screenshot.png)

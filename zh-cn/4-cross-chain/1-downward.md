@@ -20,7 +20,7 @@ Polkadot的XCMP(跨链信息传递)将允许不同的区块链之间任意资产
 
 根据您所期望的填写具体的信息并提交交易
 
-![Sending tokens down](../../../assets/img/downward-transfer-screenshot.png)
+![Sending tokens down](../../assets/img/downward-transfer-screenshot.png)
 
 ## 确认收到DOTs
 
