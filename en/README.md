@@ -9,9 +9,9 @@ asset transfers, and convert their own Substrate runtimes to parachains using Cu
 
 This workshop has been tested on commits:
 
-- Polkadot @ `a3e1113`
+- Polkadot @ `bf2d87a`
 - Parachain Template @ `cdf1729`
-- Polkadot JS Apps @ `fe560f4`
+- Polkadot JS Apps @ `e3d9058`
 
 ## Learn More
 
