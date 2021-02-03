@@ -8,7 +8,7 @@ FROM parity/rust-builder as builder
 # Clone the polkadot code and checkout the right commit
 RUN git clone https://github.com/paritytech/polkadot.git
 WORKDIR /builds/polkadot
-RUN git checkout 93f0029
+RUN git checkout bf2d87a
 
 # Build the Polkadot node
 RUN cargo build --release
@@ -22,9 +22,9 @@ FROM debian:stretch-slim
 COPY --from=builder /builds/polkadot/target/release/polkadot .
 
 ## Copy chainspecs into the image
-COPY specs/rococo-local.json .
-COPY specs/rococo-3.json .
-COPY specs/rococo-4.json .
+COPY shared/chainspecs/rococo-local.json .
+COPY shared/chainspecs/rococo-3.json .
+COPY shared/chainspecs/rococo-4.json .
 
 # Open default ports. User is responsible for re-mapping these
 # or using host or overlay networking.

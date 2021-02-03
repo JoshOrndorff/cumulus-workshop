@@ -16,6 +16,4 @@
   - [平行链模版概覧](zh-cn/5-develop/1-template-overview.md)
   - [External 模块](zh-cn/5-develop/2-external-pallet.md)
   - [Template 模块](zh-cn/5-develop/3-template-pallet.md)
-  - [发放信息](zh-cn/5-develop/4-sending-messages.md)
-  - [接收信息](zh-cn/5-develop/5-receiving-messages.md)
 - [记事本](shared/embedded-notes.md)

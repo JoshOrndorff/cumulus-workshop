@@ -13,10 +13,10 @@
 
 <!-- 由于某些原因，这些文件不能被编辑. 详见 https://github.com/substrate-developer-hub/cumulus-workshop/issues/16 -->
 
-- <a href="specs/rococo-local.json" download>specs/rococo-local.json</a>: 由Alice和Bob作为一个具有两个验证者节点的中继链的权威节点。用于注册一个单个平行链。
+- <a href="shared/chainspecs/rococo-local.json" download>shared/chainspecs/rococo-local.json</a>: 由Alice和Bob作为一个具有两个验证者节点的中继链的权威节点。用于注册一个单个平行链。
 这是`rococo-local`规范的直接输出被包含在polkadot中。
-- <a href="specs/rococo-3.json" download>specs/rococo-3.json</a>: 一个具有三个验证者节点的中继链与`rococo-local`相同，但是是以Charlie作为第三个验证者节点。
-- <a href="specs/rococo-4.json" download>specs/rococo-4.json</a>. 一个具有四个验证者节点的中继链，增加了Dave作为第四个验证者节点。
+- <a href="shared/chainspecs/rococo-3.json" download>shared/chainspecs/rococo-3.json</a>: 一个具有三个验证者节点的中继链与`rococo-local`相同，但是是以Charlie作为第三个验证者节点。
+- <a href="shared/chainspecs/rococo-4.json" download>shared/chainspecs/rococo-4.json</a>. 一个具有四个验证者节点的中继链，增加了Dave作为第四个验证者节点。
 
 这些规范是根据下一节中的步骤创建的。如果您想要更多的验证者节点，或者以其它一些方式去定义中继链，请进入最后一个选项。
 

@@ -28,12 +28,6 @@ This pallet is responsible for distributing cross-chain messages received over t
 pallets that they are intended for. If you intend to receive cross chain messages, you should use
 this pallet.
 
-<!--### Token Dealer Pallet
-
-This pallet serves as an example of both sending and receiving crosschain messages. It is the pallet
-that implements the [cross-chain token transfers](../4-cross-chain/1-downward.md) we saw earlier. If
-you want to accept DOTs or other assets from foreign chains, you should either use this pallet or
-use its code as inspiration. -->
 
 ### `register_validate_block!` Macro
 

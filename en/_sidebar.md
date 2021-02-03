@@ -16,6 +16,4 @@
   - [Parachain Template Overview](en/5-develop/1-template-overview.md)
   - [External Pallet](en/5-develop/2-external-pallet.md)
   - [Template Pallet](en/5-develop/3-template-pallet.md)
-  - [Sending Messages](en/5-develop/4-sending-messages.md)
-  - [Receiving Messages](en/5-develop/5-receiving-messages.md)
 - [Notepad](shared/embedded-notes.md)
