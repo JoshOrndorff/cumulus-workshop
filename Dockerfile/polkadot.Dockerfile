@@ -8,7 +8,7 @@ FROM parity/rust-builder as builder
 # Clone the polkadot code and checkout the right commit
 RUN git clone https://github.com/paritytech/polkadot.git
 WORKDIR /builds/polkadot
-RUN git checkout bf2d87a
+RUN git checkout 9bc891
 
 # Build the Polkadot node
 RUN cargo build --release
