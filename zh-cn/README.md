@@ -8,9 +8,9 @@
 
 这个工作间成功测试运行在:
 
-- Polkadot @ `9bc891`
-- Parachain Template @ `04d3546`
-- Polkadot JS Apps @ `75abaf3`
+- Polkadot @ `46c826f`
+- Parachain Template @ `465d539`
+- Polkadot JS Apps @ `9f79c92`
 
 ## 额外学习
 
