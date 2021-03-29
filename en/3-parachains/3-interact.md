@@ -8,7 +8,7 @@ parachains and interact with them.
 We've already connected the Apps UI to the relay chain node. Now we can also connect to the
 parachain collator. Open another instance of Apps in a new browser window, and connect it to the
 appropriate endpoint. If you have followed these instructions so far, you can connect to the
-parachain node at https://polkadot.js.org/apps/#/?rpc=ws://localhost:9855
+parachain node at https://polkadot.js.org/apps/#/?rpc=ws://localhost:9844
 
 ## Submit Transactions
 
