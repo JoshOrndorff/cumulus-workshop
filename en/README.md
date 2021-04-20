@@ -9,9 +9,21 @@ asset transfers, and convert their own Substrate runtimes to parachains using Cu
 
 This workshop has been tested on commits:
 
-- Polkadot @ `46c826f`
-- Parachain Template @ `465d539`
-- Polkadot JS Apps @ `9f79c92`
+- Polkadot @ [`943038a`](https://github.com/paritytech/polkadot/commit/943038a888bfaf736142642e2610b248f7af486c)
+- Parachain Template @ [`???`]()
+    - FIXME!! needs companion PR! 
+- Polkadot JS Apps @ [`e2b51e6 `](https://github.com/polkadot-js/apps/commit/e2b51e6033f0a0c25fffc037be18d1326e1e8f39)
+
+> NOTE: you **must** use these commits exactly to ensure that you do not run into conflicts as parachain development
+> development is actively making breaking changes between commits on these repos!
+
+#### Rococo Compatibility
+
+We on the devhub team do our best to keep the parachain template & this workshop updated presently
+with the HEAD of the [rococo-v1](https://github.com/paritytech/polkadot/commits/rococo-v1) branch
+of Polkadot. **But do not assume this is the case!** Check the latest commit for rococo that is
+reported in the [rococo matrix channel](https://matrix.to/#/#rococo:matrix.parity.io) when breaking
+changes and test-network resets occur.
 
 ## Learn More
 
@@ -20,14 +32,14 @@ Polkadot Blog.
 
 ## Acknowledgement & Contribution
 
-Refer to [Acknowledgement & Contribution](acknowledgement-contribution)
+Refer to [Acknowledgement & Contribution](acknowledgement-contribution.md)
 
 ## License
 
-MIT
+[MIT](LICENCE)
 
 ## Disclaimer
 
-Cumulus is pre-release software that is still under development. While this workshop strives to be useful, the material
+**Cumulus is pre-release software that is still under development.** While this workshop strives to be useful, the material
 it covers may change or break before Cumulus is fully released. Nothing presented here is ready for use in value-bearing
-blockchains.
+blockchains!
