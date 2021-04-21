@@ -17,7 +17,7 @@ to request ROC tokens.
 ## Launch Rococo Validators
 
 In order to register a parachain with the Rococo test network, we require you to support the central
-Rococo relay chain by running at least one Rococo validator nodes.
+Rococo relaychain by running at least one Rococo validator nodes.
 
 ### Building the Validator Node
 
@@ -59,10 +59,10 @@ The **AccountId** (address) that you used to make this call is going to become y
 ## Request Parachain Registration
 
 In the workshop we used the Sudo wrapper pallet on a development
-relay chain to register a parachain. The actual Rococo relay chain uses
+relaychain to register a parachain. The actual Rococo relaychain uses
 [the Propose Parachain pallet](https://github.com/paritytech/polkadot/blob/rococo-v1/runtime/rococo/src/propose_parachain.rs)Use the
 [Polkadot JS Apps UI Extrinsics app](https://polkadot.js.org/apps/#/extrinsics?rpc=wss://rococo-rpc.polkadot.io)
-to call the `proposeParachain.proposeParachain` dispatchable on the Rococo relay chain and provide
+to call the `proposeParachain.proposeParachain` dispatchable on the Rococo relaychain and provide
 the following parameters:
 
 - `para_id`: the ID of your parachain

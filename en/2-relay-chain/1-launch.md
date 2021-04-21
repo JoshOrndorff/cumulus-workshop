@@ -1,4 +1,4 @@
-# Starting the Relay Chain
+# Starting the Relaychain
 
 Before we can attach any cumulus-based parachains, we need to launch the relay-chain. This page
 describes in detail how to start both nodes in the two-validator `rococo-local.json` spec that
@@ -17,7 +17,7 @@ polkadot \
 
 The port and websocket port specified here are the defaults and thus those flags can be omitted.
 However I've chosen to leave them in to enforce the habit of checking their values. Because Alice is
-using the defaults, no other nodes on the relay chain or parachains can use these ports.
+using the defaults, no other nodes on the relaychain or parachains can use these ports.
 
 When the node starts you will see several log messages. Take note of one that looks as follows. This
 lists Alice's Peer Id. We will need it when connecting other nodes to her.

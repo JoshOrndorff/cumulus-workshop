@@ -1,4 +1,4 @@
-# Adding Parachain Nodes
+# Connecting Additional Parachain Nodes
 
 A parachain _can_ work with only a single collator as we've shown already. But that configuration is
 not very decentralized. An adversary would only need to take down a single node to stall the
@@ -19,10 +19,10 @@ parachain-collator \
   --bootnodes <Your first collator> \
   --bob \
   -- \ # Any flags after this -- go to the embedded polkadot node
-  --chain <relay chain spec json> \
+  --chain <relaychain spec json> \
   --port <Your chosen libp2p port> \
   --ws-port <Your chosen websocket port> \
-  --bootnodes <Alice, and other relay chain collators>
+  --bootnodes <Alice, and other relaychain collators>
 ```
 
 ## Full Nodes
@@ -39,5 +39,5 @@ parachain-collator \
   --parachain-id <Your ID> \
   -- \ # Any flags after this -- go to the embedded polkadot node
   --chain spec.json \
-  --bootnodes <Alice, Bob, and other relay chain collators>
+  --bootnodes <Alice, Bob, and other relaychain collators>
 ```

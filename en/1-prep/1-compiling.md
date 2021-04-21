@@ -1,40 +1,37 @@
 # Compilation
 
-This workshop covers the entire process of launching a relay chain, connecting parachains,
+This workshop covers the entire process of launching a relaychain, connecting parachains,
 transferring assets between chains, and developing your own parachain runtimes. Naturally, there
 will be some significant compiling if you intend to build everything yourself. (Compiling the
 Polkadot and parachain template nodes can be avoided if you prefer to use the Docker images.)
 
-## Shortening the Workshop
+
+<!-- FIXME: docker for this is presently not maintained. Instead we use polkadot-launch as a "fast" way to build once you  -->
+<!-- ## Shortening the Workshop -->
 
 <!-- If you intend to use this material for a live workshop you may shorten it by cutting steps off of
 the end. If your workshop will not cover writing your own parachains, you may skip all the
 compilation by using the provided docker images. -->
-
+<!-- 
 If you prefer to focus primarily on development in your workshop, you may also skip initial relay
 chain setup by performing those steps yourself in preparation for the workshop or using the public
 rococo testnet. See [Setting Up The Bootnode](../SettingUpTheBootnode.md) for notes on setting up a
-cloud-based relay chain.
+cloud-based relaychain. 
+ -->
 
 ## Install Substrate Prerequisites
 
-> You may skip this step if you will not develop your own runtimes, and prefer docker to locally
-> built binaries.
+<!-- > You may skip this step if you will not develop your own runtimes, and prefer docker to locally
+> built binaries. -->
 
 The Substrate Developer Hub describes setting up a local development environment. Follow the
 instructions at https://substrate.dev/docs/en/knowledgebase/getting-started/
 
-> This workshop is known to work on Linux, MacOS, and Windows Subsystem for Linux. It is recommended
-> you use one of those platforms. If you must build naively on Windows, try the DevHub's
-> [Windows Setup Instructions](https://substrate.dev/docs/en/knowledgebase/getting-started/windows-users).
-> Support for executing this workshop on Windows will be made on a best-effort basis, but no
-> guarantees are made.
-
 ## Building a Relay Chain Node
 
-> You may skip this step if you prefer to use docker to run nodes.
+<!-- > You may skip this step if you prefer to use docker to run nodes. -->
 
-Clone the Polkadot repository, and build the node. We are using a specific commit for this workshop.
+Clone the Polkadot repository, and build the node. We are using a [specific commit](../README#versions-of-software) for this workshop.
 Perform these steps in your typical workspace directory.
 
 ```bash
@@ -45,7 +42,8 @@ git clone https://github.com/paritytech/polkadot.git
 cd polkadot
 
 # Checkout the proper commit
-git checkout 46c826f
+# SEE THE README OF THE WORKSHOP FOR THIS!
+git checkout <set this yourself>
 
 # Build the Relay Chain Node
 cargo build --release --features=real-overseer
@@ -79,7 +77,8 @@ git clone  https://github.com/substrate-developer-hub/substrate-parachain-templa
 cd substrate-parachain-template
 
 # Checkout the proper commit
-git checkout 465d539
+# SEE THE README OF THE WORKSHOP FOR THIS!
+git checkout <set this yourself>
 
 # Build the parachain template collator
 cargo build --release
@@ -110,7 +109,7 @@ that section of the workshop.
 The two docker images available for this workshop run the exact same binaries that we described
 building in the previous section.
 
-- `joshyorndorff/cumulus-workshop-polkadot` is the relay chain node.
+- `joshyorndorff/cumulus-workshop-polkadot` is the relaychain node.
 - `joshyorndorff/cumulus-workshop-parachain-collator` is the parachain node.
 
 Because these containers will need to communicate with each other, you will need to handle

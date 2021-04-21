@@ -1,29 +1,27 @@
 # Obtaining a (Relay) Chain Specification
 
-You will need a chain specification for your relay chain network. You can use one that ships with
+You will need a chain specification for your relaychain network. You can use one that ships with
 this workshop, or create your own. An important requirement to keep in mind is that you must always
-have one more relay chain validator than you have connected parachains. For example, if you want to
-connect two parachains, you need at least three validators in the relay chain.
+have one more relaychain validator than you have connected parachains. For example, if you want to
+connect two parachains, you need at least three validators in the relaychain.
 
 Whichever spec you choose to use we will refer to it simply as `spec.json` in the upcoming
 instructions. You will need to supply the proper path to the spec file you are using.
 
 ## The Specs in this Workshop Repo
 
-This workshop contains three chain-spec files that you can use without modification:
+This workshop contains three chain-spec files that you can use **without modification**:
 
 <!-- for some reason these links can't be markdown. See https://github.com/substrate-developer-hub/cumulus-workshop/issues/16 -->
 
 - <a href="shared/chainspecs/rococo-local.json" download>shared/chainspecs/rococo-local.json</a>: A two-validator relay
   chain with Alice and Bob as authorities. Useful for registering a single parachain. This is a
   direct export of the `rococo-local` spec that is included in polkadot.
-- <a href="shared/chainspecs/rococo-3.json" download>shared/chainspecs/rococo-3.json</a>: A three-validator relay chain
+- <a href="shared/chainspecs/rococo-3.json" download>shared/chainspecs/rococo-3.json</a>: A three-validator relaychain
   identical to `rococo-local` but with Charlie as a third validator.
-- <a href="shared/chainspecs/rococo-4.json" download>shared/chainspecs/rococo-4.json</a>. A four-validator relay chain that
-  adds Dave as a fourth validator.
 
 These specs were created according to the steps in the next section. If you would like even more
-validators, or to customize the relay chain in some other way, proceed to the final option.
+validators, or to customize the relaychain in some other way, proceed to the final option.
 
 <!-- > These specs are also present in the Polkadot docker image and can be used when running in Docker. -->
 

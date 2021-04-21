@@ -2,8 +2,8 @@
 
 我们有我们启动了的中继链，而且我们的平行链收集者准备去注册。现在我们必须在中继链上注册平行链。在实时的Polkadot网络中，
 这会通过[平行链-拍卖](https://wiki.polkadot.network/docs/en/learn-auction)来完成。但是现在，我们使用Sudo来完成平行链的注册。
-We have our relay chain launched and our parachain collator ready to go. Now we have to register the
-parachain on the relay chain. In the live Polkadot network, this will be accomplished with
+We have our relaychain launched and our parachain collator ready to go. Now we have to register the
+parachain on the relaychain. In the live Polkadot network, this will be accomplished with
 [parachain auctions](https://wiki.polkadot.network/docs/en/learn-auction). But today we will do it
 with Sudo.
 
