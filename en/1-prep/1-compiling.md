@@ -27,7 +27,7 @@ cloud-based relaychain.
 The Substrate Developer Hub describes setting up a local development environment. Follow the
 instructions at https://substrate.dev/docs/en/knowledgebase/getting-started/
 
-## Building a Relay Chain Node
+## Building a Relaychain Node
 
 <!-- > You may skip this step if you prefer to use docker to run nodes. -->
 
@@ -45,7 +45,7 @@ cd polkadot
 # SEE THE README OF THE WORKSHOP FOR THIS!
 git checkout <set this yourself>
 
-# Build the Relay Chain Node
+# Build the Relaychain Node
 cargo build --release --features=real-overseer
 
 # Print the help page to ensure the node build correctly
