@@ -10,9 +10,10 @@ asset transfers, and convert their own Substrate runtimes to parachains using Cu
 This workshop has been tested on commits:
 
 - Polkadot @ [`943038a`](https://github.com/paritytech/polkadot/commit/943038a888bfaf736142642e2610b248f7af486c)
-- Parachain Template @ [`???`]()
-    - FIXME!! needs companion PR! 
+- Parachain Template @ [`40b8581`](https://github.com/substrate-developer-hub/substrate-parachain-template/commit/40b858149b212e493da08d80e0fc5b06a6b0b72d)
 - Polkadot JS Apps @ [`e2b51e6 `](https://github.com/polkadot-js/apps/commit/e2b51e6033f0a0c25fffc037be18d1326e1e8f39)
+    - _It is generally expected that the [hosted Polkadot JS Apps](https://polkadot.js.org/apps/#/explorer)
+      _should work. If you have issues, build and host this yourself at this commit._
 
 > NOTE: you **must** use these commits exactly to ensure that you do not run into conflicts as parachain development
 > development is actively making breaking changes between commits on these repos!
