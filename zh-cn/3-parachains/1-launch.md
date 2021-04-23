@@ -41,7 +41,7 @@ parachain-collator \
   -- \
   --chain spec.json \
   --bootnodes /ip4/<Alice IP>/tcp/30333/p2p/<Alice Peer ID> \
-  --bootnodes <Other Relay Chain Node(s)
+  --bootnodes <Other Relaychain Node(s)
 ```
 
 关于这个命令，需要注意的一件事是，许多的参数在`--`之前被传递，以及更多的参数在它之后被传递。一个cumulus收集者包含实际的收集者节点，而且

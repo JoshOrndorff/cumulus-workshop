@@ -3,7 +3,7 @@
 - [Preparation](/)
   - [Compiling](en/1-prep/1-compiling.md)
   - [Chain Spec](en/1-prep/2-chain-spec.md)
-- [Launch Relaychain](en/2-relay-chain/1-launch.md)
+- [Launch Relay chain](en/2-relay-chain/1-launch.md)
 - [Launch Parachains](en/3-parachains/1-launch.md)
   - [Register](en/3-parachains/2-register.md)
   - [Interact](en/3-parachains/3-interact.md)
