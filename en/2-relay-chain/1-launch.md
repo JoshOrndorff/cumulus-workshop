@@ -4,6 +4,9 @@ Before we can attach any cumulus-based parachains, we need to launch the relay c
 describes in detail how to start both nodes in the two-validator `rococo-local.json` spec that
 ships with this workshop as well as general instructions for starting additional nodes.
 
+Note that the `parachain-collator` command used below comes from the [substrate-parachain-template repo](https://github.com/substrate-developer-hub/substrate-parachain-template/)
+that we set up in the Preparation/Compiling step.
+
 ## Start Alice's Node
 
 ```bash

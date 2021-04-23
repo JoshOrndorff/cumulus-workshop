@@ -193,8 +193,16 @@ polkadot build-spec --chain rococo-custom-plain.json --raw --disable-default-boo
 
 ## Further Resources
 
+This custom session key addition in the plain is not needed for **production chains** - as these 
+are generated for you from your `chain-spec.rs` file more simply and concretely. This exersize above is 
+used because you _must recompile your node_ for just adding authorities in this case!
+So if all you need to do is configure minor things off of a know base chainspec, as we did, you will want
+to set the information in `chain-spec.rs`, and generate the binary and finally use the CLI to generate 
+your custom chain spec. 
+
 ### Chain Specification
-To learn more about the process we just completed and other things that can be configured, check out
+
+To learn more about things beyond what we did and more that can be configured, check out
 these resources on understanding chain specs:
 
 - https://substrate.dev/docs/en/tutorials/start-a-private-network/customspec#create-a-chain-specification
