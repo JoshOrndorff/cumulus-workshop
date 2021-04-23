@@ -7,7 +7,7 @@ with Sudo.
 
 ## Registration Transaction
 
-The transaction can be submitted from `Apps > Sudo > parasSudoWrapper > sudoScheduleParaInitialize`
+The transaction can be submitted from `Developer > Sudo > parasSudoWrapper > sudoScheduleParaInitialize`
 with the following parameters:
 
 - id: `200`
