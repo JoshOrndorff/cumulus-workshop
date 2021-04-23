@@ -19,10 +19,10 @@ parachain-collator \
   --bootnodes <Your first collator> \
   --bob \
   -- \ # Any flags after this -- go to the embedded polkadot node
-  --chain <relaychain spec json> \
+  --chain <relay chain spec json> \
   --port <Your chosen libp2p port> \
   --ws-port <Your chosen websocket port> \
-  --bootnodes <Alice, and other relaychain collators>
+  --bootnodes <Alice, and other relay chain collators>
 ```
 
 ## Full Nodes
@@ -39,5 +39,5 @@ parachain-collator \
   --parachain-id <Your ID> \
   -- \ # Any flags after this -- go to the embedded polkadot node
   --chain spec.json \
-  --bootnodes <Alice, Bob, and other relaychain collators>
+  --bootnodes <Alice, Bob, and other relay chain collators>
 ```

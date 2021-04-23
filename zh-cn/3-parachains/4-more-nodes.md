@@ -18,7 +18,7 @@ parachain-collator \
   --validator \
   -- \ # Any flags after this -- go to the embedded polkadot node
   --chain spec.json \
-  --bootnodes <Alice, Bob, and other relaychain collators>
+  --bootnodes <Alice, Bob, and other relay chain collators>
 ```
 
 ## 全节点
@@ -36,5 +36,5 @@ parachain-collator \
   --parachain-id <Your ID> \
   -- \ # Any flags after this -- go to the embedded polkadot node
   --chain spec.json \
-  --bootnodes <Alice, Bob, and other relaychain collators>
+  --bootnodes <Alice, Bob, and other relay chain collators>
 ```

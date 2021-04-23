@@ -1,15 +1,15 @@
 # Obtaining a (Relay) Chain Specification
 
-You will need a chain specification for your relaychain network. You can use one that ships with
+You will need a chain specification for your relay chain network. You can use one that ships with
 this workshop, or create your own. An important requirement to keep in mind is that you must always
-have one more relaychain validator than you have connected parachains. 
-**For example, if you want to connect two parachains, you need at least three validators in the relaychain.**
+have one more relay chain validator than you have connected parachains. 
+**For example, if you want to connect two parachains, you need at least three validators in the relay chain.**
 
 Whichever spec you choose to use we will refer to it simply as `spec.json` in the instructions below.
 You will need to supply the proper path to the spec file you are using. These _conventionally_ live
 in a `/res` folder that is published in your node's codebase for others to use. As an example:
 
-- Polkadot includes [these relaychain `chainspec` files](https://github.com/paritytech/polkadot/tree/master/node/service/res)
+- Polkadot includes [these relay chain `chainspec` files](https://github.com/paritytech/polkadot/tree/master/node/service/res)
 - Cumulus includes [these parachain `chainspec` files](https://github.com/paritytech/cumulus/tree/master/rococo-parachains/res)
 
 > If you intend to let other connect to your network **you must** have the genesis Wasm the associated and chainspec
@@ -26,11 +26,11 @@ This workshop contains two chain-spec files that you can use **without modificat
 - <a href="shared/chainspecs/rococo-local.json" download>shared/chainspecs/rococo-local.json</a>: A two-validator relay
   chain with Alice and Bob as authorities. Useful for registering a single parachain. This is a
   direct export of the `rococo-local` spec that is included in polkadot.
-- <a href="shared/chainspecs/rococo-local-3.json" download>shared/chainspecs/rococo-local-3.json</a>: A three-validator relaychain
+- <a href="shared/chainspecs/rococo-local-3.json" download>shared/chainspecs/rococo-local-3.json</a>: A three-validator relay chain
   identical to `rococo-local` but with Charlie as a third validator.
 
 These specs were created according to the steps in the next section. If you would like even more
-validators, or to customize the relaychain in some other way, proceed to the final option.
+validators, or to customize the relay chain in some other way, proceed to the final option.
 
 <!-- > These specs are also present in the Polkadot docker image and can be used when running in Docker. -->
 

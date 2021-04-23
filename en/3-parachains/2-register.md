@@ -1,7 +1,7 @@
 # Parachain Registration
 
-We have our relaychain launched and our parachain collator ready to go. Now we have to register the
-parachain on the relaychain. In the live Polkadot network, this will be accomplished with
+We have our relay chain launched and our parachain collator ready to go. Now we have to register the
+parachain on the relay chain. In the live Polkadot network, this will be accomplished with
 [parachain auctions](https://wiki.polkadot.network/docs/en/learn-auction). But today we will do it
 with Sudo.
 
@@ -43,7 +43,7 @@ successful. The collator should start producing log messages like the following:
 
 ### Updating Heads
 
-The relaychain tracks the latest heads of each parachain. When a relaychain block is finalized,
+The relay chain tracks the latest heads of each parachain. When a relay chain block is finalized,
 any parachain blocks that have completed the
 [validation process](https://polkadot.network/the-path-of-a-parachain-block/) are also finalized.
 This is how Polkadot achieves shared security.

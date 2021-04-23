@@ -6,7 +6,7 @@ by adjusting occurrences of the number 200 accordingly.
 
 ## Generate Genesis State
 
-To register a parachain, the relaychain needs to know the parachain's genesis state. The collator
+To register a parachain, the relay chain needs to know the parachain's genesis state. The collator
 node can export that state to a file for us. The following command will create a file containing the
 parachain's entire genesis state, hex-encoded.
 
@@ -16,7 +16,7 @@ parachain-collator export-genesis-state --parachain-id 200 > para-200-genesis
 
 ## Obtain Wasm Validation Function
 
-The relaychain also needs the parachain-specific validation logic to validate parachain blocks. The
+The relay chain also needs the parachain-specific validation logic to validate parachain blocks. The
 collator node also has a command to produce this wasm blob.
 
 ```bash
@@ -30,7 +30,7 @@ parachain-collator export-genesis-wasm > para-200-wasm
 ## Start the Collator Node
 
 We can now start the collator node with the following command. Notice that we need to supply the same
-relaychain spec we used when launching relaychain nodes.
+relay chain spec we used when launching relay chain nodes.
 
 ```bash
 parachain-collator \
@@ -42,27 +42,27 @@ parachain-collator \
   --alice \
   -- \
   --execution wasm \
-  --chain <relaychain spec json> \
+  --chain <relay chain spec json> \
   --port 30343 \
   --ws-port 9977
 ```
 
 The first thing to notice about this command is that several arguments are passed before the lone
 `--`, and several more arguments are passed after it. A cumulus collator contains the actual
-collator node, and also an embedded relaychain node. The arguments before the `--` are for the
-collator, and the arguments after the `--` are for the embedded relaychain node.
+collator node, and also an embedded relay chain node. The arguments before the `--` are for the
+collator, and the arguments after the `--` are for the embedded relay chain node.
 
-We give the collator a base path and ports as we did for the relaychain node previously. We also
+We give the collator a base path and ports as we did for the relay chain node previously. We also
 specify the parachain id. Remember to change these collator-specific values if you are executing
-these instructions a second time for a second parachain. Then we give the embedded relaychain node
-the relaychain spec we are using. Finally, we give the embedded relaychain node some peer
+these instructions a second time for a second parachain. Then we give the embedded relay chain node
+the relay chain spec we are using. Finally, we give the embedded relay chain node some peer
 addresses.
 
 ## Is It Working?
 
-At this point you should see your collator node running and peering with the relay-chain nodes. You
+At this point you should see your collator node running and peering with the relay chain nodes. You
 should _not_ see it authoring parachain blocks yet. Authoring will begin when the collator is
-actually registered on the relaychain (the next step).
+actually registered on the relay chain (the next step).
 
 At this point your collator's logs should look something like this:
 

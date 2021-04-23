@@ -2,7 +2,7 @@
 
 Connect Substrate blockchains to Polkadot with Cumulus
 
-In this hands-on workshop, participants will start a Polkadot-like relaychain, register
+In this hands-on workshop, participants will start a Polkadot-like relay chainn, register
 parachains, make cross-chain asset transfers, and convert their own Substrate runtimes to
 parachains using Cumulus.
 
@@ -56,10 +56,10 @@ Try one, or both of these methods together, to trade time for limited RAM machin
 
 ## Versions of Software
 
-At the moment, parachains are _very tightly coupled_ with the relaychain's codebase they are 
+At the moment, parachains are _very tightly coupled_ with the relay chainn's codebase they are 
 connecting to. If you want to connect your parachian to a running relay network like the 
 [rococo](https://wiki.polkadot.network/docs/en/build-parachains-rococo) test network, you _must_
-be sure that you are testing against the exact same build of that relaychain. 
+be sure that you are testing against the exact same build of that relay chainn. 
 
 This workshop has been tested on commits:
 

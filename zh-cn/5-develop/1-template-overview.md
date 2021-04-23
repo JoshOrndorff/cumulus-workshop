@@ -37,7 +37,7 @@ use its code as inspiration.
 
 ### `register_validate_block!` Macro
 
-Each parachain must supply a `validate_block` function, expressed as a wasm blob, to the relaychain
+Each parachain must supply a `validate_block` function, expressed as a wasm blob, to the relay chain
 when registering. The node template does not provide this function, but the parachain template does.
 Thanks to cumulus, creating this function for a Substrate runtime is as simple as adding one line of
 code at the bottom of your runtime:
@@ -67,7 +67,7 @@ this at:
 Many popular Substrate runtimes including the node template feature a finality-related GRANDPA
 pallet and its associated `GrandpaApi`. These are both missing from the parachain template.
 
-This is because parachains follow the finality of the relaychain rather than running their own
+This is because parachains follow the finality of the relay chain rather than running their own
 finality gadget. This is fundamental to Polkadot's architecture and will not change.
 
 ### Service

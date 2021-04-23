@@ -1,6 +1,6 @@
 # Compilation
 
-This workshop covers the entire process of launching a relaychain, connecting parachains,
+This workshop covers the entire process of launching a relay chain, connecting parachains,
 transferring assets between chains, and developing your own parachain runtimes. Naturally, there
 will be some significant compiling if you intend to build everything yourself. (Compiling the
 Polkadot and parachain template nodes can be avoided if you prefer to use the Docker images.)
@@ -16,7 +16,7 @@ compilation by using the provided docker images. -->
 If you prefer to focus primarily on development in your workshop, you may also skip initial relay
 chain setup by performing those steps yourself in preparation for the workshop or using the public
 rococo testnet. See [Setting Up The Bootnode](../SettingUpTheBootnode.md) for notes on setting up a
-cloud-based relaychain. 
+cloud-based relay chain. 
  -->
 
 ## Install Substrate Prerequisites
@@ -27,7 +27,7 @@ cloud-based relaychain.
 The Substrate Developer Hub describes setting up a local development environment. Follow the
 instructions at https://substrate.dev/docs/en/knowledgebase/getting-started/
 
-## Building a Relaychain Node
+## Building a Relay Chain Node
 
 <!-- > You may skip this step if you prefer to use docker to run nodes. -->
 
@@ -45,7 +45,7 @@ cd polkadot
 # SEE THE README OF THE WORKSHOP FOR THIS!
 git checkout <set this yourself>
 
-# Build the Relaychain Node
+# Build the relay chain Node
 cargo build --release --features=real-overseer
 
 # Print the help page to ensure the node build correctly
@@ -109,7 +109,7 @@ that section of the workshop.
 The two docker images available for this workshop run the exact same binaries that we described
 building in the previous section.
 
-- `joshyorndorff/cumulus-workshop-polkadot` is the relaychain node.
+- `joshyorndorff/cumulus-workshop-polkadot` is the relay chain node.
 - `joshyorndorff/cumulus-workshop-parachain-collator` is the parachain node.
 
 Because these containers will need to communicate with each other, you will need to handle
