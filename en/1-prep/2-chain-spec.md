@@ -24,28 +24,32 @@ in a `/res` folder that is published in your node's codebase for others to use. 
 For just seeing if things work, we suggest you use one of the [precompiled raw](#_1a-using-a-prebuilt-chain-spec) specifications we
 have included for you. If you want to customize your network, jump to [create your chain spec](#_1b-create-your-own-chain-spec).
 
-In either case, if you use a **plain** chain spec (human redable) you want to convert it to a SCALE encoded **raw** chain spec to
-use in when starting your nodes. Jump to the [convertion section](#_2-convert-to-raw-chain-spec) to see how to do that.  
+In either case, if you use a **plain** chain spec (human readable) you want to convert it to a SCALE encoded **raw** chain spec to
+use in when starting your nodes. Jump to the [conversion section](#_2-convert-to-raw-chain-spec) to see how to do that.  
 
 ## 1.a) Using A Prebuilt Chain Spec
 
-This workshop contains two chain-spec files that you can use **without modification** for a
+This workshop contains three chain-spec files that you can use **without modification** for a
 local test network:
 
 <!-- for some reason these links can't be markdown. See https://github.com/substrate-developer-hub/cumulus-workshop/issues/16 -->
 
-- <a href="shared/chainspecs/rococo-custom.json" download>shared/chainspecs/rococo-local.json</a>: A two-validator relay
+- <a href="shared/chainspecs/rococo-custom.json" download>shared/chainspecs/rococo-custom.json</a>: A two-validator relay
   chain with Alice and Bob as authorities. Useful for registering a single parachain. 
-  **This is a direct export of the `rococo-local` spec that is included in polkadot.**
-  - There is also <a href="shared/chainspecs/rococo-custom-plain.json" download>shared/chainspecs/rococo-custom-plain.json</a> 
-    available to inspect in a more human readable and modifiable format that can be used to derive 
-    a [new custom raw spec](#adjust-the-chain-spec). 
+  **This is a direct export of the `rococo-local` spec that is**
+  **[included in polkadot](https://github.com/paritytech/polkadot/tree/master/node/service/res).**
+  - Plain chainspec: <a href="shared/chainspecs/rococo-custom-plain.json" download>shared/chainspecs/rococo-custom-plain.json</a> 
 
 - <a href="shared/chainspecs/rococo-custom-3.json" download>shared/chainspecs/rococo-local-3.json</a>: A three-validator relay chain
   identical to `rococo-custom.json` but with Charlie as a third validator.
-  - There is also <a href="shared/chainspecs/rococo-custom-plain-3.json" download>shared/chainspecs/rococo-custom-plain-3.json</a> 
-    available to inspect in a more human readable and modifiable format that can be used to derive 
-    a [new custom raw spec](#adjust-the-chain-spec). 
+  - Plain chainspec:  <a href="shared/chainspecs/rococo-custom-plain-3.json" download>shared/chainspecs/rococo-custom-plain-3.json</a>  
+
+- <a href="shared/chainspecs/rococo-custom-4.json" download>shared/chainspecs/rococo-local-4.json</a>: A four-validator relay chain
+  identical to `rococo-custom.json` but with Charlie and Dave as a third and fourth validator.s
+  - Plain chainspec: <a href="shared/chainspecs/rococo-custom-plain-4.json" download>shared/chainspecs/rococo-custom-plain-4.json</a> 
+
+All `*plain.json` files included are used to inspect in a more human readable and modifiable format that can also be used to derive 
+a [new custom raw spec](#adjust-the-chain-spec).
 
 These specs were created according to the steps in the next section. If you would like even more
 validators, or to customize the relay chain in some other way, keep reading, otherwise 
@@ -109,68 +113,73 @@ spec file can be reproduced. The second part is obtained similarly with `//Bob` 
 > + the [`subkey` tool](https://substrate.dev/docs/en/knowledgebase/integrate/subkey)
 > + or the `polkadot key` subcommand.
 
+<!-- TODO: use the key subcommand when it's avalible -->
+
 Polkadot **validator authority** address for `//Alice//stash` (`sr25519` cryptography):
 
 ```bash
-polkadot key inspect-key --scheme sr25519 --network substrate //Alice//stash
+subkey inspect --scheme sr25519 --network substrate //Alice//stash
 ```
 *Output:*
 ```
 Secret Key URI `//Alice//stash` is account:
-  Secret seed:      0x3c881bc4d45926680c64a7f9315eeda3dd287f8d598f3653d7c107799c5422b3
-  Public key (hex): 0xbe5ddb1579b72e84524fc29e78609e3caf42e85aa118ebfe0b0ad404b5bdd25f
-  Account ID:       0xbe5ddb1579b72e84524fc29e78609e3caf42e85aa118ebfe0b0ad404b5bdd25f
-  SS58 Address:     5GNJqTPyNqANBkUVMN1LPPrxXnFouWXoe2wNSmmEoLctxiZY
+  Secret seed:       0x3c881bc4d45926680c64a7f9315eeda3dd287f8d598f3653d7c107799c5422b3
+  Public key (hex):  0xbe5ddb1579b72e84524fc29e78609e3caf42e85aa118ebfe0b0ad404b5bdd25f
+  Public key (SS58): 5GNJqTPyNqANBkUVMN1LPPrxXnFouWXoe2wNSmmEoLctxiZY
+  Account ID:        0xbe5ddb1579b72e84524fc29e78609e3caf42e85aa118ebfe0b0ad404b5bdd25f
+  SS58 Address:      5GNJqTPyNqANBkUVMN1LPPrxXnFouWXoe2wNSmmEoLctxiZY
 ```
 
 Polkadot **grandpa session** key for `//Alice` (`ed25519` cryptography):
 
 ```bash
-polkadot key inspect-key --scheme ed25519 --network substrate //Alice
+subkey inspect --scheme ed25519 --network substrate //Alice
 ```
 *Output:*
 ```
 Secret Key URI `//Alice` is account:
-  Secret seed:      0xabf8e5bdbe30c65656c0a3cbd181ff8a56294a69dfedd27982aace4a76909115
-  Public key (hex): 0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee
-  Account ID:       0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee
-  SS58 Address:     5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu
+  Secret seed:       0xabf8e5bdbe30c65656c0a3cbd181ff8a56294a69dfedd27982aace4a76909115
+  Public key (hex):  0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee
+  Public key (SS58): 5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu
+  Account ID:        0x88dc3417d5058ec4b4503e0c12ea1a0a89be200fe98922423d4334014fa6b0ee
+  SS58 Address:      5FA9nQDVg267DEd8m1ZypXLBnvN7SFxYwV7ndqSYGiN9TTpu
 ```
 
 Polkadot address for `//Alice` (`sr25519` cryptography). This is used in all but the `beefy`
 key sections of the chainpec after the `grandpa` key.
 
 ```bash
-polkadot key inspect-key --scheme sr25519 --network substrate //Alice
+subkey inspect --scheme sr25519 --network substrate //Alice
 ```
 *Output:*
 ```
 Secret Key URI `//Alice` is account:
-  Secret seed:      0xe5be9a5092b81bca64be81d212e7f2f9eba183bb7a90954f7b76361f6edb5c0a
-  Public key (hex): 0xd43593c715fdd31c61141abd04a99fd6822c8558854ccde39a5684e7a56da27d
-  Account ID:       0xd43593c715fdd31c61141abd04a99fd6822c8558854ccde39a5684e7a56da27d
-  SS58 Address:     5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY
+  Secret seed:       0xe5be9a5092b81bca64be81d212e7f2f9eba183bb7a90954f7b76361f6edb5c0a
+  Public key (hex):  0xd43593c715fdd31c61141abd04a99fd6822c8558854ccde39a5684e7a56da27d
+  Public key (SS58): 5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY
+  Account ID:        0xd43593c715fdd31c61141abd04a99fd6822c8558854ccde39a5684e7a56da27d
+  SS58 Address:      5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY
 ```
 
-And finally the **encoded** ecdsa BEEFY key:
+And finally the **encoded SS58** ecdsa BEEFY key:
 ```bash
-polkadot key inspect-key --scheme ecdsa --network substrate //Alice
+subkey inspect --scheme ecdsa --network substrate //Alice
 ```
 *Output:*
 ```
 Secret Key URI `//Alice` is account:
-  Secret seed:      0xcb6df9de1efca7a3998a8ead4e02159d5fa99c3e0d4fd6432667390bb4726854
-  Public key (hex): 0x020a1091341fe5664bfa1782d5e04779689068c916b04cb365ec3153755684d9a1
-  Account ID:       0x01e552298e47454041ea31273b4b630c64c104e4514aa3643490b8aaca9cf8ed
-  SS58 Address:     5C7C2Z5sWbytvHpuLTvzKunnnRwQxft1jiqrLD5rhucQ5S9X
+  Secret seed:       0xcb6df9de1efca7a3998a8ead4e02159d5fa99c3e0d4fd6432667390bb4726854
+  Public key (hex):  0x020a1091341fe5664bfa1782d5e04779689068c916b04cb365ec3153755684d9a1
+  Public key (SS58): KW39r9CJjAVzmkf9zQ4YDb2hqfAVGdRqn53eRqyruqpxAP5YL
+  Account ID:        0x01e552298e47454041ea31273b4b630c64c104e4514aa3643490b8aaca9cf8ed
+  SS58 Address:      5C7C2Z5sWbytvHpuLTvzKunnnRwQxft1jiqrLD5rhucQ5S9X
 ```
 
-That is *almost* what we need, but this key furhter needs to be **encoded**
+Notice the BEEFY key is the `Public key (SS58)` and it's _different_ from the `SS58 Address` in the
+case of ECDSA keys (see [the note below](#ss58-encoding-of-key-vs-address) on why).
 
-TODO: show how to generate this with subkey! 
-
-> Phew! That was a lot of keys! To learn more about *why and how* these are used, see the [session keys](session-keys)
-section below.
+> Phew! That was a lot of keys! To learn more about *why and how* these are used, see the 
+> [session keys](session-keys) section below.
 
 #### Add Your Keys to the `custom-plain.json` File
 
@@ -194,7 +203,7 @@ polkadot build-spec --chain rococo-custom-plain.json --raw --disable-default-boo
 ## Further Resources
 
 This custom session key addition in the plain is not needed for **production chains** - as these 
-are generated for you from your `chain-spec.rs` file more simply and concretely. This exersize above is 
+are generated for you from your `chain-spec.rs` file more simply and concretely. This exercise above is 
 used because you _must recompile your node_ for just adding authorities in this case!
 So if all you need to do is configure minor things off of a know base chainspec, as we did, you will want
 to set the information in `chain-spec.rs`, and generate the binary and finally use the CLI to generate 
@@ -228,3 +237,15 @@ base58encode ( concat ( <address-type>, <address>, <checksum> ) )
 So for `rococo` the keys are...
 
 TODO: show how to generate this with subkey! 
+
+#### SS58 Encoding of Key vs. Address
+
+In case of sr25519 and ed25519 crypto, the account id matches public key, hence SS58 encoded
+account-id address is the same as SS58 public key encoding.
+
+In case of ECDSA, we blake2 the public key to get the address (due to size difference
+33 vs 32 bytes), so the SS58 encoding was different.
+
+Default Ser/De implementation for public keys is using SS58 encoding, hence every time we use 
+public keys in encoded form we are going to need it's SS58 encoding. A notable case is 
+chain spec JSON file and encoding of session keys (most importantly BEEFY).
