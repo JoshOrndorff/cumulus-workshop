@@ -31,7 +31,7 @@ this pallet.
 
 ### `register_validate_block!` Macro
 
-Each parachain must supply a `validate_block` function, expressed as a wasm blob, to the relay chain
+Each parachain must supply a `validate_block` function, expressed as a Wasm blob, to the relay chain
 when registering. The node template does not provide this function, but the parachain template does.
 Thanks to cumulus, creating this function for a Substrate runtime is as simple as adding one line of
 code at the bottom of your runtime:

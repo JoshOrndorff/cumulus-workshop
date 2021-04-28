@@ -5,9 +5,9 @@ specifically for parachain id 200, however you can re-use these instructions wit
 by adjusting occurrences of the number 200 accordingly.
 
 Note that the `parachain-collator` command used below comes from the [substrate-parachain-template repo](https://github.com/substrate-developer-hub/substrate-parachain-template/)
-that we set up in the Preparation/Compiling step.
+that we set up in the [Preparation/Compiling step]((../README#versions-of-software) at a _specific_ commit.
 
-## Generate Genesis State
+## Generate Parachain Genesis State
 
 To register a parachain, the relay chain needs to know the parachain's genesis state. The collator
 node can export that state to a file for us. The following command will create a file containing the
@@ -17,10 +17,10 @@ parachain's entire genesis state, hex-encoded.
 parachain-collator export-genesis-state --parachain-id 200 > para-200-genesis
 ```
 
-## Obtain Wasm Validation Function
+## Obtain Wasm Runtime Validation Function
 
-The relay chain also needs the parachain-specific validation logic to validate parachain blocks. The
-collator node also has a command to produce this wasm blob.
+The relay chain also needs the parachain-specific runtime validation logic to validate 
+parachain blocks. The collator node also has a command to produce this Wasm blob:
 
 ```bash
 parachain-collator export-genesis-wasm > para-200-wasm
@@ -29,6 +29,10 @@ parachain-collator export-genesis-wasm > para-200-wasm
 > The Wasm blob does not depend on the parachain id, so we do not provide that flag. If you are
 > launching multiple parachains using the exact same runtime, you do not need to regenerate the Wasm
 > blob each time (although it is fast and harmless to do so).
+
+> This is for the _genesis_ only - you cannot, at this time, connect a parachian with any previous 
+> state to a relay chain. All parachains _must_ start from block 0 on the relay chain.
+> There is _no_ "hot swap" consensus or re-genesis possible at the moment either.
 
 ## Start the Collator Node
 
@@ -43,7 +47,7 @@ parachain-collator \
   --port 40333 \
   --ws-port 9844 \
   --alice \
-  -- \
+  -- \ # Above are flags for the parachain _collator_, below for the embedded relay chain _validator_
   --execution wasm \
   --chain <relay chain spec json> \
   --port 30343 \
@@ -52,24 +56,26 @@ parachain-collator \
 
 The first thing to notice about this command is that several arguments are passed before the lone
 `--`, and several more arguments are passed after it. A cumulus collator contains the actual
-collator node, and also an embedded relay chain node. The arguments before the `--` are for the
+collator node, and also an **embedded relay chain node**. The arguments before the `--` are for the
 collator, and the arguments after the `--` are for the embedded relay chain node.
 
 We give the collator a base path and ports as we did for the relay chain node previously. We also
-specify the parachain id. Remember to change these collator-specific values if you are executing
-these instructions a second time for a second parachain. Then we give the embedded relay chain node
-the relay chain spec we are using. Finally, we give the embedded relay chain node some peer
-addresses.
+specify the parachain id.
+
+> Remember to change the collator-specific values if you are executing
+> these instructions a second time for a second parachain.
+> You will use the same relay chain chainspec, but need different ports exposed.
+
+> A Parachain node = (full) collator + (full) vallidator node.
+> _Eventually_, this will change to only need a minimal light client for the relay chain node.
+> There is also no such thing as a "light" collator node that does not include an embedded 
+> relay chain node _yet_ - but there will also eventually be options for this.
 
 ## Is It Working?
 
-At this point you should see your collator node running and peering with the relay chain nodes. You
-should _not_ see it authoring parachain blocks yet. Authoring will begin when the collator is
-actually registered on the relay chain (the next step).
+At this point your _collator's logs_ should look something like this:
 
-At this point your collator's logs should look something like this:
-
-```
+```bash
 2021-01-14 15:47:03  Cumulus Test Parachain Collator
 2021-01-14 15:47:03  ✌️  version 0.1.0-4786231-x86_64-linux-gnu
 2021-01-14 15:47:03  ❤️  by Parity Technologies <admin@parity.io>, 2017-2021
@@ -107,10 +113,8 @@ At this point your collator's logs should look something like this:
 2021-01-14 15:47:12  [Relaychain] ✨ Imported #292 (0x26a5…7d91)
 2021-01-14 15:47:14  [Relaychain] 💤 Idle (3 peers), best: #292 (0x1cdf…7cf7), finalized #289 (0xca88…7eb1), ⬇ 256.8kiB/s ⬆ 270.0kiB/s
 2021-01-14 15:47:15  [Parachain] 💤 Idle (0 peers), best: #0 (0x755b…42ca), finalized #0 (0x755b…42ca), ⬇ 814.3kiB/s ⬆ 799.9kiB/s
-2021-01-14 15:47:18  [Relaychain] ✨ Imported #293 (0x93d5…c54c)
-2021-01-14 15:47:19  [Relaychain] 💤 Idle (3 peers), best: #293 (0x93d5…c54c), finalized #290 (0x1109…ea3d), ⬇ 203.6kiB/s ⬆ 200.5kiB/s
-2021-01-14 15:47:20  [Parachain] 💤 Idle (0 peers), best: #0 (0x755b…42ca), finalized #0 (0x755b…42ca), ⬇ 751.0kiB/s ⬆ 730.2kiB/s
-2021-01-14 15:47:24  [Relaychain] ✨ Imported #294 (0xbd35…8364)
-2021-01-14 15:47:24  [Relaychain] 💤 Idle (3 peers), best: #294 (0xbd35…8364), finalized #290 (0x1109…ea3d), ⬇ 175.6kiB/s ⬆ 181.4kiB/s
-2021-01-14 15:47:25  [Parachain] 💤 Idle (0 peers), best: #0 (0x755b…42ca), finalized #0 (0x755b…42ca), ⬇ 727.8kiB/s ⬆ 736.7kiB/s
 ```
+
+You should see your collator node running (alone) and peering with the already 
+running relay chain nodes. You should _not_ see it authoring parachain blocks yet.
+Authoring will begin when the collator is actually **registered on the relay chain**.

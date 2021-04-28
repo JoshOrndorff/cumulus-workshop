@@ -34,12 +34,12 @@ this node using the command above, you can access the node as
 https://polkadot.js.org/apps/#/?rpc=ws://localhost:9944
 
 > Some browsers, notably Firefox, will not connect to a local node from an https website. An easy
-> work around is to try another browser, like Chromium. Another option is to
-> [host this interface locally](https://github.com/polkadot-js/apps#development).
-
+> work around is to try another browser, like Chromium.
+> 
 > At time of writing, this demo works with the hosted version of Apps linked above. If something has
 > changed in the meantime, try to
-> [host the interface locally](https://github.com/polkadot-js/apps#development)
+> [host the interface locally](https://github.com/polkadot-js/apps#development) using the commit
+> that is defined [the version compatablilty](../README#versions-of-software) noted.
 
 ## Start Bob's Node
 

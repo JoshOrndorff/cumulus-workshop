@@ -7,8 +7,8 @@ with Sudo.
 
 ## Registration Transaction
 
-The transaction can be submitted from `Developer > Sudo > parasSudoWrapper > sudoScheduleParaInitialize`
-with the following parameters:
+The transaction can be submitted **on a relay chain node** from 
+`Developer > Sudo > parasSudoWrapper > sudoScheduleParaInitialize` with the following parameters:
 
 - id: `200`
 - genesisHead: upload the file `para-200-genesis` (from the previous step)
@@ -18,7 +18,10 @@ with the following parameters:
 ![Registration screenshot](../../assets/img/registration-screenshot.png)
 
 If you are running a network with more than two validators you can add more parachains through the
-same interface with the parameters adjusted accordingly.
+same interface with the parameters adjusted accordingly. More important details on this in the
+[latter on in this tutorial](en/3-parachains/4-more-nodes).
+
+
 
 ### Block Production
 
@@ -41,10 +44,10 @@ successful. The collator should start producing log messages like the following:
 2021-01-14 16:10:05  [Parachain] 💤 Idle (0 peers), best: #17 (0x4d77…20d0), finalized #16 (0xd7e0…ae67), ⬇ 605.2kiB/s ⬆ 595.0kiB/s
 ```
 
-### Updating Heads
+### Parachian Block Finalization
 
-The relay chain tracks the latest heads of each parachain. When a relay chain block is finalized,
-any parachain blocks that have completed the
+The relay chain tracks the latest blocks (the heads) of each parachain. When a relay chain block
+is finalized, any parachain blocks that have completed the
 [validation process](https://polkadot.network/the-path-of-a-parachain-block/) are also finalized.
 This is how Polkadot achieves shared security.
 

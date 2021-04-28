@@ -17,3 +17,21 @@ also make some on-chain remarks by submitting `Extrinsics` -> `System` -> `remar
 
 If transactions go through as expected, you have a working parachain!
 <!-- In the next section we'll learn about cross-chain transfers. -->
+
+## Cross-chain Message Passing (XCMP)
+
+A parachain is it's own chain, but one key feature of connecting to a _common_ relaychain is the
+ability to communicate _between_ the connected partied. This functionality is a _very active_
+area of development, and for now is not implemented in this workshop. A few things to keep
+in mind when interacting with the various connected chains:
+
+- The relay chain has no parachain state, so can't query parachain data. 
+  Only Proof of Validity (PoV) information resides in relay chain storage: the Wasm runtime 
+  validation functions and PoV headers.
+- The relaychain is not the place to submit extrinsics or gather events data about parachains
+  and vice versa. You should communicate with a _collator_ node directly for parachain operations.
+  - Vertical message passing (VMP) will eventually allow for  
+  - Systems and possibly common-good parachains will likely be accessible directly from relaychain
+    for extrinsics and events, but in general, most parachains are not expected to do this. 
+
+> For a detailed overview, see the [Polkadot wiki on XCMP](https://wiki.polkadot.network/docs/en/learn-crosschain)

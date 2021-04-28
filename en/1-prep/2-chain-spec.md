@@ -10,8 +10,8 @@ with this workshop, or create your own.
 >**you need *at least* three validators in the relay chain!**
 
 Whichever spec you choose to use we will refer to it simply as `spec.json` in the instructions below.
-You will need to supply the proper path to the spec file you are using. These _conventionally_ live
-in a `/res` folder that is published in your node's codebase for others to use. As an example:
+You will need to supply the proper path to the spec file you are using. **These _conventionally_ live**
+**in a `/res` folder that is published in your node's codebase for others to use**. As an example:
 
 - Polkadot includes [these **relay chain** `chainspec` files](https://github.com/paritytech/polkadot/tree/master/node/service/res)
 - Cumulus includes [these **parachain** `chainspec` files](https://github.com/paritytech/cumulus/tree/master/rococo-parachains/res)
