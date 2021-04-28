@@ -11,7 +11,7 @@ and resets of the network happen frequently.
 
 > **IMPORTANT NOTE:** you _must_ use the _same_ commit for cumulus and polkadot `rococo-v1` branch
 > to build your parachain against to be compatible!!! You _must_ test locally registering your
-> parachain sucessfully before you attempt to connect to rococo!
+> parachain successfully before you attempt to connect to rococo!
 
 ** [Polkadot `rococo-v1` branch](https://github.com/paritytech/polkadot/tree/rococo-v1) **
 ** [Cumulus `rococo-v1` branch](https://github.com/paritytech/cumulus/tree/rococo-v1) **
