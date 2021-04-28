@@ -4,6 +4,9 @@ We'll begin by deploying a parachain template with parachain id `200`. These ins
 specifically for parachain id 200, however you can re-use these instructions with any parachain id
 by adjusting occurrences of the number 200 accordingly.
 
+Note that the `parachain-collator` command used below comes from the [substrate-parachain-template repo](https://github.com/substrate-developer-hub/substrate-parachain-template/)
+that we set up in the Preparation/Compiling step.
+
 ## Generate Genesis State
 
 To register a parachain, the relay chain needs to know the parachain's genesis state. The collator

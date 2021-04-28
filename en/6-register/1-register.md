@@ -22,9 +22,8 @@ Rococo relay chain by running at least one Rococo validator nodes.
 ### Building the Validator Node
 
 For the live testnet, you should build the tip of the `rococo-v1` branch in the [Polkadot repository](https://github.com/paritytech/polkadot).
-Compile it with the `real-overseer` feature.
 ```shell
-cargo build --release --features=real-overseer
+cargo build --release
 ```
 
 ### Launching the Validators

@@ -46,7 +46,7 @@ cd polkadot
 git checkout <set this yourself>
 
 # Build the relay chain Node
-cargo build --release --features=real-overseer
+cargo build --release
 
 # Print the help page to ensure the node build correctly
 ./target/release/polkadot --help
