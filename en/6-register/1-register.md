@@ -1,18 +1,33 @@
 # Register a Rococo Parachain
 
-Rococo is Parity's official test network for Cumulus-based parachains. The purpose of this document
-is to guide Cumulus parachain developers through the steps needed to register their parachain with
-the Rococo test network. This page is an _addendum_ to the main workshop. Before you attempt to
-register your parachain on a public testnet like Rococo, we expect that you have done the proper local testing.
-[#Rococo Element chat room](https://app.element.io/#/room/!WuksvCDImqYSxvNmua:matrix.parity.io?via=matrix.org)
+Rococo is Parity's official test network for Cumulus-based parachains.
+
+** [Official Rococo Registration Instructions](https://wiki.polkadot.network/docs/en/build-parachains-rococo#rococo-parachain-requirements) **
+
+Please see the guide above for the most recent instructions. The rest of the document here is for
+reference, but may be outdated vs. the official guide. Also note that from time to time, 
+registration on rococo **will not be allowed** as testing priority is given to the core team
+and resets of the network happen frequently. 
+
+> **IMPORTANT NOTE:** you _must_ use the _same_ commit for cumulus and polkadot `rococo-v1` branch
+> to build your parachain against to be compatible!!! You _must_ test locally registering your
+> parachain successfully before you attempt to connect to rococo!
+
+** [Polkadot `rococo-v1` branch](https://github.com/paritytech/polkadot/tree/rococo-v1) **
+** [Cumulus `rococo-v1` branch](https://github.com/paritytech/cumulus/tree/rococo-v1) **
+
+This network is under _constant development_ - so expect to need to follow progress and update
+your parachains in lock step with the rococo changes if you wish to connect to the network.
+
+Do join the [rococo matrix chat room](https://matrix.to/#/#rococo:matrix.parity.io) to ask questions and connect
+with the rococo teams.
 
 ## Request ROC Tokens
 
 The symbol for the Rococo test network's native currency is ROC. You will need some ROC in order to
 register your Rococo parachain. There is a deposit required to register a parachain (currently 1,000
 ROC) and you will also need some additional ROC in order pay transaction fees. Please use our
-[#Rococo Element chat room](https://app.element.io/#/room/!WuksvCDImqYSxvNmua:matrix.parity.io?via=matrix.org)
-to request ROC tokens.
+[rococo faucet channel](https://matrix.to/#/#rococo-faucet:matrix.org) to request ROC tokens.
 
 ## Launch Rococo Validators
 
@@ -22,9 +37,8 @@ Rococo relay chain by running at least one Rococo validator nodes.
 ### Building the Validator Node
 
 For the live testnet, you should build the tip of the `rococo-v1` branch in the [Polkadot repository](https://github.com/paritytech/polkadot).
-Compile it with the `real-overseer` feature.
 ```shell
-cargo build --release --features=real-overseer
+cargo build --release
 ```
 
 ### Launching the Validators
@@ -72,5 +86,5 @@ the following parameters:
 - `validators`: one validator from the previous step
 - `balance`: the constant value `1000`
 
-Let us know when you have submitted this request (use the Element chat room), and we will do our
-best to get back to you within a day or two.
+Let us know when you have submitted this request (use the rococo matrix chat room), and we will do 
+our best to get back to you within a day or two.

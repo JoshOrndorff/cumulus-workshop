@@ -1,8 +1,13 @@
-# Adding Parachain Nodes
+# Connecting Additional Parachain Nodes
 
 A parachain _can_ work with only a single collator as we've shown already. But that configuration is
 not very decentralized. An adversary would only need to take down a single node to stall the
 parachain.
+
+> You should have _at least_ 2 **validators** (relay chain nodes) running for every **collator**
+> (parachain nodes) on your network! This is why we have included a prebuilt 3 and 4 validator 
+> chainspec for you in [the workshop assets](../README#_1a-using-a-prebuilt-chain-spec), and you
+> can add more as needed, described there.
 
 ## Start the Second Collator
 
@@ -25,7 +30,7 @@ parachain-collator \
   --bootnodes <Alice, and other relay chain collators>
 ```
 
-## Full Nodes
+## Non-Collating Parachain Full Nodes
 
 It is also possible to start non-collating full nodes in the parachain. For these options, simply
 leave out the `--collator` flag.
