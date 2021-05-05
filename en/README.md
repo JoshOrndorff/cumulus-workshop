@@ -63,9 +63,11 @@ be sure that you are testing against the exact same build of that relay chainn.
 
 This workshop has been tested on commits:
 
-- **Polkadot @ [`127eb17a`](https://github.com/paritytech/polkadot?branch=rococo-v1#127eb17a25bbe2a9f2731ff11a65d7f8170f2373)**
-- **Parachain Template @ [`1e1e725`](1e1e7257e4429e8413f5a27940d4941d220317a7)**
-- **Polkadot JS Apps @ [`35b238a `](https://github.com/polkadot-js/apps/commit/35b238a1bfb59a4c4e7488671a7261b54bf314c9)**
+- **Polkadot @ [`943038a`](https://github.com/paritytech/polkadot/commit/943038a888bfaf736142642e2610b248f7af486c)**
+- **Parachain Template @ [`40b8581`](https://github.com/substrate-developer-hub/substrate-parachain-template/commit/40b858149b212e493da08d80e0fc5b06a6b0b72d)**
+- **Polkadot JS Apps @ [`e2b51e6 `](https://github.com/polkadot-js/apps/commit/e2b51e6033f0a0c25fffc037be18d1326e1e8f39)**
+    - _It is generally expected that the [hosted Polkadot JS Apps](https://polkadot.js.org/apps/#/explorer)
+      _should work. If you have issues, build and host this yourself at this commit._
 
 > NOTE: you **must** use these commits exactly to ensure that you do not run into conflicts as parachain development
 > development is actively making breaking changes between commits on these repositories!
