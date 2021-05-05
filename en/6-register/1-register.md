@@ -1,6 +1,6 @@
 # Rococo
 
-Rococo is Parity's official test network for Cumulus-based parachains.
+Rococo is Parity's official test network for cumulus-based parachains.
 
 > **IMPORTANT NOTE:** you _must_ use the _same_ commit for cumulus and polkadot `rococo-v1` branch
 > to build your parachain against to be compatible!!! You _must_ test locally registering your
@@ -116,9 +116,13 @@ And that your parathread registration is *onboarding*:
 > for the candidate to fully onboard to a Parathread.
 
 
-## Slot Auctions
+## Parachain Slot Auction
 
-Only fully onboarded rococo parathreads are eligible to bid in a rococo parachain slot auction. 
+Paratheads can elect to become parachains, where their PoV inclusion in the relay chain is 
+guaranteed for the slot duration they are alloted. Systems parachains will bypass auctions, but 
+all normal chains (including yours) will need to win a parachain slot auction to get one!
+
+> Only fully onboarded rococo parathreads are eligible to bid in a rococo parachain slot auction. 
 
 ### Relevant Values
 
@@ -135,15 +139,23 @@ Only fully onboarded rococo parathreads are eligible to bid in a rococo parachai
 ### Bidding
 
 Anyone with a **fully onboarded parachain** registered can make a bid to win a parachain slot for their Para ID.
+This can be done independently, assuming this individual account can out-bid all others participating in the
+slot auction.
 Do so via the [apps UI](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frococo-rpc.polkadot.io#/parachains/auctions):
 
 Pick your Para ID, how much you want to bid, and the slots you want to bid for:
 
 ![parachain-bid.png](../../assets/img/parachain-bid.png)
 
-#### Crowdloan
+### Crowdloans
 
-You can also make a crowdloan for your Para ID. Note:
+If you _cannot_ (or would rather not) win a slot with the ROCs you have in a single account, you 
+must gather the support of the Rococo community and start a crowdloan that your supporters can
+loan you their ROC to win the auction!
+
+#### Start a Crowdloan
+
+Important notes:
 
 - You can only create a crowdloan for a Para ID that you own / have registered.
 - The crowdfund cap is the MAXIMUM amount your crowdloan can collect. You can still win a bid if you
@@ -164,3 +176,14 @@ You can also make a crowdloan for your Para ID. Note:
 If your extrinsic succeeds, you will get:
 
 ![crowdloan-success.png](../../assets/img/crowdloan-success.png)
+
+#### Fund a Crowdloan
+
+Any Account with a free ROC ballance and elect to contribute to your crowdloan, including the 
+same account that started this crowdloan to begin with from 
+[the apps UI](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frococo-rpc.polkadot.io#/parachains/crowdloan):
+
+![crowdloan-contribute.png](../../assets/img/crowdloan-contribute.png)
+
+Spread the word on the [rococo matrix chat room](https://matrix.to/#/#rococo:matrix.parity.io) about
+your parachain, and rally support to have others loan you the funds you need to win a slot!
