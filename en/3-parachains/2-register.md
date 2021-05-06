@@ -53,8 +53,16 @@ Finally, the collator should start producing log messages like the following:
 ```
 
 > NOTE: your parachain collator is the _only home of all parachain data_ as there is only one node
-> on your network! The Relaychain only stores _header_ information! If you loose your parachina DB
+> on your network! The Relaychain only stores _header_ information! If you loose your parachian DB
 > (my using `--tmp` for you collator as an example) you will **NOT** be able to recover the chain!
+
+If you _must_ purge your chain, you need to deregister and re-register! To purge the collator DB,
+run:
+
+```bash
+parachain-collator purge-chain\
+  --base-path <your collator DB path set above> \  # <-- set a proper path
+```
 
 ### Parachian Block Finalization
 
