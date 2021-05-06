@@ -5,7 +5,7 @@ specifically for parachain id 200, however you can re-use these instructions wit
 by adjusting occurrences of the number 200 accordingly.
 
 Note that the `parachain-collator` command used below comes from the [substrate-parachain-template repo](https://github.com/substrate-developer-hub/substrate-parachain-template/)
-that we set up in the [Preparation/Compiling step]((../README#versions-of-software) at a _specific_ commit.
+that we set up in the [Preparation/Compiling step](/#versions-of-software) at a _specific_ commit.
 
 ## Generate Parachain Genesis State
 

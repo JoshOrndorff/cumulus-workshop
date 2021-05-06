@@ -31,7 +31,7 @@ instructions at https://substrate.dev/docs/en/knowledgebase/getting-started/
 
 <!-- > You may skip this step if you prefer to use docker to run nodes. -->
 
-Clone the Polkadot repository, and build the node. We are using a [specific commit](../README#versions-of-software) for this workshop.
+Clone the Polkadot repository, and build the node. We are using a [specific commit](/#versions-of-software) for this workshop.
 Perform these steps in your typical workspace directory.
 
 ```bash

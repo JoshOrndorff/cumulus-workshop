@@ -39,7 +39,7 @@ https://polkadot.js.org/apps/#/?rpc=ws://localhost:9944
 > At time of writing, this demo works with the hosted version of Apps linked above. If something has
 > changed in the meantime, try to
 > [host the interface locally](https://github.com/polkadot-js/apps#development) using the commit
-> that is defined [the version compatablilty](../README#versions-of-software) noted.
+> that is defined [the version compatablilty](/#versions-of-software) noted.
 
 ## Start Bob's Node
 
