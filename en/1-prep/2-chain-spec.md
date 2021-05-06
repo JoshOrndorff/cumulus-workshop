@@ -197,6 +197,12 @@ Now that you've created your spec, you can generate the final raw spec file.
 polkadot build-spec --chain rococo-custom-plain.json --raw --disable-default-bootnode > rococo-custom.json
 ```
 
+> If as a result of running the above command some message like
+> ```
+> Took active validators from set with wrong size
+> ```
+> is prompted, don't worry, the resulting spec will be **perfectly usable** and that warning is nothing you should be concerned about.
+
 > Your final spec _must_ start with the word `rococo` or the node will not know what runtime logic
 > it includes.
 
