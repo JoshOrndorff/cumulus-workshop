@@ -17,6 +17,8 @@ The transaction can be submitted **on a relay chain node** from
 
 ![Registration screenshot](../../assets/img/registration-screenshot.png)
 
+This successful dispatch will emit the `sudo.Sudid` event, viewable in the relay chain explorer page.
+
 If you are running a network with more than two validators you can add more parachains through the
 same interface with the parameters adjusted accordingly. More important details on this in the
 [latter on in this tutorial](en/3-parachains/4-more-nodes).
@@ -26,10 +28,10 @@ same interface with the parameters adjusted accordingly. More important details 
 ### Block Production
 
 The collator should start producing parachain blocks (aka collating) once the registration is
-successful. **look in the block explorer tab on the Apps ui for a `parasInherent.enter` event -**
+successful. **Look in the block explorer tab on the Apps ui for a `parasInherent.enter` event -**
 **this signals that the parachain is now active**.
 
-> This may take a while! be patcient as you need to wait for a new session to begin first.
+> This may take a while! be patient as you need to wait for a new session to begin first.
 > This is 10 blocks for the 
 > [included rococo `chain-spec.json`](en/1-prep/2-chain-spec?id=_1a-using-a-prebuilt-chain-spec) 
 > in this workshop's files.
@@ -52,17 +54,26 @@ Finally, the collator should start producing log messages like the following:
 2021-01-14 16:10:05  [Parachain] 💤 Idle (0 peers), best: #17 (0x4d77…20d0), finalized #16 (0xd7e0…ae67), ⬇ 605.2kiB/s ⬆ 595.0kiB/s
 ```
 
-> NOTE: your parachain collator is the _only home of all parachain data_ as there is only one node
-> on your network! The Relaychain only stores _header_ information! If you loose your parachian DB
+#### Collator Data Base Corruption or Loss
+
+> NOTE: your sole collator is the _only home of all parachain data_ as there is only one node
+> on your entire network! Relay chains only store _header_ information! If the parachian DB is lost
 > (my using `--tmp` for you collator as an example) you will **NOT** be able to recover the chain!
 
-If you _must_ purge your chain, you need to deregister and re-register! To purge the collator DB,
-run:
+If you _must_ purge your chain, you need to deregister and re-register! It may be easier in testing
+to instead purge all the chains. To purge the collator DB run:
 
 ```bash
+# Purge the collator(s)
 parachain-collator purge-chain\
   --base-path <your collator DB path set above> \  # <-- set a proper path
+
+# Purge the validator(s)
+polkadot purge-chain\
+  --base-path <your collator DB path set above> \  # <-- set a proper path
 ```
+
+Then register from a [blank slate](#registration-transaction) again.
 
 ### Parachian Block Finalization
 
