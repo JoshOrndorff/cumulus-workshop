@@ -64,7 +64,7 @@ specify the parachain id.
 
 > Remember to change the collator-specific values if you are executing
 > these instructions a second time for a second parachain.
-> You will use the same relay chain chainspec, but need different ports exposed.
+> You will use the same relay chain chain spec, but need different ports exposed.
 
 > A Parachain node = (full) collator + (full) vallidator node.
 > _Eventually_, this will change to only need a minimal light client for the relay chain node.

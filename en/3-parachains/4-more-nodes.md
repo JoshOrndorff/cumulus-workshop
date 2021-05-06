@@ -6,7 +6,7 @@ parachain.
 
 > You should have _at least_ 2 **validators** (relay chain nodes) running for every **collator**
 > (parachain nodes) on your network! This is why we have included a prebuilt 3 and 4 validator 
-> chainspec for you in [the workshop assets](../README#_1a-using-a-prebuilt-chain-spec), and you
+> chain spec for you in [the workshop assets](../README#_1a-using-a-prebuilt-chain-spec), and you
 > can add more as needed, described there.
 
 ## Start the Second Collator
@@ -43,6 +43,6 @@ parachain-collator \
   --port <Your chosen libp2p port> \
   --parachain-id <Your ID> \
   -- \ # Any flags after this -- go to the embedded polkadot node
-  --chain spec.json \
+  --chain <relay chain spec json> \
   --bootnodes <Alice, Bob, and other relay chain collators>
 ```
