@@ -26,7 +26,15 @@ same interface with the parameters adjusted accordingly. More important details 
 ### Block Production
 
 The collator should start producing parachain blocks (aka collating) once the registration is
-successful. The collator should start producing log messages like the following:
+successful. **look in the block explorer tab on the Apps ui for a `parasInherent.enter` event -**
+**this signals that the parachain is now active**.
+
+> This may take a while! be patcient as you need to wait for a new session to begin first.
+> This is 10 blocks for the 
+> [included rococo `chain-spec.json`](en/1-prep/2-chain-spec?id=_1a-using-a-prebuilt-chain-spec) 
+> in this workshop's files.
+
+Finally, the collator should start producing log messages like the following:
 
 ```
 2021-01-14 16:09:54  [Relaychain] ✨ Imported #519 (0x7c22…71b8)
@@ -43,6 +51,10 @@ successful. The collator should start producing log messages like the following:
 2021-01-14 16:10:04  [Relaychain] 💤 Idle (4 peers), best: #520 (0x0ecb…4dba), finalized #518 (0x15df…f3fa), ⬇ 282.0kiB/s ⬆ 275.3kiB/s
 2021-01-14 16:10:05  [Parachain] 💤 Idle (0 peers), best: #17 (0x4d77…20d0), finalized #16 (0xd7e0…ae67), ⬇ 605.2kiB/s ⬆ 595.0kiB/s
 ```
+
+> NOTE: your parachain collator is the _only home of all parachain data_ as there is only one node
+> on your network! The Relaychain only stores _header_ information! If you loose your parachina DB
+> (my using `--tmp` for you collator as an example) you will **NOT** be able to recover the chain!
 
 ### Parachian Block Finalization
 

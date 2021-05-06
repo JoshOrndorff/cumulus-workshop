@@ -9,7 +9,7 @@ spec that ships with this workshop as well as general instructions for starting 
 ```bash
 polkadot \
   --chain <path to spec json> \
-  --tmp \
+  --base-path /tmp/relay-alice \
   --ws-port 9944 \
   --port 30333 \
   --alice
@@ -46,7 +46,7 @@ https://polkadot.js.org/apps/#/?rpc=ws://localhost:9944
 ```bash
 polkadot \
   --chain <path to spec json> \
-  --tmp \
+  --base-path /tmp/relay-bob \
   --ws-port 9955 \
   --port 30334 \
   --bob \
@@ -70,7 +70,7 @@ make sure that nodes on the same physical system do not have conflicting ports o
 ```bash
 polkadot \
   --chain <path to spec json> \
-  --tmp \
+  --base-path /tmp/relay-charlie \
   --ws-port 9966 \           # Any unused port
   --port 30335 \             # Any unused port
   --charlie                  # The appropriate key for your validator

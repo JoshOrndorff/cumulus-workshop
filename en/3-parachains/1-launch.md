@@ -42,7 +42,7 @@ relay chain spec we used when launching relay chain nodes.
 ```bash
 parachain-collator \
   --collator \
-  --tmp \
+  --base-path /tmp/parachain-alice \
   --parachain-id 200 \
   --port 40333 \
   --ws-port 9844 \
