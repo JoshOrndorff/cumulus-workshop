@@ -9,14 +9,14 @@ with this workshop, or create your own.
 > **For example, if you want to connect two parachains,**
 >**you need *at least* three validators in the relay chain!**
 
-Whichever spec you choose to use we will refer to it simply as `spec.json` in the instructions below.
+Whichever spec you choose to use we will refer to it simply as `chain-spec.json` in the instructions below.
 You will need to supply the proper path to the spec file you are using. **These _conventionally_ live**
 **in a `/res` folder that is published in your node's codebase for others to use**. As an example:
 
-- Polkadot includes [these **relay chain** `chainspec` files](https://github.com/paritytech/polkadot/tree/master/node/service/res)
-- Cumulus includes [these **parachain** `chainspec` files](https://github.com/paritytech/cumulus/tree/master/rococo-parachains/res)
+- Polkadot includes [these **relay chain** `chain-spec.json` files](https://github.com/paritytech/polkadot/tree/master/node/service/res)
+- Cumulus includes [these **parachain** `chain-spec.json` files](https://github.com/paritytech/cumulus/tree/master/rococo-parachains/res)
 
-> If you intend to let other connect to your network **you must** have the genesis Wasm the associated and chainspec
+> If you intend to let other connect to your network **you must** have the genesis Wasm the associated and chain spec
 > for your network on _one machine_ and have a way for all other nodes to copy this _exact file_ on starting thier nodes.
 > This stems from [non-determinism](https://dev.to/gnunicorn/hunting-down-a-non-determinism-bug-in-our-rust-wasm-build-4fk1))
 > in the way Wasm runtimes are compiled, at least for now. Thus including it in your codebase is best practice!
@@ -38,15 +38,15 @@ local test network:
   chain with Alice and Bob as authorities. Useful for registering a single parachain. 
   **This is a direct export of the `rococo-local` spec that is**
   **[included in polkadot](https://github.com/paritytech/polkadot/tree/master/node/service/res).**
-  - Plain chainspec: <a href="shared/chainspecs/rococo-custom-plain.json" download>shared/chainspecs/rococo-custom-plain.json</a> 
+  - Plain chain spec: <a href="shared/chainspecs/rococo-custom-plain.json" download>shared/chainspecs/rococo-custom-plain.json</a> 
 
 - <a href="shared/chainspecs/rococo-custom-3.json" download>shared/chainspecs/rococo-local-3.json</a>: A three-validator relay chain
   identical to `rococo-custom.json` but with Charlie as a third validator.
-  - Plain chainspec:  <a href="shared/chainspecs/rococo-custom-plain-3.json" download>shared/chainspecs/rococo-custom-plain-3.json</a>  
+  - Plain chain spec:  <a href="shared/chainspecs/rococo-custom-plain-3.json" download>shared/chainspecs/rococo-custom-plain-3.json</a>  
 
 - <a href="shared/chainspecs/rococo-custom-4.json" download>shared/chainspecs/rococo-local-4.json</a>: A four-validator relay chain
   identical to `rococo-custom.json` but with Charlie and Dave as a third and fourth validator.s
-  - Plain chainspec: <a href="shared/chainspecs/rococo-custom-plain-4.json" download>shared/chainspecs/rococo-custom-plain-4.json</a> 
+  - Plain chain spec: <a href="shared/chainspecs/rococo-custom-plain-4.json" download>shared/chainspecs/rococo-custom-plain-4.json</a> 
 
 All `*plain.json` files included are used to inspect in a more human readable and modifiable format that can also be used to derive 
 a [new custom raw spec](#adjust-the-chain-spec).
@@ -185,7 +185,7 @@ case of ECDSA keys (see [the note below](#ss58-encoding-of-key-vs-address) on wh
 
 Now that you have all the keys you need, append them in the `palletSession` section of you *plain* spec file.
 You can either create new IDs or use other well known accounts following this same process.
-You can also proceed with the **raw** `spec.json` files [mentioned above](#using-a-prebuilt-chain-spec).
+You can also proceed with the **raw** `chain-spec.json` files [mentioned above](#using-a-prebuilt-chain-spec).
 
 ---
 
@@ -193,19 +193,22 @@ You can also proceed with the **raw** `spec.json` files [mentioned above](#using
 
 Now that you've created your spec, you can generate the final raw spec file.
 
+> Your final spec _must_ start with the word `rococo` or the node will not know what runtime logic
+> it includes.
+
 ```bash
 polkadot build-spec --chain rococo-custom-plain.json --raw --disable-default-bootnode > rococo-custom.json
 ```
 
-> Your final spec _must_ start with the word `rococo` or the node will not know what runtime logic
-> it includes.
+You may get the output warning: `Took active validators from set with wrong size`.
+The resulting `chain-spec.json` will still be **perfectly usable**, you can ignore this safely.
 
 ## Further Resources
 
 This custom session key addition in the plain is not needed for **production chains** - as these 
 are generated for you from your `chain-spec.rs` file more simply and concretely. This exercise above is 
 used because you _must recompile your node_ for just adding authorities in this case!
-So if all you need to do is configure minor things off of a know base chainspec, as we did, you will want
+So if all you need to do is configure minor things off of a know base chain spec, as we did, you will want
 to set the information in `chain-spec.rs`, and generate the binary and finally use the CLI to generate 
 your custom chain spec. 
 

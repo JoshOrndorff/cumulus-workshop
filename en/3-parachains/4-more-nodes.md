@@ -6,7 +6,7 @@ parachain.
 
 > You should have _at least_ 2 **validators** (relay chain nodes) running for every **collator**
 > (parachain nodes) on your network! This is why we have included a prebuilt 3 and 4 validator 
-> chainspec for you in [the workshop assets](../README#_1a-using-a-prebuilt-chain-spec), and you
+> chain spec for you in [the workshop assets](/#_1a-using-a-prebuilt-chain-spec), and you
 > can add more as needed, described there.
 
 ## Start the Second Collator
@@ -17,12 +17,12 @@ we used to start the first collator, but again we need to avoid conflicting port
 ```bash
 parachain-collator \
   --collator \
-  --tmp
+  --base-path /tmp/parachain-bob \         # <-- set a proper path
   --parachain-id <Your ID> \
   --port <Your chosen libp2p port> \
   --ws-port <Your chosen websocket port> \
   --bootnodes <Your first collator> \
-  --bob \
+  --bob \                                  # <-- set a proper authority
   -- \ # Any flags after this -- go to the embedded polkadot node
   --chain <relay chain spec json> \
   --port <Your chosen libp2p port> \
@@ -37,12 +37,12 @@ leave out the `--collator` flag.
 
 ```bash
 parachain-collator \
-  --tmp
+  --base-path <a DB base path> \           # <-- set a proper path
   --bootnodes <Your first collator> \
   --ws-port <Your chosen websocket port> \
   --port <Your chosen libp2p port> \
   --parachain-id <Your ID> \
   -- \ # Any flags after this -- go to the embedded polkadot node
-  --chain spec.json \
+  --chain <relay chain spec json> \
   --bootnodes <Alice, Bob, and other relay chain collators>
 ```

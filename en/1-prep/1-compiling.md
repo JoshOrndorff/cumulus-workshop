@@ -31,7 +31,7 @@ instructions at https://substrate.dev/docs/en/knowledgebase/getting-started/
 
 <!-- > You may skip this step if you prefer to use docker to run nodes. -->
 
-Clone the Polkadot repository, and build the node. We are using a [specific commit](../README#versions-of-software) for this workshop.
+Clone the Polkadot repository, and build the node. We are using a [specific commit](/#versions-of-software) for this workshop.
 Perform these steps in your typical workspace directory.
 
 ```bash
@@ -42,7 +42,7 @@ git clone https://github.com/paritytech/polkadot.git
 cd polkadot
 
 # Checkout the proper commit
-git checkout 943038a
+git checkout 127eb17a
 
 # Build the relay chain Node
 cargo build --release
@@ -76,7 +76,7 @@ git clone  https://github.com/substrate-developer-hub/substrate-parachain-templa
 cd substrate-parachain-template
 
 # Checkout the proper commit
-git checkout 40b8581
+git checkout 1e1e725
 
 # Build the parachain template collator
 cargo build --release

@@ -1,4 +1,4 @@
-# Copyable snippets for chainspecs
+# Copyable snippets for chain specs
 
 To get these, you _must rebuild polkadot_ with the `chain_spec.rs` set with the authorities (and more) you want configured.
 Then follow the [instructions](../../en/1-prep/2-chain-spec#generate-a-plain-chain-spec)
