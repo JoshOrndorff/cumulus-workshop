@@ -24,10 +24,6 @@ Rococo测试网的本地货币标志是ROC。为了注册您的Rococo平行链�
 
 为了可以在注册前体验Rococo, 并鼓励您的团队支持Rococo上的众筹，请不要使用主要的聊天室，请使用我们[rococo faucet channel] (https://matrix.to/#/#rococo-faucet:matrix.org) 来索要一些ROC代币。
 
-As you will need more than the faucet practically allows for to register, please join and ask in
-the [rococo matrix chat room](https://matrix.to/#/#rococo:matrix.parity.io), one of the Parity team
-will get you setup if you let us know (with some proof) that you have a parachain ready to register.
-
 因为您所需要的不仅仅是允许注册，请加入并在[rococo matrix chat room](https://matrix.to/#/#rococo:matrix.parity.io)提问。如果您让我们知道（并提供证据）证明您有一个平行链准备注册，Parity团队的成员会帮您设置
 
 
