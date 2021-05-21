@@ -14,11 +14,6 @@
 
 这个 Substrate Developer Hub 描述了如何创建一个本地的开发环境。请按照这里的指示： https://substrate.dev/docs/en/knowledgebase/getting-started/ 。
 
-
-> 这个工作间众所周知可以运行在Linux，MacOS,以及Windows子系统中的Linux。
-> 建议您可以使用其中的一个平台。如果您必须在Windows本地构建，请尝试DevHub的[Windows安装说明](https://substrate.dev/docs/en/knowledgebase/getting-started/windows-users)。
-> 将尽最大的努力支持这个工作间在Windows运行，但是不能保证。
-
 ## 构建一个中继链节点
 
 > 如果您喜欢用docker来运行节点，可以跳过此步骤。
@@ -27,21 +22,21 @@
 
 
 ```bash
-# 克隆polkadot仓库
+# 克隆polkadot数据库
 git clone https://github.com/paritytech/polkadot.git
 
 # 切换到polkadot目录
 cd polkadot
 
 # 切换到合适的分支
-git checkout 93f0029
+git checkout 127eb17a
 
 # 建立合适的Rust版本去编译这个工作间
 rustup install nightly-2020-10-06
 rustup target add wasm32-unknown-unknown --toolchain nightly-2020-10-06
 
 # 构建中继链节点
-cargo +nightly-2020-10-06 build --release
+cargo build --release
 
 # 打印帮助页面，确保节点被正确构建
 ./target/release/polkadot --help
@@ -49,7 +44,7 @@ cargo +nightly-2020-10-06 build --release
 
 如果打印了帮助页面，那么您已经成功的构建了一个Polkadot节点。
 
-对于这个工作间的剩余部分，当我们需要去运行这个二进制文件时，我们更喜欢简称为`polkadot`。您可能将刚刚构建的二进制文件移动到更方便的地方，或者将它保留在原处。您需要恰当的输入它的完整路径。
+对于这个工作间的剩余部分，当我们需要去运行这个二进制文件时，我们将其简称为`polkadot`。您可能将刚刚构建的二进制文件移动到更方便的地方，或者将它保留在原处。您需要恰当的输入它的完整路径。
 
 ## 构建一个收集者模板
 
@@ -60,13 +55,13 @@ cargo +nightly-2020-10-06 build --release
 
 ```bash
 # 克隆平行链模板
-git clone https://github.com/substrate-developer-hub/substrate-parachain-template.git
+git clone https://github.com/substrate-developer-hub/substrate-parachain-template
 
 # 切换到平行链目录
 cd substrate-parachain-template
 
 # 切换到合适的分支
-git checkout 9506b93
+git checkout 1e1e725
 
 # 构建平行链模板的收集者节点
 cargo build --release
@@ -74,10 +69,6 @@ cargo build --release
 # 打印帮助页面，确保节点被正确构建
 ./target/release/parachain-collator --help
 ```
-
-> 偶尔构建的时候会失败 `error: package collision in the lockfile` 在这种情况下，
-> 只要简单的再次运行构建的命令就可以成功了。 更多信息，请参见
-> https://github.com/paritytech/cumulus/issues/174
 
 如果打印了帮助页面，就表示您已经成功的构建了基于Cumulus的平行链收集者节点。
 
@@ -122,6 +113,6 @@ parachain-collator --para-args -- --relay-args
 docker run --network host joshyorndorff/cumulus-workshop-parachain-collator --para-args -- --relay-args
 ```
 
-通过这个工作间，当我们需要去构建节点时，我们更喜欢它们被称之为`polkadot`和`parachain-collator`。您只需要将这些命令转换为合适的docker命令。
+通过这个工作间，当我们需要去构建节点时，我们将它们被称之为`polkadot`和`parachain-collator`。您只需要将这些命令转换为合适的docker命令。
 
 -->

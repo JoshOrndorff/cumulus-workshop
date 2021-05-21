@@ -5,4 +5,3 @@
 通过添加存储项修改这个托盘。
 
 遵循[PoE tutorial](https://substrate.dev/docs/en/tutorials/build-a-dapp/)。尽管它是为节点模板编写的，但是在这里它的工作方式几乎相同。
-

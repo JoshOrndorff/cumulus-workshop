@@ -18,12 +18,13 @@ polkadot \
 这个port和ws-port的端口是默认的，因此那些标志也可以被省略掉。然后，我选择留下它们以强制检查它们的值的习惯。由于Alice使用的是默认值，所以在中继链或者平行链的其它节点不能使用这些端口。
 
 
-当节点启动时，您将看到许多日志消息。注意下面这个例子。这里列出了Alice的peerId。我们需要它来连接其它的节点。
-
-
-```
-Local node identity is: 12D3KooWLRPJAA6CrXP14FRJztzCh4JmgtRzKWpiBjL3BtseEfyv
-```
+当节点启动时，您将看到许多日志消息。**记下其节点的对等ID** 
+> 在日志中。将其他节点连接到她时，我们将需要它。看起来_像_
+>这个: 
+>
+> ```bash
+> 🏷 Local node identity is: 12D3KooWGjsmVmZCM1jPtVNp6hRbbkGBK3LADYNniJAKJ19NUYiq
+> ```
 
 ### 连接应用程序UI
 

@@ -9,22 +9,30 @@
 如果您已经按照这些说明进行了操作，您可以在https://polkadot.js.org/apps/#/?rpc=ws://localhost:9977连接到Alice的节点。
 
 
-## 添加自定义类型
-
-收集者已经引入了前端不知道的自定义数据类型。为了正确的解码交易信息，我们必须告诉前端这些类型。在`Settings` -> `Developer` 栏中输入下面的json。
-
-
-```json
-{
-  "Address": "AccountId",
-  "LookupSource": "AccountId"
-}
-```
-
 ## 提交交易
 
 您可以进行一些简单的代币转账以确保平行链正常运行。您也可以通过提交`Extrinsics` -> `System` -> `remark`来进行链上的备注。
 
 
-如果交易事务像期待中的运行的话，您就有了一个正在工作的平行链！在下一节中我们将学习关于跨链转账。
+如果交易事务像期待中的运行的话，您就有了一个正在工作的平行链！如果出现UI错误指示“无法在节点和运行时之间转换参数`tx”：No such variant in 
+enum MultiSignature"，进入“设置”->“开发人员”并添加以下元数据类型：
 
+```json
+{
+  "Address": "MultiAddress",
+  "LookupSource": "MultiAddress"
+}
+```
+
+
+## 跨链消息传递（XCMP）
+
+
+副链是它自己的链，但是连接到_common_中继链的一个关键功能是能够在连接的参与者之间进行通信。此功能非常活跃开发领域，目前尚未在此研讨会中实施。需要保留的几件事与各种连接的链进行交互时，请牢记：
+
+- 中继链没有平行链状态，因此无法查询平行链数据。仅有效性证明（PoV）信息驻留在中继链存储中：Wasm运行时验证功能和PoV标头。
+- 中继链不是提交外部信息或收集有关平行链的事件数据的地方,反之亦然。您应直接与_collat​​or_节点通信以进行平行链操作。
+  - 垂直消息传递（VMP）最终将允许
+  - 可以直接从中继链访问系统和可能的共同利益旁链用于外部和事件，但一般而言，大多数平行链都不希望这样做。
+
+> 有关详细概述，请参见[Polkadot wiki on XCMP](https://wiki.polkadot.network/docs/en/learn-crosschain)
