@@ -78,6 +78,9 @@ cd substrate-parachain-template
 # Checkout the proper commit
 git checkout 1e1e725
 
+# Set up the environment
+./scripts/init.sh
+
 # Build the parachain template collator
 cargo build --release
 
