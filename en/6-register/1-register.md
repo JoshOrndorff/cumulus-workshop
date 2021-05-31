@@ -2,12 +2,12 @@
 
 Rococo is Parity's official test network for cumulus-based parachains.
 
-> **IMPORTANT NOTE:** you _must_ use the _same_ commit for cumulus and polkadot `rococo-v1` branch
+> **IMPORTANT NOTE:** you _must_ use the _same_ commit for cumulus and polkadot branch
 > to build your parachain against to be compatible!!! You _must_ test locally registering your
 > parachain successfully before you attempt to connect to rococo!
 
-** [Polkadot `rococo-v1` branch](https://github.com/paritytech/polkadot/tree/rococo-v1) **
-** [Cumulus `rococo-v1` branch](https://github.com/paritytech/cumulus/tree/rococo-v1) **
+** [Polkadot `v0.9.3` branch](https://github.com/paritytech/polkadot/tree/v0.9.3) **
+** [Cumulus `polkadot-v0.9.3` branch](https://github.com/paritytech/cumulus/tree/polkadot-v0.9.3) **
 
 This network is under _constant development_ - so expect to need to follow progress and update
 your parachains in lock step with the rococo changes if you wish to connect to the network.
@@ -88,20 +88,23 @@ The **AccountId** (address) that you used to make this call is going to become y
 Thus you want to have an account setup and funded already, so
 [request some ROC](en/6-register/1-register?id=request-roc-tokens) an account first via the faucet. 
 
-## Register as a Parathread
+## Reserve a ParaID
 
-All Parachains will need to Register as a "parathread" first. To do this, you need:
+All Parachains will need to Register 
 
-- A _unique_ `para_id` (one that has not been previously registered,
-  [check the listings](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frococo-rpc.polkadot.io#/accounts))
-  - This integer _must_ be greater than `1000`, as `0-999` are _reserved_ for systems parachains!
-- `initial_head_state`: your parachain's genesis state ([Same process as before](en/3-parachains/1-launch#generate-parachain-genesis-state))
-- `validation_function`: the Wasm runtime for your parachain ([Same process as before](en/3-parachains/1-launch#obtain-wasm-runtime-validation-function))
+## Register a Parathread
+
+All non-system parachains must first register as Parathread before they can obtain a slot on a production network.
+To do this, you need:
+
+- A ParaID reserved with an account you control. ([Same process as before](en/2-relay-chain/2-reserve))
+- `code`: the Wasm runtime for your parachain ([Same process as before](en/3-parachains/1-launch#obtain-wasm-runtime-validation-function))
+- `initial_state`: your parachain's genesis state ([Same process as before](en/3-parachains/1-launch#generate-parachain-genesis-state))
 
 Submit the required fields in the 
 [apps UI here](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frococo-rpc.polkadot.io#/parachains/parathreads)
 
-![register-parathread.png](../../assets/img/register-parathread.png)
+![parathread-register.png](../../assets/img/parathread-register.png)
 
 If your extrinsic succeeds, you will see this in the explorer's block data:
 

@@ -42,7 +42,7 @@ git clone https://github.com/paritytech/polkadot.git
 cd polkadot
 
 # Checkout the proper commit
-git checkout 127eb17a
+git checkout aa386760
 
 # Build the relay chain Node
 cargo build --release
@@ -68,6 +68,10 @@ that we will use to launch our first parachains and make cross-chain asset trans
 use it as a starting point for developing our own parachains. Perform these steps in your typical
 workspace directory.
 
+> NOTE: unless you have a _massive amount of RAM_ you will need to wait for the 
+> relay chain to compile _before_ you compile your chain. Each take ~12 GB minimum of RAM at peak 
+> to complete.
+
 ```bash
 # Clone the Parachain Template
 git clone  https://github.com/substrate-developer-hub/substrate-parachain-template
@@ -76,7 +80,7 @@ git clone  https://github.com/substrate-developer-hub/substrate-parachain-templa
 cd substrate-parachain-template
 
 # Checkout the proper commit
-git checkout 1e1e725
+git checkout df34c27d
 
 # Build the parachain template collator
 cargo build --release
