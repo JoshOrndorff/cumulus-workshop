@@ -4,15 +4,13 @@
 
 在这个亲自动手的工作间，参与者们将开始一个类似波卡的中继链，注册平行链，实现跨链转账，以及通过使用 Cumulus 将他们自己的 Substrate 运行时逻辑转换成平行链。
 
-##先决条件
+## 先决条件
 
+在开始之前，您需要进行 **Substrate 彻底检查** 并确保您的硬件可以构建和运行这组（资源密集型）软件。
 
-在开始之前，您需要进行 ** substrate彻底检查** 并确保您的硬件可以构建和运行这组（资源密集型）软件。
+### Substrate 运行要求
 
-### Substrate要求 
-
-
-如果您_没有_任何以前的substrate经验，您可能不理解或
+如果您 _没有_ 任何以前的 Substrate 经验，您可能不理解或
 不能完成本教程。在继续之前，请完成以下教程：
 
 - [创建您的第一个Substrate Chain](https://substrate.dev/docs/en/tutorials/create-your-first-substrate-chain/)
@@ -22,16 +20,15 @@
 
 ### 硬件要求
 
-任何机器都可以_处理构建平行链模板，但这是一个_非常_资源密集型的过程！
+任何机器都可以处理构建平行链模板，但这是一个 _非常_ 资源密集型的过程！
 我们建议在具有**不少于**的机器上运行这些构建：
 - 16 GB 内存（建议 32）
 - 4 个 CPU 内核（建议 8 个）
 - 50 GB 的可用 HDD/SSD 空间
 
-如果这里没有最小的 RAM，您很可能 ** 内存不足，导致 `SIGKILL` 错误！**
+如果这里没有最少的 RAM 數量，您很可能 **内存不足，导致有 `SIGKILL` 報错！**
 这通常发生在 `polkadot-service` 构建中 - 所以一定要*监控你的 RAM 使用情况*
 （类似于 [htop](https://htop.dev/)）并注意开始使用交换。
-
 
 如果你不能在这里使用最低限度的机器，你可以尝试一些交易时间更长的东西
 限制 RAM 使用的次数。
@@ -47,18 +44,15 @@ RUSTFLAGS="-C codegen-units=1" cargo build --release
 货物构建 --release -j 1
 ```
 
-
 尝试一种或两种方法一起使用，以换取有限 RAM 机器的时间。
 
 > 最终`polkadot-service` 将不那么单一，但目前这是一个低优先级。
 > 它为 polkadot 存储库中的_每个网络_ 构建一个节点。
 
-## 软件的版本
+## 软件版本
 
-目前，平行链与中继链的代码库_非常紧密地耦合_它们是
-连接到。如果你想将你的 parachian 连接到一个正在运行的中继网络，比如
-[rococo](https://wiki.polkadot.network/docs/en/build-parachains-rococo) 测试网络，你_必须_
-确保您正在针对该中继链的完全相同的构建进行测试。
+目前，平行链与中继链的代码库是 _非常紧密地耦合_ 的。如果你想将你的平行链 连接到一个正在运行的中继网络，比如
+[rococo](https://wiki.polkadot.network/docs/en/build-parachains-rococo) 测试网络，你 _必须_ 确保您正在针对该中继链的完全相同的构建进行测试。
 
 该工作间已经经过测试：
 - **Polkadot @ [`127eb17a`](https://github.com/paritytech/polkadot/commit/127eb17a25bbe2a9f2731ff11a65d7f8170f2373)**
@@ -68,5 +62,5 @@ RUSTFLAGS="-C codegen-units=1" cargo build --release
       _should_ work. 如果您有问题，请在此提交时自己构建和托管此 UI。
 
 
-> 注意：您 ** 必须** 准确地使用这些提交，以确保您不会在平行链开发中遇到冲突
-> 开发正在积极地在这些存储库的提交之间进行重大更改！
+> 注意：由於平行鏈開發在如火如荼的進行著，經常出現最新版本不兼容舊版本情況，請 **必须**
+> 使用这些提交版本，以确保您不会在平行链开发中遇到冲突。

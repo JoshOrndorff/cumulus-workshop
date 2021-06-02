@@ -2,23 +2,29 @@
 
 这个工作间包含了准备一条中继链，连接平行链，链之间资产的转账，以及开发您自己的平行链运行时逻辑的所有过程。自然而然地，如果您想要构建自己所有的内容，会有一些更值得注意的编译。（如果您喜欢使用Docker镜像，则可以避免编译波卡和平行链的模板节点。）
 
+<!--
 ## 缩短工作间
 如果您打算要给这个现场工作间使用这份材料，您应该通过削减最后的步骤去缩短它。如果您的工作间不包括编写您自己的平行链，您可以通过使用提供的docker镜像去跳过所有的编译。
 
 如果您喜欢关注您工作间上的主要开发，您也可以跳过初始的中继链配置，通过执行那些您为工作间准备的步骤或者使用公共的rococo测试网。有关创建基于云的中继链的说明可以看[Setting Up The Bootnode](../SettingUpTheBootnode.md)
+-->
 
-## 安装Substrate的前提条件
+## 安装 Substrate 的先決条件
 
+<!--
 > 如果您不想开发您自己的运行时逻辑，以及更喜欢用docker而不是本地构建的二进制文件，
 > 那么您可以跳过此步骤。
+-->
 
 这个 Substrate Developer Hub 描述了如何创建一个本地的开发环境。请按照这里的指示： https://substrate.dev/docs/en/knowledgebase/getting-started/ 。
 
 ## 构建一个中继链节点
 
+<!--
 > 如果您喜欢用docker来运行节点，可以跳过此步骤。
+-->
 
-克隆Polkadot仓库，以及运行节点。我们正在为这个工作间使用具体的提交。在您的标准的工作间目录执行这些步骤。
+克隆 Polkadot 仓库，以及运行节点。我们需要用上某個[特定 git 提交](/#软件版本)。請在您的目录內执行这些步骤。
 
 
 ```bash
@@ -30,10 +36,6 @@ cd polkadot
 
 # 切换到合适的分支
 git checkout 127eb17a
-
-# 建立合适的Rust版本去编译这个工作间
-rustup install nightly-2020-10-06
-rustup target add wasm32-unknown-unknown --toolchain nightly-2020-10-06
 
 # 构建中继链节点
 cargo build --release
@@ -70,7 +72,7 @@ cargo build --release
 ./target/release/parachain-collator --help
 ```
 
-如果打印了帮助页面，就表示您已经成功的构建了基于Cumulus的平行链收集者节点。
+如果打印了帮助页面，就表示您已经成功的构建了基于 Cumulus 的平行链收集者节点。
 
 对于这个工作间的其余部分，当我们需要去运行这个二进制文件时，我们更喜欢将他简称为`parachain-collator`。您可能将刚刚构建的二进制文件移动到更方便的地方，或者将它保留在原处。您需要恰当的输入它的完整路径。
 
