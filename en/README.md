@@ -39,7 +39,7 @@ If you cannot use a machine with the minimums here,you can try a few things that
 times for limited RAM usage.
 - Use Less threads cargo's `j` flag == the number of threads to use to build.
   Try to use just a few less than you have available total and monitor RAM usage.
-- Cargo's [codegen units](](https://doc.rust-lang.org/cargo/reference/profiles.html#codegen-units))
+- Cargo's [codegen units](https://doc.rust-lang.org/cargo/reference/profiles.html#codegen-units)
   feature makes more optimized builds, and uses less ram, but _much_ longer compile times!
 
 ```bash

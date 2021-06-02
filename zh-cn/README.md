@@ -34,7 +34,7 @@
 限制 RAM 使用的次数。
 - 使用更少的线程cargo 的`j` 标志== 用于构建的线程数。
   尝试使用比可用总量少的几个，并监控 RAM 使用情况。
-- Cargo 的 [codegen units](](https://doc.rust-lang.org/cargo/reference/profiles.html#codegen-units))
+- Cargo 的 [codegen units](https://doc.rust-lang.org/cargo/reference/profiles.html#codegen-units)
   功能进行更优化的构建，并使用更少的内存，但编译时间_更长_！
 
 ```bash
