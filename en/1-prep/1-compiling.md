@@ -62,8 +62,8 @@ it is. You will need to type its full path as appropriate.
 <!-- > You may skip this step if you prefer to use docker to run nodes. -->
 
 The Substrate DevHub team maintains a
-[parachain template](https://github.com/substrate-developer-hub/substrate-parachain-template) (very
-similar to the [node template](https://github.com/substrate-developer-hub/substrate-node-template))
+[Parachain Template](https://github.com/substrate-developer-hub/substrate-parachain-template) (very
+similar to the [Node Template](https://github.com/substrate-developer-hub/substrate-node-template))
 that we will use to launch our first parachains and make cross-chain asset transfers. Later, we will
 use it as a starting point for developing our own parachains. Perform these steps in your typical
 workspace directory.

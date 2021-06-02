@@ -9,7 +9,7 @@
 如果您喜欢关注您工作间上的主要开发，您也可以跳过初始的中继链配置，通过执行那些您为工作间准备的步骤或者使用公共的rococo测试网。有关创建基于云的中继链的说明可以看[Setting Up The Bootnode](../SettingUpTheBootnode.md)
 -->
 
-## 安装 Substrate 的先決条件
+## 安装 Substrate 的先决条件
 
 <!--
 > 如果您不想开发您自己的运行时逻辑，以及更喜欢用docker而不是本地构建的二进制文件，
@@ -24,7 +24,7 @@
 > 如果您喜欢用docker来运行节点，可以跳过此步骤。
 -->
 
-克隆 Polkadot 仓库，以及运行节点。我们需要用上某個[特定 git 提交](/#软件版本)。請在您的目录內执行这些步骤。
+克隆 Polkadot 仓库，以及运行节点。我们需要用上某个[特定的 git 提交](zh-cn/#软件版本)。请在您的目录内执行这些步骤。
 
 
 ```bash
@@ -44,16 +44,18 @@ cargo build --release
 ./target/release/polkadot --help
 ```
 
-如果打印了帮助页面，那么您已经成功的构建了一个Polkadot节点。
+如果能夠打印出帮助页面，那么您已经成功的构建了一个 Polkadot 节点。
 
 对于这个工作间的剩余部分，当我们需要去运行这个二进制文件时，我们将其简称为`polkadot`。您可能将刚刚构建的二进制文件移动到更方便的地方，或者将它保留在原处。您需要恰当的输入它的完整路径。
 
 ## 构建一个收集者模板
 
+<!--
 > 如果您喜欢用docker来运行节点，可以跳过此步骤。
+-->
 
-这个Substrate DevHub团队维护一个[parachain template](https://github.com/substrate-developer-hub/substrate-parachain-template) (与[node template](https://github.com/substrate-developer-hub/substrate-node-template)非常类似)，然后我们将开始我们的第一条平行链以及实现跨链转账。
-然后，我们将使用它作为我们平行链开发的一个启动节点。在您的标准的工作间目录执行这些步骤。
+这个Substrate DevHub团队维护一个[Parachain Template](https://github.com/substrate-developer-hub/substrate-parachain-template) (与[Node Template](https://github.com/substrate-developer-hub/substrate-node-template)非常类似)，然后我们将开始我们的第一条平行链以及实现跨链转账。
+然后，我们将使用它作为我们平行链开发的一个启动节点。请在您的目录执行这些步骤。
 
 ```bash
 # 克隆平行链模板
@@ -79,9 +81,9 @@ cargo build --release
 
 ## 构建您自定义的平行链
 
-> 您必须配置一个本地的开发黄静以及构建平行链模板来编译这个工作间的这个部分。
+> 您必须配置一个本地的开发环境以及构建平行链模板来编译这部份的工作坊。
 
-您自定义的平行链将基于我们上面编译的模板。构建它看起来是一样的，但是您必须在构建它之前需要写好您自己的代码。我们将在这个工作间的这一部分重复构建过程。
+您自定义的平行链将基于我们上面编译的模板。构建它的步骤是一样的，但是您必须在构建它之前写好您自己的代码。我们将在那部份的工作坊重复编驿过程。
 
 <!-- ## 使用Docker镜像
 

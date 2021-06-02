@@ -1,4 +1,4 @@
-# Your **Relay Chain** Specification
+# **Relay Chain** Specification
 
 You will need a chain specification for your relay chain network. You can use one that is included
 with this workshop, or create your own. 
@@ -10,8 +10,8 @@ with this workshop, or create your own.
 >**you need *at least* three validators in the relay chain!**
 
 Whichever spec you choose to use we will refer to it simply as `chain-spec.json` in the instructions below.
-You will need to supply the proper path to the spec file you are using. **These _conventionally_ live**
-**in a `/res` folder that is published in your node's codebase for others to use**. As an example:
+You will need to supply the proper path to the spec file you are using. **These files _conventionally_ live
+in a `/res` folder that is published in your node's codebase for others to use**. As an example:
 
 - Polkadot includes [these **relay chain** `chain-spec.json` files](https://github.com/paritytech/polkadot/tree/master/node/service/res)
 - Cumulus includes [these **parachain** `chain-spec.json` files](https://github.com/paritytech/cumulus/tree/master/rococo-parachains/res)
@@ -27,7 +27,7 @@ have included for you. If you want to customize your network, jump to [create yo
 In either case, if you use a **plain** chain spec (human readable) you want to convert it to a SCALE encoded **raw** chain spec to
 use in when starting your nodes. Jump to the [conversion section](#_2-convert-to-raw-chain-spec) to see how to do that.  
 
-## 1.a) Using A Prebuilt Chain Spec
+## 1a) Using A Prebuilt Chain Spec
 
 This workshop contains three chain-spec files that you can use **without modification** for a
 local test network:
@@ -36,8 +36,8 @@ local test network:
 
 - <a href="shared/chainspecs/rococo-custom.json" download>shared/chainspecs/rococo-custom.json</a>: A two-validator relay
   chain with Alice and Bob as authorities. Useful for registering a single parachain. 
-  **This is a direct export of the `rococo-local` spec that is**
-  **[included in polkadot](https://github.com/paritytech/polkadot/tree/master/node/service/res).**
+  **This is a direct export of the `rococo-local` spec that is
+  [included in polkadot](https://github.com/paritytech/polkadot/tree/master/node/service/res).**
   - Plain chain spec: <a href="shared/chainspecs/rococo-custom-plain.json" download>shared/chainspecs/rococo-custom-plain.json</a> 
 
 - <a href="shared/chainspecs/rococo-custom-3.json" download>shared/chainspecs/rococo-local-3.json</a>: A three-validator relay chain
@@ -48,16 +48,16 @@ local test network:
   identical to `rococo-custom.json` but with Charlie and Dave as a third and fourth validator.s
   - Plain chain spec: <a href="shared/chainspecs/rococo-custom-plain-4.json" download>shared/chainspecs/rococo-custom-plain-4.json</a> 
 
-All `*plain.json` files included are used to inspect in a more human readable and modifiable format that can also be used to derive 
+All `*plain*.json` files included are used to inspect in a more human readable and modifiable format that can also be used to derive
 a [new custom raw spec](#adjust-the-chain-spec).
 
-These specs were created according to the steps in the next section. If you would like even more
+These specs were created according to the steps in the next section. If you would like to have even more
 validators, or to customize the relay chain in some other way, keep reading, otherwise 
 **[start your relay chain](en/2-relay-chain/1-launch)** with a **raw chain spec file**.
 
 <!-- > These specs are also present in the Polkadot docker image and can be used when running in Docker. -->
 
-## 1.b) Create Your Own Chain Spec
+## 1b) Create Your Own Chain Spec
 
 As with any Substrate chain, you can always create your own chain spec file. It is generally best to start
 from an existing specification, as developing one from scratch is outside the scope of this tutorial.
@@ -91,9 +91,10 @@ in other tutorials (Alice and Bob in the case of the `rococo-custom-plain.json` 
         "authority_discovery": "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY",
         "beefy": "KW39r9CJjAVzmkf9zQ4YDb2hqfAVGdRqn53eRqyruqpxAP5YL",               // <---- The BEEFY *encoded* ecdsa session keys (//Alice)
        }
-    ],
+    ]
   // -- snip -- ADD MORE KEYS HERE, following the same format
-},
+  ]
+}
 ```
 
 ### Adjust the Chain Spec
@@ -120,6 +121,7 @@ Polkadot **validator authority** address for `//Alice//stash` (`sr25519` cryptog
 ```bash
 subkey inspect --scheme sr25519 --network substrate //Alice//stash
 ```
+
 *Output:*
 ```
 Secret Key URI `//Alice//stash` is account:
@@ -146,7 +148,7 @@ Secret Key URI `//Alice` is account:
 ```
 
 Polkadot address for `//Alice` (`sr25519` cryptography). This is used in all but the `beefy`
-key sections of the chainpec after the `grandpa` key.
+key sections of the chain spec after the `grandpa` key.
 
 ```bash
 subkey inspect --scheme sr25519 --network substrate //Alice
@@ -238,8 +240,6 @@ base58encode ( concat ( <address-type>, <address>, <checksum> ) )
 ```
 
 So for `rococo` the keys are...
-
-TODO: show how to generate this with subkey! 
 
 #### SS58 Encoding of Key vs. Address
 

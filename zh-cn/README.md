@@ -26,7 +26,7 @@
 - 4 个 CPU 内核（建议 8 个）
 - 50 GB 的可用 HDD/SSD 空间
 
-如果这里没有最少的 RAM 數量，您很可能 **内存不足，导致有 `SIGKILL` 報错！**
+如果这里没有最少的 RAM 数量，您很可能 **内存不足，导致有 `SIGKILL` 报错！**
 这通常发生在 `polkadot-service` 构建中 - 所以一定要*监控你的 RAM 使用情况*
 （类似于 [htop](https://htop.dev/)）并注意开始使用交换。
 
@@ -39,7 +39,7 @@
 
 ```bash
 # 使用更少的代码生成单元
-RUSTFLAGS="-C codegen-units=1" cargo build --release 
+RUSTFLAGS="-C codegen-units=1" cargo build --release
 # 设置要编译的内核/线程数（用于在 rpi 3 上构建 cumulus/polkadot）
 货物构建 --release -j 1
 ```
@@ -62,5 +62,25 @@ RUSTFLAGS="-C codegen-units=1" cargo build --release
       _should_ work. 如果您有问题，请在此提交时自己构建和托管此 UI。
 
 
-> 注意：由於平行鏈開發在如火如荼的進行著，經常出現最新版本不兼容舊版本情況，請 **必须**
+> 注意：由于平行链开发在如火如荼的进行着，经常出现最新版本不兼容旧版本情况，请 **必须**
 > 使用这些提交版本，以确保您不会在平行链开发中遇到冲突。
+
+#### [Rococo](https://wiki.polkadot.network/docs/zh-CN/build-parachains-rococo) 兼容性
+
+devhub 团队正以最有效率去维持 Parachain 模版与本工作坊更新至与 Polkadot 的 [rococo-v1](https://github.com/paritytech/polkadot/commits/rococo-v1) 分支同步。 **但请不要假设确是这样！** 请查看 rococo 最及时的提交及查看 [rococo matrix 频道](https://matrix.to/#/#rococo:matrix.parity.io) 有没有新的不向后兼容 及 测试网络重启等事情.
+
+## 了解更多
+
+Polkadot 博客文章 [The Path of a Parachain Block](https://polkadot.network/the-path-of-a-parachain-block/)
+
+## 鸣谢
+
+请前往 [鸣谢页](acknowledgement-contribution.md)
+
+## 软件许可证
+
+[MIT](LICENCE)
+
+## 免责声明
+
+**Cumulus 是仍在开发中的预发布软件。** 虽然本工作坊力求有用，但它涵盖了 Cumulus 在正式发布前的功能，它们可能在不久将来被修改或移除。这里所介绍的任何东西都不能用于有直接价值承载的区块链上！
