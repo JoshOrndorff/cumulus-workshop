@@ -64,7 +64,7 @@ be sure that you are testing against the exact same build of that relay chainn.
 This workshop has been tested on commits:
 
 - **Polkadot @ [`127eb17a`](https://github.com/paritytech/polkadot/commit/127eb17a25bbe2a9f2731ff11a65d7f8170f2373)**
-- **Parachain Template @ [`1e1e725`](https://github.com/substrate-developer-hub/substrate-parachain-template/commit/1e1e7257e4429e8413f5a27940d4941d220317a7)**
+- **Parachain Template @ [`9c65875`](https://github.com/substrate-developer-hub/substrate-parachain-template/commit/9c65875fd7f59754c65c87662df0083cf56addf1)**
 - **Polkadot JS Apps @ [`35b238a `](https://github.com/polkadot-js/apps/commit/35b238a1bfb59a4c4e7488671a7261b54bf314c9)**
     - _It is generally expected that the [hosted Polkadot JS Apps](https://polkadot.js.org/apps/#/explorer)
       _should_ work. If you have issues, build and host this UI yourself, at this commit.
