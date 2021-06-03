@@ -80,7 +80,7 @@ git clone  https://github.com/substrate-developer-hub/substrate-parachain-templa
 cd substrate-parachain-template
 
 # Checkout the proper commit
-git checkout df34c27d
+git checkout b7d946d2
 
 # Build the parachain template collator
 cargo build --release
