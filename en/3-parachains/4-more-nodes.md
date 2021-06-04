@@ -16,18 +16,20 @@ we used to start the first collator, but again we need to avoid conflicting port
 
 ```bash
 parachain-collator \
-  --collator \
-  --base-path /tmp/parachain-bob \         # <-- set a proper path
-  --parachain-id <Your ID> \
-  --port <Your chosen libp2p port> \
-  --ws-port <Your chosen websocket port> \
-  --bootnodes <Your first collator> \
-  --bob \                                  # <-- set a proper authority
-  -- \ # Any flags after this -- go to the embedded polkadot node
-  --chain <relay chain spec json> \
-  --port <Your chosen libp2p port> \
-  --ws-port <Your chosen websocket port> \
-  --bootnodes <Alice, and other relay chain collators>
+--bob \
+--collator \
+--force-authoring \
+--parachain-id 2000 \
+--base-path /tmp/parachain/bob \
+--bootnodes <a running collator node> \
+--port 40334 \
+--ws-port 9946 \
+-- \
+--execution wasm \
+--chain <relay chain spec json> \
+--port 30344 \
+--ws-port 9978
+--bootnodes <other relay chain node>
 ```
 
 ## Non-Collating Parachain Full Nodes
@@ -37,12 +39,12 @@ leave out the `--collator` flag.
 
 ```bash
 parachain-collator \
-  --base-path <a DB base path> \           # <-- set a proper path
+  --base-path <a DB base path> \
   --bootnodes <Your first collator> \
   --ws-port <Your chosen websocket port> \
   --port <Your chosen libp2p port> \
   --parachain-id <Your ID> \
-  -- \ # Any flags after this -- go to the embedded polkadot node
+  -- \
   --chain <relay chain spec json> \
   --bootnodes <Alice, Bob, and other relay chain collators>
 ```

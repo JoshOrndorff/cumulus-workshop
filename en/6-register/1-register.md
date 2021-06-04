@@ -35,12 +35,12 @@ will get you setup if you let us know (with some proof) that you have a parachai
 
 ### Register as a Parathread
 
-All Parachains will need to Register as a "parathread" first. To do this, you need:
+All Parachains will need to Register. There is a 5 ROCs deposit to register the parachain id.
 
-- Reserve a _unique_ `para_id`. This will be assigned taking the next available id.
-There is a 5 ROCs deposit to register the parachain id.
-  - This integer will be greater than `2000`, as `0-999` are _reserved_ for systems parachains and
-  `1000-1999` are _reserved_ for common good parachians!
+- [Reserve a _unique_ `para_id`](en/2-relay-chain/2-reserve). This will be assigned taking the next
+ available id.
+- This integer will be greater than `2000`, as `0-999` are _reserved_ for systems parachains and
+  `1000-1999` are _reserved_ for common good parachians.
 - `initial_head_state`: your parachain's genesis state ([Same process as before](../3-parachains/1-launch.md#generate-parachain-genesis-state))
 - `validation_function`: the Wasm runtime for your parachain ([Same process as before](../3-parachains/1-launch.md##obtain-wasm-runtime-validation-function))
 
@@ -102,7 +102,7 @@ Pick your Para ID, how much you want to bid, and the slots you want to bid for:
 
 If you _cannot_ (or would rather not) win a slot with the ROCs you have in a single account, you 
 must gather the support of the Rococo community and start a crowdloan that your supporters can
-loan you their ROC to win the auction!
+loan you their ROC to win the auction.
 
 #### Start a Crowdloan
 
