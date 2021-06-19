@@ -7,12 +7,14 @@ spec that ships with this workshop as well as general instructions for starting 
 ## Start Alice's Node
 
 ```bash
+# Start Relay `Alice` node
 polkadot \
-  --chain <path to spec json> \
-  --base-path /tmp/relay-alice \
-  --ws-port 9944 \
-  --port 30333 \
-  --alice
+--alice \
+--validator \
+--base-path /tmp/relay/alice \
+--chain <path to spec json> \
+--port 50555 \
+--ws-port 9944
 ```
 
 The port and websocket port specified here are the defaults and thus those flags can be omitted.
@@ -45,12 +47,13 @@ https://polkadot.js.org/apps/#/?rpc=ws://localhost:9944
 
 ```bash
 polkadot \
-  --chain <path to spec json> \
-  --base-path /tmp/relay-bob \
-  --ws-port 9955 \
-  --port 30334 \
-  --bob \
-  --bootnodes /ip4/<Alice IP>/tcp/30333/p2p/<Alice Peer ID>
+--bob \
+--validator \
+--base-path /tmp/relay-bob \
+--chain <path to spec json> \
+--bootnodes /ip4/<Alice IP>/tcp/30333/p2p/<Alice Peer ID>
+--port 30334 \
+--ws-port 9955 \
 ```
 
 Bob's command is perfectly analogous to Alice's. It differs concretely from Alice's in that Bob has
@@ -69,11 +72,12 @@ make sure that nodes on the same physical system do not have conflicting ports o
 
 ```bash
 polkadot \
-  --chain <path to spec json> \
-  --base-path /tmp/relay-charlie \
-  --ws-port 9966 \           # Any unused port
-  --port 30335 \             # Any unused port
-  --charlie                  # The appropriate key for your validator
+--charlie \
+--validator \
+--base-path /tmp/relay-charlie \
+--chain <path to spec json> \
+--port 30335 \
+--ws-port 9966
 ```
 
 If your custom chainspec includes self-generated keys, see the

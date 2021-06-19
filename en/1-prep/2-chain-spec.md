@@ -110,14 +110,13 @@ The following commands demonstrate how the first part of the `palletSession` sec
 spec file can be reproduced. The second part is obtained similarly with `//Bob` and `//Bob//stash`.
 
 > All the keys and addresses needed can be generated using either:
-> + the [`subkey` tool](https://substrate.dev/docs/en/knowledgebase/integrate/subkey)
-> + or the `polkadot key` subcommand.
-
-<!-- TODO: use the key subcommand when it's avalible -->
+> - The [`subkey` tool](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) (v2.0.1 and above for BEEFY keys)
+> - The `node key` subcommand. (this can be your `polkadot` or `parachain-collator` binary, based on the latest substrate)
 
 Polkadot **validator authority** address for `//Alice//stash` (`sr25519` cryptography):
 
 ```bash
+# Replace `node` with any substrate based node binary, like `polkadot`
 subkey inspect --scheme sr25519 --network substrate //Alice//stash
 ```
 *Output:*
@@ -146,7 +145,7 @@ Secret Key URI `//Alice` is account:
 ```
 
 Polkadot address for `//Alice` (`sr25519` cryptography). This is used in all but the `beefy`
-key sections of the chainpec after the `grandpa` key.
+key sections of the chainspec after the `grandpa` key.
 
 ```bash
 subkey inspect --scheme sr25519 --network substrate //Alice
@@ -237,9 +236,8 @@ The BEEFY key is encoded, this is derived in the [polkadot launch CLI tool](http
 base58encode ( concat ( <address-type>, <address>, <checksum> ) )
 ```
 
-So for `rococo` the keys are...
-
-TODO: show how to generate this with subkey! 
+Fortunately, `subkey` and the `node key` subcommand will generate this for you! So no need to 
+worry about the details any more here.
 
 #### SS58 Encoding of Key vs. Address
 

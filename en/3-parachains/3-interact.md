@@ -15,7 +15,9 @@ parachain node at https://polkadot.js.org/apps/#/?rpc=ws://localhost:9844
 You can make some simple token transfers to ensure that the parachain is operating normally. You can
 also make some on-chain remarks by submitting `Extrinsics` -> `System` -> `remark`.
 
-If transactions go through as expected, you have a working parachain! If you get a UI error
+If transactions go through as expected, you have a working parachain! 
+
+If you get a UI error
 indicating "Could not convert parameter `tx` between node and runtime: No such variant in 
 enum MultiSignature", go into `Settings` -> `Developer` and add these metadata types:
 

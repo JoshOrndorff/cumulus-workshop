@@ -63,22 +63,21 @@ be sure that you are testing against the exact same build of that relay chainn.
 
 This workshop has been tested on commits:
 
-- **Polkadot @ [`127eb17a`](https://github.com/paritytech/polkadot/commit/127eb17a25bbe2a9f2731ff11a65d7f8170f2373)**
-- **Parachain Template @ [`1e1e725`](https://github.com/substrate-developer-hub/substrate-parachain-template/commit/1e1e7257e4429e8413f5a27940d4941d220317a7)**
-- **Polkadot JS Apps @ [`35b238a `](https://github.com/polkadot-js/apps/commit/35b238a1bfb59a4c4e7488671a7261b54bf314c9)**
+- **Polkadot @ [`aa386760`](https://github.com/paritytech/polkadot/commit/aa386760948574af4078c59decf558d16efe15e2)**
+- **Parachain Template @ [`9c65875f`](https://github.com/substrate-developer-hub/substrate-parachain-template/commit/9c65875fd7f59754c65c87662df0083cf56addf1)**
+- **Polkadot JS Apps @ [`e9876dd5`](https://github.com/polkadot-js/apps/commit/e9876dd592c11590b08e0fbaba00de148555395f)**
     - _It is generally expected that the [hosted Polkadot JS Apps](https://polkadot.js.org/apps/#/explorer)
       _should_ work. If you have issues, build and host this UI yourself, at this commit.
 
 > NOTE: you **must** use these commits exactly to ensure that you do not run into conflicts as parachain development
 > development is actively making breaking changes between commits on these repositories!
 
-#### [Rococo](https://wiki.polkadot.network/docs/en/build-parachains-rococo) Compatibility
+#### Polkadot Testnet Compatibility
 
 We on the devhub team do our best to keep the parachain template & this workshop updated presently
-with the HEAD of the [rococo-v1](https://github.com/paritytech/polkadot/commits/rococo-v1) branch
-of Polkadot. **But do not assume this is the case!** Check the latest commit for rococo that is
-reported in the [rococo matrix channel](https://matrix.to/#/#rococo:matrix.parity.io) when breaking
-changes and test-network resets occur.
+with the latest release of Polkadot. **But do not assume this is the case!**
+Check with us in the [Rococo matrix channel](https://matrix.to/#/#rococo:matrix.parity.io) when
+breaking changes and testnet resets occur.
 
 ## Learn More
 
