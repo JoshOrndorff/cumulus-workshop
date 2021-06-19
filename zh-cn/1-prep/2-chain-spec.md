@@ -1,6 +1,8 @@
-# 获取一条 (中继) 链规范
+# 您的中继链规格
 
-您将需要一条中继链网络的链规范。您可以使用这个工作间的附带的工具，也可以创建您自己第工具。需要记住的一个重要的要求是，您必须比连接的平行链至少多一个中继链的验证者节点。
+您将需要一条中继链网络的链规范。您可以使用这个工作间的附带的工具，也可以创建您自己第工具。
+
+需要记住的一个重要的要求是，您必须比连接的平行链至少多一个中继链的验证者节点。
 例如，如果您想连接两条平行链，您就需要在中继链中至少有三个验证者节点。
 
 
@@ -9,25 +11,23 @@
 您需要为适当的路径提供您正在使用的规范文件。 **These _conventionally_ live**
 **in a `/res` folder that is published in your node's codebase for others to use**. 例如：
 
-- Polkadot 包括 [these **relay chain** `chain-spec.json` files](https://github.com/paritytech/polkadot/tree/master/node/service/res)
+- Polkadot 包括  [these **relay chain** `chain-spec.json` files](https://github.com/paritytech/polkadot/tree/master/node/service/res)
 - Cumulus 包括 [these **parachain** `chain-spec.json` files](https://github.com/paritytech/cumulus/tree/master/rococo-parachains/res)
-
 
 > 如果您打算让其他人链接到您的网路，您必须链条规格必须有genesis Wasm 
 > 您的在机网路需要可以让其他节点在开始时复制确切的文件。
 > 这源于 [non-determinism](https://dev.to/gnunicorn/hunting-down-a-non-determinism-bug-in-our-rust-wasm-build-4fk1))
 > Wasm的运行编译，将其包含在您的代码库中是最佳实践 
 
-验证是否工作，我们建议您使用我们提供给您的[precompiled raw](#_1a-using-a-prebuilt-chain-spec)之一。如果您想自定义您的网路，切换到create your chain spec](#_1b-create-your-own-chain-spec)。
- 
+验证是否工作，我们建议您使用我们提供给您的[precompiled raw](#_1a-using-a-prebuilt-chain-spec) specifications 之一。如果您想自定义您的网路，切换到[create your chain spec](#_1b-create-your-own-chain-spec).
 无论怎样，如果您使用**普通**链规格（可读），当开始您的节点时，您需要转换成SCALE编码的**raw** 链条规格来使用。切换到[conversion section](#_2-convert-to-raw-chain-spec) 去看如何做到这一点。
 
 
-## 这个工作间的规范文件
+## 1.a) 使用预建链规范
 
 这个工作间包含三个链规范文件，您可以不用修改就可以使用它们：
 
-<!-- 由于某些原因，这些文件不能被编辑. 详见 https://github.com/substrate-developer-hub/cumulus-workshop/issues/16 -->
+<!-- 由于某些原因，这些文件不能被编辑. 详见  https://github.com/substrate-developer-hub/cumulus-workshop/issues/16 -->
 
 - <a href="shared/chainspecs/rococo-local.json" download>shared/chainspecs/rococo-local.json</a>: 由Alice和Bob作为一个具有两个验证者节点的中继链的权威节点。用于注册一个单个平行链。
 这是`rococo-local`规范的直接输出被包含在polkadot中。
@@ -35,14 +35,21 @@
   - 普通链规格: <a href="shared/chainspecs/rococo-custom-plain.json" download>shared/chainspecs/rococo-custom-plain.json</a> 
 
 - <a href="shared/chainspecs/rococo-3.json" download>shared/chainspecs/rococo-3.json</a>: 一个具有三个验证者节点的中继链与`rococo-local`相同，但是是以Charlie作为第三个验证者节点。
+- 普通链条规格:  <a href="shared/chainspecs/rococo-custom-plain-3.json" download>shared/chainspecs/rococo-custom-plain-3.json</a> 
 
 - <a href="shared/chainspecs/rococo-4.json" download>shared/chainspecs/rococo-4.json</a>. 一个具有四个验证者节点的中继链，增加了Dave作为第四个验证者节点。
+- 普通链条规格: <a href="shared/chainspecs/rococo-custom-plain-4.json" download>shared/chainspecs/rococo-custom-plain-4.json</a> 
 
-这些规范是根据下一节中的步骤创建的。如果您想要更多的验证者节点，或者以其它一些方式去定义中继链，请进入最后一个选项。
 
-> 这些规范也出现在 Plokadot docker 镜像中，并且也可以在运行Docker时被使用。
+包含的所有 `*plain.json` 文件都用于以更易读和可修改的格式进行检查，该格式也可用于派生[新的自定义原始规范](#adjust-the-chain-spec)。
 
-## 创建属于您自己的
+这些规范是根据下一节中的步骤创建的。如果你还想要更多
+验证器，或以其他方式自定义中继链，请继续阅读，否则
+**[启动您的中继链](en/2-relay-chain/1-launch)** 使用 **原始链规范文件**。
+
+<!--> 这些规范也存在于 Polkadot docker 镜像中，可以在 Docker 中运行时使用。 -->
+
+## 1.b) 创建属于您自己的
 
 跟任何Substrate链一样，您总是可以创建自己的链规范文件。最好是从现有的规范开始。我们将使用内部构建好的`rococo-local`作为我们的出发点。
 
@@ -75,7 +82,12 @@ polkadot build-spec --chain rococo-local --disable-default-bootnode > rococo-cus
 },
 ```
 
-1.添加您新权威的`AccountId`和`ValidatorId`。
+
+### 调整链条规格
+
+#### 生成权限和会话密钥
+
+添加您新权威的`AccountId`和`ValidatorId`。
 
 在这个运行时配置中，两个IDs都是一样的，而且都是从“stash”账户生成的。您可以生成您自己的账户或检查【众所周知的发展成熟的账户】
 (https://substrate.dev/docs/en/knowledgebase/integrate/subkey#well-known-keys).
@@ -84,18 +96,18 @@ polkadot build-spec --chain rococo-local --disable-default-bootnode > rococo-cus
 一下命令显示了`palletSession`的第一部分是如何在规格文件中重新产生的。第二部分与`//Bob` and `//Bob//stash`相似。
 
 > 所有钥匙和地址需要使用如下一种来产生：
-> + the [`subkey` tool](https://substrate.dev/docs/en/knowledgebase/integrate/subkey)
-> + 或者 `polkadot key` 命令。
+> - The [`subkey` tool](https://substrate.dev/docs/en/knowledgebase/integrate/subkey) (BEEFY 键的 v2.0.1 及更高版本)
+> - The `node key` 子命令. (这可以是基于最新基板的“polkadot”或“parachain-collat​​or”二进制文件)
 
-<!-- TODO: use the key subcommand when it's avalible -->
+
+`//Alice//stash`（`sr25519` 密码学）的 Polkadot **验证器权限** 地址：
 
 Polkadot **validator authority** address for `//Alice//stash` (`sr25519` cryptography):
 
-
-
 ```bash
+# 用任何基于基板的节点二进制文件替换 `node`，比如 `polkadot`
 subkey inspect --scheme sr25519 --network substrate //Alice//stash
-```
+
 *Output:*
 ```
 Secret Key URI `//Alice//stash` is account:
@@ -106,7 +118,7 @@ Secret Key URI `//Alice//stash` is account:
   SS58 Address:      5GNJqTPyNqANBkUVMN1LPPrxXnFouWXoe2wNSmmEoLctxiZY
 ```
 
-2.添加一个grandpa会话密钥 (`ed25519`加密)。
+添加一个grandpa会话密钥 (`ed25519`加密)。
 
 ```bash
 subkey inspect --scheme ed25519 --network substrate //Alice
@@ -135,7 +147,6 @@ Secret Key URI `//Alice` is account:
   Public key (SS58): 5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY
   Account ID:        0xd43593c715fdd31c61141abd04a99fd6822c8558854ccde39a5684e7a56da27d
   SS58 Address:      5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY
-```
 ```
 
 4.最后 **encoded SS58** ecdsa BEEFY key:
@@ -216,9 +227,9 @@ BEEFY钥匙是编码的, 这来源于 [polkadot launch CLI tool](https://github.
 base58encode ( concat ( <address-type>, <address>, <checksum> ) )
 ```
 
-`rococo` 钥匙是...
+幸运的是，`subkey` 和 `node key` 子命令会为你生成这个！所以没必要
+在这里不再担心细节。
 
-需要做的: 演示如何使用子项生成它！
 
 #### SS58 钥匙编码 vs. 地址
 

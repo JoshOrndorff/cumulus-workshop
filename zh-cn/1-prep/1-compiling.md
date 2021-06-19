@@ -2,17 +2,18 @@
 
 这个工作间包含了准备一条中继链，连接平行链，链之间资产的转账，以及开发您自己的平行链运行时逻辑的所有过程。自然而然地，如果您想要构建自己所有的内容，会有一些更值得注意的编译。（如果您喜欢使用Docker镜像，则可以避免编译波卡和平行链的模板节点。）
 
-## 缩短工作间
+<!-- FIXME：目前没有维护用于此的docker。相反，我们使用 polkadot-launch 作为一种“快速”构建方式 -->
+<!-- ## 缩短工作间 -->
+
 如果您打算要给这个现场工作间使用这份材料，您应该通过削减最后的步骤去缩短它。如果您的工作间不包括编写您自己的平行链，您可以通过使用提供的docker镜像去跳过所有的编译。
 
 如果您喜欢关注您工作间上的主要开发，您也可以跳过初始的中继链配置，通过执行那些您为工作间准备的步骤或者使用公共的rococo测试网。有关创建基于云的中继链的说明可以看[Setting Up The Bootnode](../SettingUpTheBootnode.md)
 
 ## 安装Substrate的前提条件
 
-> 如果您不想开发您自己的运行时逻辑，以及更喜欢用docker而不是本地构建的二进制文件，
-> 那么您可以跳过此步骤。
+> 如果您不想开发您自己的运行时逻辑，以及更喜欢用docker而不是本地构建的二进制文件， 那么您可以跳过此步骤。
 
-这个 Substrate Developer Hub 描述了如何创建一个本地的开发环境。请按照这里的指示： https://substrate.dev/docs/en/knowledgebase/getting-started/ 。
+这个 Substrate Developer Hub 描述了如何创建一个本地的开发环境。请按照这里的指示： https://substrate.dev/docs/en/knowledgebase/getting-started/
 
 ## 构建一个中继链节点
 
@@ -29,11 +30,7 @@ git clone https://github.com/paritytech/polkadot.git
 cd polkadot
 
 # 切换到合适的分支
-git checkout 127eb17a
-
-# 建立合适的Rust版本去编译这个工作间
-rustup install nightly-2020-10-06
-rustup target add wasm32-unknown-unknown --toolchain nightly-2020-10-06
+git checkout aa386760
 
 # 构建中继链节点
 cargo build --release
@@ -53,15 +50,18 @@ cargo build --release
 这个Substrate DevHub团队维护一个[parachain template](https://github.com/substrate-developer-hub/substrate-parachain-template) (与[node template](https://github.com/substrate-developer-hub/substrate-node-template)非常类似)，然后我们将开始我们的第一条平行链以及实现跨链转账。
 然后，我们将使用它作为我们平行链开发的一个启动节点。在您的标准的工作间目录执行这些步骤。
 
+> 注意：除非您有_大量的 RAM_，否则您将需要等待继链编译才能编译你的链。每个在峰值时最少需要约 12 GB 的 RAM来 完成。
+
 ```bash
 # 克隆平行链模板
 git clone https://github.com/substrate-developer-hub/substrate-parachain-template
+
 
 # 切换到平行链目录
 cd substrate-parachain-template
 
 # 切换到合适的分支
-git checkout 1e1e725
+git checkout 9c65875f
 
 # 构建平行链模板的收集者节点
 cargo build --release

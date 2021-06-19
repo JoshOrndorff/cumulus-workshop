@@ -66,5 +66,5 @@ cumulus_runtime::register_validate_block!(Block, Executive);
 这些说明假设您已经[在本地系统上编译了平行链模板]（../ 1-prep / 1-compiling.md）。如果还没有请回去做。
 
 如果您是github使用者, 请从这里开始
-[forking the parachain template](https://github.com/substrate-developer-hub/substrate-pallet-template),
+[forking the parachain template](https://github.com/substrate-developer-hub/substrate-pallet-template)。
 

@@ -61,12 +61,38 @@ RUSTFLAGS="-C codegen-units=1" cargo build --release
 确保您正在针对该中继链的完全相同的构建进行测试。
 
 该工作间已经经过测试：
-- **Polkadot @ [`127eb17a`](https://github.com/paritytech/polkadot/commit/127eb17a25bbe2a9f2731ff11a65d7f8170f2373)**
-- **Parachain Template @ [`1e1e725`](https://github.com/substrate-developer-hub/substrate-parachain-template/commit/1e1e7257e4429e8413f5a27940d4941d220317a7)**
-- **Polkadot JS Apps @ [`35b238a `](https://github.com/polkadot-js/apps/commit/35b238a1bfb59a4c4e7488671a7261b54bf314c9)**
+- **Polkadot @ [`aa386760`](https://github.com/paritytech/polkadot/commit/aa386760948574af4078c59decf558d16efe15e2)**
+- **Parachain Template @ [`9c65875f`](https://github.com/substrate-developer-hub/substrate-parachain-template/commit/9c65875fd7f59754c65c87662df0083cf56addf1)**
+- **Polkadot JS Apps @ [`e9876dd5`](https://github.com/polkadot-js/apps/commit/e9876dd592c11590b08e0fbaba00de148555395f)**
     - _It is generally expected that the [hosted Polkadot JS Apps](https://polkadot.js.org/apps/#/explorer)
       _should_ work. 如果您有问题，请在此提交时自己构建和托管此 UI。
 
 
 > 注意：您 ** 必须** 准确地使用这些提交，以确保您不会在平行链开发中遇到冲突
 > 开发正在积极地在这些存储库的提交之间进行重大更改！
+
+#### Polkadot 测试网兼容性
+
+我们在 devhub 团队尽最大努力保持平行链模板和这个研讨会目前更新
+随着 Polkadot 的最新版本。 **但不要假设是这种情况！**
+在 [洛可可矩阵频道](https://matrix.to/#/#rococo:matrix.parity.io) 与我们联系时
+发生重大更改和测试网重置。
+
+＃＃ 学到更多
+
+在官方阅读[平行链区块的路径](https://polkadot.network/the-path-of-a-parachain-block/)
+波卡博客。
+
+## 致谢与贡献
+
+参考【致谢与贡献】(acknowledgement-contribution.md)
+
+＃＃ 执照
+
+[麻省理工学院]（执照）
+
+## 免责声明
+
+**Cumulus 是仍在开发中的预发布软件。** 虽然本次研讨会力求有用，但材料
+它涵盖了在 Cumulus 完全释放之前可能发生变化或破裂的情况。这里展示的任何东西都不能用于价值承载
+区块链！

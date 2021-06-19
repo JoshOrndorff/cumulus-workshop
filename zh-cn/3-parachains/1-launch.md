@@ -31,34 +31,41 @@ parachain-collator export-genesis-wasm > para-200-wasm
 >状态到中继链。所有副链必须从中继链的块0开始。
 >目前没有“hot swap”共识或重新生成。
 
-
-
 ## 启动收集者节点
 
 我们现在可以通过以下的命令来启动收集者节点。请注意，我们提供的中继链规范与启动中继链节点时使用的链规范是一样的。
 
-
 ```bash
+# NOTE: this command assumes a ParaId of 2000. Change as needed.
+# Above `--` line are flags for the parachain collator, below for the embedded relay chain validator
 parachain-collator \
-  --collator \
-  --base-path /tmp/parachain-alice \
-  --parachain-id 200 \
-  --port 40333 \
-  --ws-port 9844 \
-  --alice \
-  -- \ # Above are flags for the parachain _collator_, below for the embedded relay chain _validator_
-  --execution wasm \
-  --chain <relay chain spec json> \
-  --port 30343 \
-  --ws-port 9977
+--alice \
+--collator \
+--force-authoring \
+--parachain-id 2000 \
+--base-path /tmp/parachain/alice \
+--port 40333 \
+--ws-port 9945 \
+-- \
+--execution wasm \
+--chain <relay chain spec json> \
+--port 30343 \
+--ws-port 9977
 ```
 
 关于这个命令，需要注意的一件事是，许多的参数在`--`之前被传递，以及更多的参数在它之后被传递。一个cumulus收集者包含实际的收集者节点，而且
 也包含一个嵌入的中继链节点。这些参数在`--`之前是用于收集者，在`--`之后是用于嵌入的中继链节点。
 
+我们为整理者提供了一个基本路径和端口，就像我们之前为中继链节点所做的那样。我们也指定平行链 ID。
 
-我们给收集者一个基本路径和端口，就像我们之前为中继链节点做的那样。我们也指定parachain ID。如果您对第二条平行链执行这些指令，请记住修改这些具体的收集者的值。
-然后，我们给嵌入的中继链节点我们正在使用的中继链规范。最后，我们给嵌入的中继链节点一些对等的地址。
+> 如果您正在执行，请记住更改特定于整理者的值
+> 对第二条平行链再次使用这些说明。
+> 您将使用相同的中继链链规范，但需要公开不同的端口。
+
+> 平行链节点 =（完整）整理者 +（完整）验证者节点。
+> _最终_，这将更改为中继链节点只需要一个最小的轻客户端。
+> 也不存在不包含嵌入式的“轻量级”整理器节点
+> 中继链节点 _yet_ - 但最终也会有这方面的选择
 
 
 ## 这有用吗？
@@ -69,45 +76,48 @@ parachain-collator \
 
 这时，您的收集者的日志应该看起来就像这样：
 
+
 ```bash
-2021-01-14 15:47:03  Cumulus Test Parachain Collator
-2021-01-14 15:47:03  ✌️  version 0.1.0-4786231-x86_64-linux-gnu
-2021-01-14 15:47:03  ❤️  by Parity Technologies <admin@parity.io>, 2017-2021
-2021-01-14 15:47:03  📋 Chain specification: Local Testnet
-2021-01-14 15:47:03  🏷 Node name: Alice
-2021-01-14 15:47:03  👤 Role: AUTHORITY
-2021-01-14 15:47:03  💾 Database: RocksDb at /tmp/substrateIZ0HQm/chains/local_testnet/db
-2021-01-14 15:47:03  ⛓  Native runtime: cumulus-test-parachain-3 (cumulus-test-parachain-1.tx1.au1)
-2021-01-14 15:47:03  Parachain id: Id(200)
-2021-01-14 15:47:03  Parachain Account: 5Ec4AhPTL6nWnUnw58QzjJvFd3QATwHA3UJnvSD4GVSQ7Gop
-2021-01-14 15:47:03  Parachain genesis state: 0x000000000000000000000000000000000000000000000000000000000000000000b86f2a5f94d1029bf54b07867c3c2fa0339e69e31748cfd5921bbb2f176ada6f03170a2e7597b7b7e3d84c05391d139a62b157e78786d8c082f29dcf4c11131400
-2021-01-14 15:47:03  Is collating: yes
-2021-01-14 15:47:04  [Relaychain] 🔨 Initializing Genesis block/state (state: 0x1693…5e3f, header-hash: 0x2fc1…2ec3)
-2021-01-14 15:47:04  [Relaychain] 👴 Loading GRANDPA authority set from genesis on what appears to be first startup.
-2021-01-14 15:47:04  [Relaychain] ⏱  Loaded block-time = 6000 milliseconds from genesis on first-launch
-2021-01-14 15:47:04  [Relaychain] 👶 Creating empty BABE epoch changes on what appears to be first startup.
-2021-01-14 15:47:04  [Relaychain] 🏷 Local node identity is: 12D3KooWDTBqULpZPTTnRrEZtA53xG3Ade223mQfbLWstg7L3HA4
-2021-01-14 15:47:04  [Relaychain] 📦 Highest known block at #0
-2021-01-14 15:47:04  [Relaychain] 〽️ Prometheus server started at 127.0.0.1:9616
-2021-01-14 15:47:04  [Relaychain] Listening for new connections on 127.0.0.1:9977.
-2021-01-14 15:47:05  [Parachain] 🔨 Initializing Genesis block/state (state: 0xb86f…da6f, header-hash: 0x755b…42ca)
-2021-01-14 15:47:05  [Parachain] Using default protocol ID "sup" because none is configured in the chain specs
-2021-01-14 15:47:05  [Parachain] 🏷 Local node identity is: 12D3KooWEmhCGHnxfuYX9yWoWmnS1MSU7mkoZFnPSAKws2ZL3CCd
-2021-01-14 15:47:05  [Parachain] 📦 Highest known block at #0
-2021-01-14 15:47:05  [Parachain] Listening for new connections on 127.0.0.1:9855.
-2021-01-14 15:47:06  [Relaychain] 🔍 Discovered new external address for our node: /ip4/127.0.0.1/tcp/30343/p2p/12D3KooWDTBqULpZPTTnRrEZtA53xG3Ade223mQfbLWstg7L3HA4
-2021-01-14 15:47:06  [Relaychain] 🔍 Discovered new external address for our node: /ip4/192.168.178.77/tcp/30343/p2p/12D3KooWDTBqULpZPTTnRrEZtA53xG3Ade223mQfbLWstg7L3HA4
-2021-01-14 15:47:06  [Parachain] 🔍 Discovered new external address for our node: /ip4/192.168.178.77/tcp/30433/p2p/12D3KooWEmhCGHnxfuYX9yWoWmnS1MSU7mkoZFnPSAKws2ZL3CCd
-2021-01-14 15:47:08  [Relaychain] 👶 New epoch 29 launching at block 0x765e…c213 (block slot 268439271 >= start slot 268439271).
-2021-01-14 15:47:08  [Relaychain] 👶 Next epoch starts at slot 268439281
-2021-01-14 15:47:08  [Relaychain] ✨ Imported #291 (0x765e…c213)
-2021-01-14 15:47:09  [Relaychain] 💤 Idle (3 peers), best: #291 (0x765e…c213), finalized #289 (0xca88…7eb1), ⬇ 196.9kiB/s ⬆ 161.9kiB/s
-2021-01-14 15:47:10  [Parachain] 💤 Idle (0 peers), best: #0 (0x755b…42ca), finalized #0 (0x755b…42ca), ⬇ 809.4kiB/s ⬆ 773.7kiB/s
-2021-01-14 15:47:12  [Relaychain] ✨ Imported #292 (0x1cdf…7cf7)
-2021-01-14 15:47:12  [Relaychain] ✨ Imported #292 (0x26a5…7d91)
-2021-01-14 15:47:14  [Relaychain] 💤 Idle (3 peers), best: #292 (0x1cdf…7cf7), finalized #289 (0xca88…7eb1), ⬇ 256.8kiB/s ⬆ 270.0kiB/s
-2021-01-14 15:47:15  [Parachain] 💤 Idle (0 peers), best: #0 (0x755b…42ca), finalized #0 (0x755b…42ca), ⬇ 814.3kiB/s ⬆ 799.9kiB/s
-```
+2021-05-30 16:57:39 Parachain Collator Template    
+2021-05-30 16:57:39 ✌️  version 3.0.0-acce183-x86_64-linux-gnu    
+2021-05-30 16:57:39 ❤️  by Anonymous, 2017-2021    
+2021-05-30 16:57:39 📋 Chain specification: Local Testnet    
+2021-05-30 16:57:39 🏷 Node name: Alice    
+2021-05-30 16:57:39 👤 Role: AUTHORITY    
+2021-05-30 16:57:39 💾 Database: RocksDb at /tmp/parachain/alice/chains/local_testnet/db    
+2021-05-30 16:57:39 ⛓  Native runtime: template-parachain-1 (template-parachain-0.tx1.au1)    
+2021-05-30 16:57:41 Parachain id: Id(2000)    
+2021-05-30 16:57:41 Parachain Account: 5Ec4AhPUwPeyTFyuhGuBbD224mY85LKLMSqSSo33JYWCazU4    
+2021-05-30 16:57:41 Parachain genesis state: 0x0000000000000000000000000000000000000000000000000000000000000000000a96f42b5cb798190e5f679bb16970905087a9a9fc612fb5ca6b982b85783c0d03170a2e7597b7b7e3d84c05391d139a62b157e78786d8c082f29dcf4c11131400    
+2021-05-30 16:57:41 Is collating: yes    
+2021-05-30 16:57:41 [Parachain] 🔨 Initializing Genesis block/state (state: 0x0a96…3c0d, header-hash: 0xd42b…f271)    
+2021-05-30 16:57:41 [Parachain] ⏱  Loaded block-time = 12s from block 0xd42bb78354bc21770e3f0930ed45c7377558d2d8e81ca4d457e573128aabf271    
+2021-05-30 16:57:43 [Relaychain] 🔨 Initializing Genesis block/state (state: 0xace1…1b62, header-hash: 0xfa68…cf58)    
+2021-05-30 16:57:43 [Relaychain] 👴 Loading GRANDPA authority set from genesis on what appears to be first startup.    
+2021-05-30 16:57:44 [Relaychain] ⏱  Loaded block-time = 6s from block 0xfa68f5abd2a80394b87c9bd07e0f4eee781b8c696d0a22c8e5ba38ae10e1cf58    
+2021-05-30 16:57:44 [Relaychain] 👶 Creating empty BABE epoch changes on what appears to be first startup.    
+2021-05-30 16:57:44 [Relaychain] 🏷 Local node identity is: 12D3KooWBjYK2W4dsBfsrFA9tZCStb5ogPb6STQqi2AK9awXfXyG    
+2021-05-30 16:57:44 [Relaychain] 📦 Highest known block at #0    
+2021-05-30 16:57:44 [Relaychain] 〽️ Prometheus server started at 127.0.0.1:9616    
+2021-05-30 16:57:44 [Relaychain] Listening for new connections on 127.0.0.1:9945.    
+2021-05-30 16:57:44 [Parachain] Using default protocol ID "sup" because none is configured in the chain specs    
+2021-05-30 16:57:44 [Parachain] 🏷 Local node identity is: 12D3KooWADBSC58of6ng2M29YTDkmWCGehHoUZhsy9LGkHgYscBw    
+2021-05-30 16:57:44 [Parachain] 📦 Highest known block at #0    
+2021-05-30 16:57:44 [Parachain] Unable to listen on 127.0.0.1:9945    
+2021-05-30 16:57:44 [Parachain] Unable to bind RPC server to 127.0.0.1:9945. Trying random port.    
+2021-05-30 16:57:44 [Parachain] Listening for new connections on 127.0.0.1:45141.    
+2021-05-30 16:57:45 [Relaychain] 🔍 Discovered new external address for our node: /ip4/192.168.42.204/tcp/30334/ws/p2p/12D3KooWBjYK2W4dsBfsrFA9tZCStb5ogPb6STQqi2AK9awXfXyG    
+2021-05-30 16:57:45 [Parachain] 🔍 Discovered new external address for our node: /ip4/192.168.42.204/tcp/30333/p2p/12D3KooWADBSC58of6ng2M29YTDkmWCGehHoUZhsy9LGkHgYscBw    
+2021-05-30 16:57:48 [Relaychain] ✨ Imported #8 (0xe60b…9b0a)    
+2021-05-30 16:57:49 [Relaychain] 💤 Idle (2 peers), best: #8 (0xe60b…9b0a), finalized #5 (0x1e6f…567c), ⬇ 4.5kiB/s ⬆ 2.2kiB/s    
+2021-05-30 16:57:49 [Parachain] 💤 Idle (0 peers), best: #0 (0xd42b…f271), finalized #0 (0xd42b…f271), ⬇ 2.0kiB/s ⬆ 1.7kiB/s    
+2021-05-30 16:57:54 [Relaychain] ✨ Imported #9 (0x1af9…c9be)    
+2021-05-30 16:57:54 [Relaychain] ✨ Imported #9 (0x6ed8…fdf6)    
+2021-05-30 16:57:54 [Relaychain] 💤 Idle (2 peers), best: #9 (0x1af9…c9be), finalized #6 (0x3319…69a2), ⬇ 1.8kiB/s ⬆ 0.5kiB/s    
+2021-05-30 16:57:54 [Parachain] 💤 Idle (0 peers), best: #0 (0xd42b…f271), finalized #0 (0xd42b…f271), ⬇ 0.2kiB/s ⬆ 0.2kiB/s    
+2021-05-30 16:57:59 [Relaychain] 💤 Idle (2 peers), best: #9 (0x1af9…c9be), finalized #7 (0x5b50…1e5b), ⬇ 0.6kiB/s ⬆ 0.4kiB/s    
+2021-05-30 16:57:59 [Parachain] 💤 Idle (0 peers), best: #0 (0xd42b…f271), finalized #0 (0xd42b…f271), ⬇ 0 ⬆ 0    
+2021-05-30 16:58:00 [Relaychain] ✨ Imported #10 (0xc9c9…1ca3)
 
 您应该看到您的整理器节点正在运行（单独）并与已经存在的对等节点
 运行中继链节点。您不应该尚未看到它编写了
