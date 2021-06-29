@@ -16,7 +16,7 @@ You will need to supply the proper path to the spec file you are using. **These 
 - Cumulus includes [these **parachain** `chain-spec.json` files](https://github.com/paritytech/cumulus/tree/master/rococo-parachains/res)
 
 > If you intend to let other connect to your network **you must** have the genesis Wasm the associated and chain spec
-> for your network on _one machine_ and have a way for all other nodes to copy this _exact file_ on starting thier nodes.
+> for your network on _one machine_ and have a way for all other nodes to copy this _exact file_ on starting their nodes.
 > This stems from [non-determinism](https://dev.to/gnunicorn/hunting-down-a-non-determinism-bug-in-our-rust-wasm-build-4fk1))
 > in the way Wasm runtimes are compiled, at least for now. Thus including it in your codebase is best practice!
 

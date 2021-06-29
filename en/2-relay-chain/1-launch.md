@@ -41,7 +41,7 @@ https://polkadot.js.org/apps/#/?rpc=ws://localhost:9944
 > At time of writing, this demo works with the hosted version of Apps linked above. If something has
 > changed in the meantime, try to
 > [host the interface locally](https://github.com/polkadot-js/apps#development) using the commit
-> that is defined [the version compatablilty](/#versions-of-software) noted.
+> that is defined [the version compatibility](/#versions-of-software) noted.
 
 ## Start Bob's Node
 
@@ -57,7 +57,7 @@ polkadot \
 ```
 
 Bob's command is perfectly analogous to Alice's. It differs concretely from Alice's in that Bob has
-specified his own base path, provided his own valiator keys (`--bob`), and used his own ports.
+specified his own base path, provided his own validator keys (`--bob`), and used his own ports.
 Finally he has added a `--bootnodes` flag. This bootnodes flag is not strictly necessary if you are
 running the entire network on a single local system, but it is necessary when operating over the
 network, so I've chosen to leave it in.
