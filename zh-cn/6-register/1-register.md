@@ -1,43 +1,41 @@
 # Rococo
 
-Rococo是基于Cumulus的平行链，是Parity的官方测试网。
+Rococo 是基于 Cumulus 的平行链，是 Parity 的官方测试网。
 
-
-> **重要信息** 对于cumulus和 polkadot `rococo-v1` 分支，您 _必须_ 使用 _相同的_ 承诺
-> 来创建您的平行链才能兼容！在连接到rocco之前，您 _必须_ 成功的在当地注册您的平行链！
+> **重要信息** 对于 cumulus 和 polkadot `rococo-v1` 分支，您 _必须_ 使用 _相同的_ 承诺
+> 来创建您的平行链才能兼容！在连接到 rocco 之前，您 _必须_ 成功的在当地注册您的平行链！
 
 **[Polkadot `release-v0.9.3` branch](https://github.com/paritytech/polkadot/tree/release-v0.9.3)**
 
 **[Cumulus `polkadot-v0.9.3` branch](https://github.com/paritytech/cumulus/tree/polkadot-v0.9.3)**
 
+该网路正在不断的发展中，因此如果您希望与网路连接，请期待您的平行链随 rococo 的变化而发展和更新。
 
-该网路正在不断的发展中，因此如果您希望与网路连接，请期待您的平行链随rococo的变化而发展和更新。
+加入 [rococo matrix chat room](https://matrix.to/#/#rococo:matrix.parity.io)向 rococo 团队提问和联系。
 
-加入 [rococo matrix chat room](https://matrix.to/#/#rococo:matrix.parity.io)向rococo团队提问和联系。 
-
-## 索要ROC代币
+## 索要 ROC 代币
 
 Rococo 测试网络的本地货币的符号是 ROC。您将需要一些 ROC 才能
 注册您的洛可可平行链。
 
-要在洛可可 _before_ 上进行实验，您需要注册，并鼓励您的团队作为支持者
-诸如洛可可上的众筹之类的事情，请**不要**使用主聊天，而是_请_使用我们的
+要在 Rococo _before_ 上进行实验，您需要注册，并鼓励您的团队作为支持者
+诸如 Rococo 上的众筹之类的事情，请**不要**使用主聊天，而是*请*使用我们的
 [rococo faucet channel](https://matrix.to/#/#rococo-faucet:matrix.org) 请求一些 ROC 令牌。
 
 由于您将需要比水龙头实际允许注册的更多，请加入并询问
-[洛可可矩阵聊天室](https://matrix.to/#/#rococo:matrix.parity.io)，Parity团队之一
+[Rococo matrix 聊天室](https://matrix.to/#/#rococo:matrix.parity.io)，Parity 团队之一
 如果您让我们知道（有一些证据）您已经准备好注册平行链，我们将帮助您进行设置。
 
 [请求一些 ROC](en/6-register/1-register?id=request-roc-tokens) 首先通过水龙头获得一个帐户。
 
-### 注册成为Parathread
+### 注册成为 Parathread
 
 所有平行链都需要注册。有 5 个 ROC 存款来注册平行链 id。
 
 - [保留 _unique_ `para_id`](en/2-relay-chain/2-reserve)。这将被分配到下一个
- 可用 ID。
+  可用 ID。
 - 该整数将大于“2000”，因为“0-999”是系统平行链和
-  `1000-1999` 是 _reserved_ 为共同的好parachians。
+  `1000-1999` 是 _reserved_ 为共同的好 parachians。
 - `initial_head_state`：你的平行链的创世状态（[与以前相同的过程]（../3-parachains/1-launch.md#generate-parachain-genesis-state））
 - `validation_function`：平行链的 Wasm 运行时（[与以前相同的过程](../3-parachains/1-launch.md##obtain-wasm-runtime-validation-function)）
 
@@ -59,17 +57,16 @@ Rococo 测试网络的本地货币的符号是 ROC。您将需要一些 ROC 才�
 
 ![parathread-onboarding.png](../../assets/img/parathread-onboarding.png)
 
-
 > 提交此数据后，需要 **2 个会话**（长度[见下文](#relevant-values)）
 > 让候选人完全加入 Parathread。
 
-## 平行链slot拍卖
+## 平行链 slot 拍卖
 
 Paratheads 可以选择成为平行链，它们在中继链中的 PoV 包含在
 在分配的时间段内保证。系统平行链将绕过拍卖，但
 所有普通链（包括你的）都需要赢得平行链插槽拍卖才能获得一个！
 
-> 只有完全加入的洛可可式平行线程才有资格参加洛可可式平行链slot拍卖。
+> 只有完全加入的洛可可式平行线程才有资格参加洛可可式平行链 slot 拍卖。
 
 ### 相关值
 
@@ -80,10 +77,10 @@ Paratheads 可以选择成为平行链，它们在中继链中的 PoV 包含在
 - 结束时间：60 分钟 = 600 块
 - 当前租赁期指数 = 当前区块编号 / 14400
 
-> 注意：Para* 到不同状态的所有转换至少需要 2 个会话（入职、
+> 注意：Para\* 到不同状态的所有转换至少需要 2 个会话（入职、
 > 下线、升级、降级等
 
-＃＃＃ 投标
+### 投标
 
 任何已注册**完全入职平行链**的人都可以竞标以赢得其 Para ID 的平行链插槽。
 这可以独立完成，假设这个个人账户可以出价超过所有其他参与
@@ -96,7 +93,7 @@ Paratheads 可以选择成为平行链，它们在中继链中的 PoV 包含在
 
 ###众筹
 
-如果您_不能_（或宁愿不）使用您在单个帐户中拥有的 ROC 赢得一个位置，您
+如果您*不能*（或宁愿不）使用您在单个帐户中拥有的 ROC 赢得一个位置，您
 必须获得洛可可社区的支持并开始众筹，您的支持者可以
 借给您他们的 ROC 以赢得拍卖。
 
@@ -141,4 +138,4 @@ Paratheads 可以选择成为平行链，它们在中继链中的 PoV 包含在
 ![crowdloan-contribute.png](../../assets/img/crowdloan-contribute.png)
 
 在[洛可可矩阵聊天室](https://matrix.to/#/#rococo:matrix.parity.io)上传播关于
-您的平行链，并集结支持，让其他人借给您赢得slot所需的资金！
+您的平行链，并集结支持，让其他人借给您赢得 slot 所需的资金！
