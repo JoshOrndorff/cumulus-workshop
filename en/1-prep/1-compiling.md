@@ -5,18 +5,17 @@ transferring assets between chains, and developing your own parachain runtimes. 
 will be some significant compiling if you intend to build everything yourself. (Compiling the
 Polkadot and parachain template nodes can be avoided if you prefer to use the Docker images.)
 
-
 <!-- FIXME: docker for this is presently not maintained. Instead we use polkadot-launch as a "fast" way to build once you  -->
 <!-- ## Shortening the Workshop -->
 
 <!-- If you intend to use this material for a live workshop you may shorten it by cutting steps off of
 the end. If your workshop will not cover writing your own parachains, you may skip all the
 compilation by using the provided docker images. -->
-<!-- 
+<!--
 If you prefer to focus primarily on development in your workshop, you may also skip initial relay
 chain setup by performing those steps yourself in preparation for the workshop or using the public
 rococo testnet. See [Setting Up The Bootnode](../SettingUpTheBootnode.md) for notes on setting up a
-cloud-based relay chain. 
+cloud-based relay chain.
  -->
 
 ## Install Substrate Prerequisites
@@ -31,8 +30,9 @@ instructions at https://substrate.dev/docs/en/knowledgebase/getting-started/
 
 <!-- > You may skip this step if you prefer to use docker to run nodes. -->
 
-Clone the Polkadot repository, and build the node. We are using a [specific commit](/#versions-of-software) for this workshop.
-Perform these steps in your typical workspace directory.
+Clone the Polkadot repository, and build the node. We are using a
+[specific commit](/#versions-of-software) for this workshop. Perform these steps in your typical
+workspace directory.
 
 ```bash
 # Clone the Polkadot Repository
@@ -42,7 +42,7 @@ git clone https://github.com/paritytech/polkadot.git
 cd polkadot
 
 # Checkout the proper commit
-git checkout aa386760
+git checkout 63667acb
 
 # Build the relay chain Node
 cargo build --release
@@ -68,9 +68,8 @@ that we will use to launch our first parachains and make cross-chain asset trans
 use it as a starting point for developing our own parachains. Perform these steps in your typical
 workspace directory.
 
-> NOTE: unless you have a _massive amount of RAM_ you will need to wait for the 
-> relay chain to compile _before_ you compile your chain. Each take ~12 GB minimum of RAM at peak 
-> to complete.
+> NOTE: unless you have a _massive amount of RAM_ you will need to wait for the relay chain to
+> compile _before_ you compile your chain. Each take ~12 GB minimum of RAM at peak to complete.
 
 ```bash
 # Clone the Parachain Template
@@ -80,7 +79,7 @@ git clone  https://github.com/substrate-developer-hub/substrate-parachain-templa
 cd substrate-parachain-template
 
 # Checkout the proper commit
-git checkout 9c65875f
+git checkout 3baf75b3
 
 # Build the parachain template collator
 cargo build --release
