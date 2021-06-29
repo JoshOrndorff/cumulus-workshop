@@ -33,7 +33,7 @@ is using the defaults, no other nodes on the relay chain or parachains can use t
 
 To explore and interact with the network, you can use the Polkadot JS Apps UI. If you've started
 this node using the command above, you can access the node as
-https://polkadot.js.org/apps/#/?rpc=ws://localhost:9944
+https://polkadot.js.org/apps/?rpc=ws%3A%2F%2F127.0.0.1%3A9944
 
 > Some browsers, notably Firefox, will not connect to a local node from an https website. An easy
 > work around is to try another browser, like Chromium.
@@ -51,9 +51,9 @@ polkadot \
 --validator \
 --base-path /tmp/relay-bob \
 --chain <path to spec json> \
---bootnodes /ip4/<Alice IP>/tcp/30333/p2p/<Alice Peer ID>
+--bootnodes /ip4/<Alice IP>/tcp/30333/p2p/<Alice Peer ID> \
 --port 30334 \
---ws-port 9955 \
+--ws-port 9955
 ```
 
 Bob's command is perfectly analogous to Alice's. It differs concretely from Alice's in that Bob has

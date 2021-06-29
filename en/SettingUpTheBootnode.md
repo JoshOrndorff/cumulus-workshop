@@ -43,7 +43,9 @@ Confirm the server is working by going directly to your IP in the browser. Shoul
 
     <p>
       You may compile the node from github
-      <a href="https://github.com/substrate-develeoper-hub/substrate-node-template">Substrate Node Template</a>.<br />
+      <a href="https://github.com/substrate-develeoper-hub/substrate-node-template"
+        >Substrate Node Template</a
+      >.<br />
       Download the <a href="spec.json">Chain Specification</a>.<br />
       Download the <a href="alice.json">Prefunded Alice Key</a>.<br />
     </p>
