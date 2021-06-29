@@ -1,6 +1,6 @@
 # Reserve a ParaID
 
-To connect to any relay chain, you _must_ first reserve a `ParaId` for your parathread that will 
+To connect to any relay chain, you _must_ first reserve a `ParaId` for your parathread that will
 become a parachain. To do this, you _must_ have currency available on an account on that network
 in sufficient amount to reserve an ID. This is 20 "units" on the testnets, check for the amount
 on your relay chain. The relay chain is responsible for allotting all ParaIDs (they can no longer

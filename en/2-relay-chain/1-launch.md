@@ -1,7 +1,7 @@
 # Starting the Relay Chain
 
 Before we can attach any cumulus-based parachains, we need to launch a relay chain to connect to.
-This page describes in detail how to start both nodes in the two-validator `rococo-custom.json` 
+This page describes in detail how to start both nodes in the two-validator `rococo-custom.json`
 spec that ships with this workshop as well as general instructions for starting additional nodes.
 
 ## Start Alice's Node
@@ -21,9 +21,9 @@ The port and websocket port specified here are the defaults and thus those flags
 However We've chosen to leave them in to enforce the habit of checking their values. Because Alice
 is using the defaults, no other nodes on the relay chain or parachains can use these ports.
 
-> When the node starts you will see several log messages. **Take note of her node's Peer ID** 
+> When the node starts you will see several log messages. **Take note of her node's Peer ID**
 > in the logs. We will need it when connecting other nodes to her. It will look something _like_
-> this: 
+> this:
 >
 > ```bash
 > 🏷 Local node identity is: 12D3KooWGjsmVmZCM1jPtVNp6hRbbkGBK3LADYNniJAKJ19NUYiq
@@ -37,7 +37,7 @@ https://polkadot.js.org/apps/#/?rpc=ws://localhost:9944
 
 > Some browsers, notably Firefox, will not connect to a local node from an https website. An easy
 > work around is to try another browser, like Chromium.
-> 
+>
 > At time of writing, this demo works with the hosted version of Apps linked above. If something has
 > changed in the meantime, try to
 > [host the interface locally](https://github.com/polkadot-js/apps#development) using the commit
