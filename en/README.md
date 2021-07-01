@@ -68,7 +68,7 @@ This workshop has been tested on commits:
 - **Polkadot @
   [`5d466006`](https://github.com/paritytech/polkadot/commit/5d46600684ff009fa691d399e0c865de4a1e0a81)**
 - **Parachain Template @
-  [`3baf75b3`](https://github.com/substrate-developer-hub/substrate-parachain-template/commit/3baf75b394965a72703728081785ddc17a24c663)**
+  [`4c47b6e2`](https://github.com/substrate-developer-hub/substrate-parachain-template/commit/4c47b6e2b88bf23807be3325e0d798a8540a2e84)**
 - **Polkadot JS Apps @
   [`23adf03b`](https://github.com/polkadot-js/apps/commit/23adf03b85ba2b9ae1090b9862ed04796e644cf4)**
   - _It is generally expected that the
