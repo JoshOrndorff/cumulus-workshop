@@ -1,6 +1,6 @@
-# Objective
+# 目标
 
-# Reference material
+# 参考资料
 
 https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04
 
@@ -10,17 +10,16 @@ https://www.digitalocean.com/community/questions/configure-nginx-for-nodejs-back
 
 https://serverfault.com/questions/424452/nginx-enable-site-command
 
-# Steps
+# 步骤
+## 基础系统
 
-## Base System
+在 digital ocean (或类似) 建立一个始于Ubuntu 18.04. SSH基础的新机器。
 
-From digital ocean (or similar) create a new machine starting with Ubuntu 18.04. SSH in as root
+## 创建网路服务器
 
-## Setup the web server
+安装 nginx `apt 安装 nginx`
 
-install nginx `apt install nginx`
-
-Confirm the server is working by going directly to your IP in the browser. Should see the nginx test page.
+通过直接在浏览器中访问您的 IP 来确认服务器正在工作。应该会看到 nginx 测试页面。
 
 `cd /var/www/html` `cp index.nginx-debian.html index.html` `vim index.html`
 
@@ -42,7 +41,7 @@ Confirm the server is working by going directly to your IP in the browser. Shoul
     <p>Thanks for joining our Substrate testnet.</p>
 
     <p>
-      You may compile the node from github
+      你可以从github编译节点
       <a href="https://github.com/substrate-develeoper-hub/substrate-node-template">Substrate Node Template</a>.<br />
       Download the <a href="spec.json">Chain Specification</a>.<br />
       Download the <a href="alice.json">Prefunded Alice Key</a>.<br />
@@ -51,23 +50,24 @@ Confirm the server is working by going directly to your IP in the browser. Shoul
 </html>
 ```
 
-We'll create those linked files later. Confirm the new webpage loads.
 
-## Adding SSL
+我们稍后会创建这些链接文件。确认新网页加载。
 
-We need a domain. Registering it and setup dns so it points to your server. This process varies a lot by registrar. When
-your domain loads the webpage we just created, you may proceed to setup SSL.
+## 添加 SSL
 
+
+我们需要一个域名。注册它并设置 dns 使其指向您的服务器。这个过程因注册商而异。什么时候
+您的域加载了我们刚刚创建的网页，您可以继续设置 SSL。
 For setting up subdomains like sfbw.bootnodes.net just use an A record `sfbw A 1.2.3.4 3600`
 
-Install certbot
+安装 certbot
 
 ```bash
 add-apt-repository ppa:certbot/certbot
 apt install python-certbot-nginx
 ```
 
-Setup server block
+设置服务器块
 
 ```bash
 cd /etc/nginx/sites-available
@@ -90,21 +90,22 @@ server {
 }
 ```
 
-Enable the new config by linking it from sites-available to sites-enabled
-`ln -s /etc/nginx/sites-available/sfbw.bootnodes.net /etc/nginx/sites-enabled/` confirm config format is ok `nginx -t`.
-reload the server `systemctl reload nginx`
+通过将新配置从可用站点链接到启用站点来启用新配置
+`ln -s /etc/nginx/sites-available/sfbw.bootnodes.net /etc/nginx/sites-enabled/` 确认配置格式没问题 `nginx -t`.
+重新加载服务器 `systemctl reload nginx`
 
-Use certbot to setup ssl `certbot --nginx -d sfbw.bootnodes.net --register-unsafely-without-email` You could also fork
-over your email. It only goes to EFF. I chose not to redirect http, but we should experiment with it. If it doesn't
-break anything, we should do it.
+使用 certbot 设置 ssl `certbot --nginx -d sfbw.bootnodes.net --register-unsafely-without-email` 你也可以 fork
+通过您的电子邮件。它只适用于 EFF。我选择不重定向 http，但我们应该尝试一下。如果没有
+破坏任何东西，我们应该去做。
 
-Confirm your site loads with ssl by navigating to eg `https://sfbw.bootnodes.net`
+通过导航到例如确认您的网站加载了 ssl `https://sfbw.bootnodes.net`
 
-## Install Node
+## 安装节点
 
 ```bash
-# First time around I did the apt/rustup installs manually
-# Script also works as of 1Nov2019
+
+# 我第一次手动安装 apt/rustup
+# 脚本也适用于 2019 年 11 月 1 日
 curl https://getsubstrate.io -sSf | bash -s -- --fast
 
 git clone https://github.com/substrate-developer-hub/substrate-node-template
@@ -112,14 +113,14 @@ cd substrate-node-template
 cargo build --release # If cargo was _just_ installed, start a new shell so it's on your path
 ```
 
-## Server blocks for node
+## 节点的服务器块
 
-Once the node is built, add server blocks to redirect standard ports 9944 and 9933. These settings assume that the node
-will expose ws and rpc on ports 9994 and 9993 respectively. That can be done with `--ws-port 9994 --rpc-port 9993`.
-We'll automate those settings shortly.
 
-Add this at the bottom, and notice the top has changed thanks to certbot. You'll need to adjust the domain name in these
-lines.
+构建节点后，添加服务器块以重定向标准端口 9944 和 9933。这些设置假定节点
+将分别在端口 9994 和 9993 上公开 ws 和 rpc。这可以通过`--ws-port 9994 --rpc-port 9993`来完成。
+我们很快就会自动执行这些设置。
+
+将此添加到底部，并注意由于 certbot，顶部已更改。您需要在这些中调整域名线。
 
 ```
 server {
@@ -156,29 +157,30 @@ server {
 
 ```
 
-check syntax and reload
+检查语法并重新加载
 
 ```bash
 nginx -t
-systemctl reload nginx
+systemctl 重新加载 nginx
 ```
 
-Start your node with --ws-port 9994 --rpc-port 9993 and confirm you can connect with hosted apps. On settings tab use
+使用 --ws-port 9994 --rpc-port 9993 启动您的节点，并确认您可以连接托管应用程序。在设置选项卡上使用
 `wss://sfbw.bootnodes.net:9944`
 
-## Create a shared chainspec
+## 创建共享链规范
 
-Create a basic chainspec based on local testnet `node-template build-spec --chain local > spec.json`
 
-Edit the name and id of the network, the root key, the prefunded accounts etc.
+基于本地测试网`node-template build-spec --chain local > spec.json`创建一个基本的chainspec
 
-Before we can add bootnodes to the chainspec, we need to know their node identities. That means we need to start each
-node once to let it generate node keys.
+编辑网络的名称和 ID、根密钥、预付账户等。
 
-Start Alice's node like `node-template --chain=spec.json --alice` Once the node starts, observe its node identity, then
-kill it with ^C. Repeat this for any other nodes you'd like in the chainspec's bootnodes section.
+在我们将引导节点添加到链规范之前，我们需要知道它们的节点身份。这意味着我们需要开始每个
+node 一次让它生成节点密钥。
 
-Now edit the chainspec again, adding each bootnode in the format
+像`node-template --chain=spec.json --alice`一样启动Alice的节点，一旦节点启动，观察它的节点身份，然后
+用 ^C 杀死它。在 chainspec 的 bootnodes 部分对您想要的任何其他节点重复此操作。
+
+现在再次编辑链规范，以格式添加每个引导节点
 
 ```json
 "bootNodes": [
@@ -187,25 +189,27 @@ Now edit the chainspec again, adding each bootnode in the format
 ],
 ```
 
-Warning: You should not delete the node's entire data directory from this point on. You may purge the chain with the
-`purge-chain` sub command, but if you delete the entire directory, it will delete the node key and change the node's
-identity.
+警告：从现在开始，您不应删除节点的整个数据目录。你可以用
+`purge-chain` 子命令，但是如果你删除整个目录，它会删除节点键并改变节点的
+身份。
 
-Finally, publish the chainspec by copying it to the web directory
+最后，通过将 chainspec 复制到 web 目录来发布链规范
 
 `cp spec.json /var/www/html/spec.json`
 
-Comfirm you can access it over the web `https://sfbw.bootnodes.net/spec.json`
 
-## Startup scripts (optional)
+确认您可以通过网络访问 https://sfbw.bootnodes.net/spec.json`
 
-If your nodes need many flags, it may be wise to make a startup script just so you don't mess it up live. I usually
-write one like this.
+## 启动脚本（可选）
+
+
+如果您的节点需要许多标志，那么制作一个启动脚本可能是明智的，这样您就不会将其弄乱。我通常
+写一个这样的。
 
 ```bash
-# Purge any old chain.
-# Only wise for chains that will be restarted frequently (eg workshops)
-# Long running chains should not be purged to avoid constant re-syncs
+# 清除所有旧链。
+# 仅适用于频繁重启的链条（例如车间）
+# 不应清除长时间运行的链以避免不断重新同步
 ./target/release/node-template purge-chain --chain=spec.json -y
 
 ./target/release/node-template \
@@ -215,18 +219,19 @@ write one like this.
         --rpc-port 9993
 ```
 
-## Share the prefunded account
+## 共享预付账户
 
-Remember at that our website offers users to download the pre-funded key. Add the Alice key to apps and export it to
-json.
+
+请记住，我们的网站为用户提供下载预先资助的密钥。将 Alice 密钥添加到应用程序并将其导出到
+json。
 [Dev phrase](https://github.com/paritytech/substrate/blob/93123cc63eac37fed7a6cc6cc58e7e43d666ee03/core/primitives/src/crypto.rs#L40)
 
-bottom drive obey lake curtain smoke basket hold race lonely fit walk //Alice I use password: alice or just a Upload the
-json key to the server
+底部驱动器服从湖帘烟篮举行比赛孤独适合步行//爱丽丝我使用密码：爱丽丝或只是一个上传
+服务器的json密钥
 
 ## Host a frontend
 
-Back in /root, clone the front end template
+回到/root，克隆前端模板
 `git clone https://github.com/substrate-developer-hub/substrate-front-end-template/`
 
 Install yarn following https://yarnpkg.com/lang/en/docs/install/#debian-stable
@@ -234,14 +239,15 @@ Install yarn following https://yarnpkg.com/lang/en/docs/install/#debian-stable
 ```bash
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-apt update
-apt install yarn
+apt 更新
+apt 安装 yarn
 ```
 
-install dependencies `yarn` modify production server to match your needs `vim src/config/production.json` and use
+安装依赖`yarn` 修改生产服务器以满足您的需求 `vim src/config/production.json` and use
 wss://sfbw.bootnodes.net:9944
 
-build production release with `yarn build` then move build output directory inside of web root
+使用“yarn build”构建生产版本，然后将构建输出目录移动到 Web 根目录中
 `mv build /var/www/html/front-end`
 
-You have to make sure the project name in the config file matches where you're serving it from.
+
+您必须确保配置文件中的项目名称与您从中提供服务的位置相匹配。
