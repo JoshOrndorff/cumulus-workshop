@@ -1,7 +1,7 @@
 # Starting the Relay Chain
 
 Before we can attach any cumulus-based parachains, we need to launch a relay chain to connect to.
-This page describes in detail how to start both nodes in the two-validator `rococo-custom.json` 
+This page describes in detail how to start both nodes in the two-validator `rococo-custom.json`
 spec that ships with this workshop as well as general instructions for starting additional nodes.
 
 ## Start Alice's Node
@@ -21,9 +21,9 @@ The port and websocket port specified here are the defaults and thus those flags
 However We've chosen to leave them in to enforce the habit of checking their values. Because Alice
 is using the defaults, no other nodes on the relay chain or parachains can use these ports.
 
-> When the node starts you will see several log messages. **Take note of her node's Peer ID** 
+> When the node starts you will see several log messages. **Take note of her node's Peer ID**
 > in the logs. We will need it when connecting other nodes to her. It will look something _like_
-> this: 
+> this:
 >
 > ```bash
 > 🏷 Local node identity is: 12D3KooWGjsmVmZCM1jPtVNp6hRbbkGBK3LADYNniJAKJ19NUYiq
@@ -33,15 +33,15 @@ is using the defaults, no other nodes on the relay chain or parachains can use t
 
 To explore and interact with the network, you can use the Polkadot JS Apps UI. If you've started
 this node using the command above, you can access the node as
-https://polkadot.js.org/apps/#/?rpc=ws://localhost:9944
+https://polkadot.js.org/apps/?rpc=ws%3A%2F%2F127.0.0.1%3A9944
 
 > Some browsers, notably Firefox, will not connect to a local node from an https website. An easy
 > work around is to try another browser, like Chromium.
-> 
+>
 > At time of writing, this demo works with the hosted version of Apps linked above. If something has
 > changed in the meantime, try to
 > [host the interface locally](https://github.com/polkadot-js/apps#development) using the commit
-> that is defined [the version compatablilty](/#versions-of-software) noted.
+> that is defined [the version compatibility](/#versions-of-software) noted.
 
 ## Start Bob's Node
 
@@ -51,13 +51,13 @@ polkadot \
 --validator \
 --base-path /tmp/relay-bob \
 --chain <path to spec json> \
---bootnodes /ip4/<Alice IP>/tcp/30333/p2p/<Alice Peer ID>
+--bootnodes /ip4/<Alice IP>/tcp/30333/p2p/<Alice Peer ID> \
 --port 30334 \
---ws-port 9955 \
+--ws-port 9955
 ```
 
 Bob's command is perfectly analogous to Alice's. It differs concretely from Alice's in that Bob has
-specified his own base path, provided his own valiator keys (`--bob`), and used his own ports.
+specified his own base path, provided his own validator keys (`--bob`), and used his own ports.
 Finally he has added a `--bootnodes` flag. This bootnodes flag is not strictly necessary if you are
 running the entire network on a single local system, but it is necessary when operating over the
 network, so I've chosen to leave it in.

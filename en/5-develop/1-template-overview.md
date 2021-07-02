@@ -28,7 +28,6 @@ This pallet is responsible for distributing cross-chain messages received over t
 pallets that they are intended for. If you intend to receive cross chain messages, you should use
 this pallet.
 
-
 ### `register_validate_block!` Macro
 
 Each parachain must supply a `validate_block` function, expressed as a Wasm blob, to the relay chain
