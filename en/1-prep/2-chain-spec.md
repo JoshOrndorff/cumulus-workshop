@@ -1,10 +1,12 @@
-# Your **Relay Chain** Specification
+# Your **Relay Chain** Chain Specification
 
-You will need a chain specification for your relay chain network. You can use one that is included
-with this workshop, or create your own.
+You will need a chain specification (chain spec) for your relay chain network. You can use one
+that is included with this workshop, or create your own.
 
-> An important requirement to keep in mind: you _must_
-> always have one more relay chain validator than you have connected parachains.
+----- Work till here ----
+
+> An important requirement to keep in mind: you _must_ always have one more relay chain
+> validator than you have connected parachains.
 >
 > **For example, if you want to connect two parachains,** >**you need _at least_ three validators in the relay chain!**
 
