@@ -1,9 +1,9 @@
 # Your **Relay Chain** Chain Specification
 
-You will need a chain specification (chain spec) for your relay chain network. You can use one
-that is included with this workshop, or create your own.
+You will need a chain specification (chain spec)
+for your relay chain network. You can use one that is included with this workshop, or create your own.
 
-> **Notes**: Keep in mind to always have one or more relay chain validator node running than
+> **Note**: Keep in mind to always have one or more relay chain validator node running than
 > your connected parachains. For example, if you want to connect two parachains, run three or more
 > relay chain validator nodes.
 
@@ -11,12 +11,10 @@ Whichever chain spec file you choose to use we will refer to the file simply as 
 in the instructions below. You will need to supply the proper path to the chain spec you are using.
 These *conventionally* live in a `/res` folder that is published in your node's codebase for others to use. As an example:
 
-Goto [here](https://substrate.dev/docs/en/knowledgebase/integrate/chain-spec) to learn more about chain spec.
-
 - Polkadot includes these **relay chain** chain spec files [here](https://github.com/paritytech/polkadot/tree/master/node/service/res)
 - Cumulus includes these **parachain** chain spec files [here](https://github.com/paritytech/cumulus/tree/master/polkadot-parachains/res)
 
-> If you intend to let others connecting to your network, you should have the genesis Wasm and the
+> If you intend to let others connect to your network, you should have the genesis Wasm and the
 > associated chain spec for your network generated once and distributed to your peers.
 >
 > This stems from the [non-deterministic issue](https://dev.to/gnunicorn/hunting-down-a-non-determinism-bug-in-our-rust-wasm-build-4fk1)
@@ -36,7 +34,7 @@ local test network:
 <!-- for some reason these links can't be markdown. See https://github.com/substrate-developer-hub/cumulus-workshop/issues/16 -->
 
 - <a href="shared/chainspecs/rococo-local-2-raw.json">shared/chainspecs/rococo-local-2-raw.json</a>:
-A two-validator relay chain with Alice and Bob as authorities. Useful for registering a single parachain. Plain chain spec <a href="shared/chainspecs/rococo-local-2-plain.json">included</a>. This is a direct copy of the `rococo-local` spec that is included in **Polkadot**.
+A two-validator relay chain with Alice and Bob as authorities. Useful for registering a single parachain. Plain chain spec <a href="shared/chainspecs/rococo-local-2-plain.json">included</a>.
 
 - <a href="shared/chainspecs/rococo-local-3-raw.json">shared/chainspecs/rococo-local-3-raw.json</a>:
   A three-validator relay chain identical to `rococo-local` spec, with Charlie as the third
@@ -188,7 +186,7 @@ case of ECDSA keys (see [the note below](#ss58-encoding-of-key-vs-address) on wh
 Now that you have all the keys you need, append them in the `palletSession` section of you _plain_ spec file.
 You can either create new IDs or use other well known accounts following this same process.
 
-### Convert to Raw Chain Spec
+### Convert Plain to Raw Chain Spec
 
 Now that you've modified your chain spec, you can generate the final raw spec file.
 
@@ -205,9 +203,9 @@ now.
 
 ## Further Resources
 
-The addition of custom session keys in the plain chain spec is not needed for **production chains**
-- as these are generated for you in the included chain spec files in `node/service/res` folder.
-The exercise above is used because you are recompiling your node_ for just adding authorities in this case!
+The addition of custom session keys in the plain chain spec is not needed for **production chains**,
+as these are generated for you in the included chain spec files in `node/service/res` folder.
+The exercise above is used because you are recompiling your node for just adding authorities in this case.
 So if all you need to do is configure minor things off of a know base chain spec, as we did, you will want
 to set the information in `chain-spec.rs`, and generate the binary and finally use the CLI to generate
 your custom chain spec.
@@ -215,7 +213,7 @@ your custom chain spec.
 ### Chain Specification
 
 To learn more beyond what we did and more on what can be configured, check out the
-[knowledge base](https://substrate.dev/docs/en/knowledgebase/integrate/chain-spec)
+[**chain spec** KB article](https://substrate.dev/docs/en/knowledgebase/integrate/chain-spec)
 
 <!--
 
