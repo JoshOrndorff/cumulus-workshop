@@ -39,12 +39,12 @@ local test network:
 A two-validator relay chain with Alice and Bob as authorities. Useful for registering a single parachain. Plain chain spec <a href="shared/chainspecs/rococo-local-2-plain.json">included</a>. This is a direct copy of the `rococo-local` spec that is included in **Polkadot**.
 
 - <a href="shared/chainspecs/rococo-local-3-raw.json">shared/chainspecs/rococo-local-3-raw.json</a>:
-  A three-validator relay chain identical to `rococo-local.json`, with Charlie as the third
+  A three-validator relay chain identical to `rococo-local` spec, with Charlie as the third
   validator. Plain chain spec <a href="shared/chainspecs/rococo-local-3-plain.json">included</a>.
 
 - <a href="shared/chainspecs/rococo-local-4-raw.json">shared/chainspecs/rococo-local-4-raw.json</a>:
-A four-validator relay chain identical to `rococo-local.json` but with Charlie and Dave as the
-third and fourth validator. Plain chain spec <a href="shared/chainspecs/rococo-local-4-plain.json">included</a>.
+A four-validator relay chain identical to `rococo-local` spec, with Charlie and Dave as the
+third and fourth validators. Plain chain spec <a href="shared/chainspecs/rococo-local-4-plain.json">included</a>.
 
 Plain chain spec files are in a more human readable and modifiable format for your inspection. They
 can also be used to derive a [new custom raw chain spec](#adjust-the-chain-spec).
