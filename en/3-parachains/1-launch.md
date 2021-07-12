@@ -1,7 +1,7 @@
 # Launching a Parachain
 
 We'll begin by deploying [Parachain Template](https://github.com/substrate-developer-hub/substrate-parachain-template)
-with parachain ID `2000`. These instructions are written specifically for parachain ID 2000.
+with Para ID `2000`. These instructions are written specifically for Para ID 2000.
 
 The `parachain-collator` binary used below comes from compiling the Parachain Template successfully.
 Refer to [Building the Parachain Template](en/1-prep/1-compiling?id=building-the-parachain-template)
@@ -26,7 +26,7 @@ parachain blocks. The collator node also has a command to produce this Wasm blob
 parachain-collator export-genesis-wasm > para-2000-wasm
 ```
 
-> The Wasm blob does not depend on the parachain ID, so we do not provide that flag. If you are
+> The Wasm blob does not depend on the Para ID, so we do not provide that flag. If you are
 > launching multiple parachains using the exact same runtime, you do not need to regenerate the Wasm
 > blob each time.
 
@@ -39,7 +39,7 @@ We can now start the collator node with the following command. Notice that we ne
 relay chain spec we used when launching relay chain nodes, at the second half of the command.
 
 ```bash
-# NOTE: this command assumes a Parachain Id of 2000. Change as needed.
+# NOTE: this command assumes a Para ID of 2000. Change as needed.
 parachain-collator \
 --alice \
 --collator \
@@ -61,7 +61,7 @@ collator node and also an **embedded relay chain node**. The arguments before th
 collator, and the arguments after the `--` are for the embedded relay chain node.
 
 We give the collator a base path and ports as we did for the relay chain node previously. We also
-specify the parachain ID.
+specify the Para ID.
 
 Remember to change the collator-specific values if you are executing these instructions a second
 time for a second parachain. You will use the same relay chain chain spec, but need different ports

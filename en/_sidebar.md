@@ -4,7 +4,7 @@
   - [Compiling](en/1-prep/1-compiling)
   - [Chain Spec](en/1-prep/2-chain-spec)
 - [Launch a Relay Chain](en/2-relay-chain/1-launch)
-  - [Reserve a Parachain ID](en/2-relay-chain/2-reserve)
+  - [Reserve a Para ID](en/2-relay-chain/2-reserve)
 - [Launch a Parachain](en/3-parachains/1-launch)
   - [Register Parachain](en/3-parachains/2-register)
   - [Parachain Interaction](en/3-parachains/3-interact)

@@ -30,7 +30,7 @@ You need to register on Rococo as a parathread before able to experiment on Roco
 
 All parachains will need to register as a parathread first. You will need:
 
-- **5 ROCs** deposit to register a parachain ID.
+- **5 ROCs** deposit to register a Para ID.
 
 - [Reserve a unique Para ID](en/2-relay-chain/2-reserve). This will be assigned to the next
   available ID. This integer will be greater than `2000`, as `0-999` are reserved for

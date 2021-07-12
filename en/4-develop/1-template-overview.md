@@ -19,7 +19,7 @@ the outset.
 ### Parachain Info Pallet
 
 This pallet is designed to inject information about the parachain's registration into its own
-runtime. Currently it just injects the parachain ID that the chain is registered at. This allows the
+runtime. Currently it just injects the Para ID that the chain is registered at. This allows the
 runtime to know which cross-chain messages are intended for it.
 
 ### Message Broker Pallet
