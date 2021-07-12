@@ -12,4 +12,4 @@
 - [Parachain Development](en/4-develop/1-template-overview)
   - [Template Pallet](en/4-develop/2-template-pallet)
   - [External Pallet](en/4-develop/3-external-pallet)
-- [Rococo Registration](en/5-register/1-register)
+- [Rococo Testnet Registration](en/5-rococo-registration/1-register)

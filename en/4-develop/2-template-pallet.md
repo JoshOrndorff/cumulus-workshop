@@ -1,7 +1,7 @@
 # Modifying the Template Pallet
 
-The Parachain template comes with a template pallet at `pallets/template` just like the node
-template.
+The Parachain Template comes with a template pallet at `pallets/template` just like the Node
+Template.
 
 Modify this pallet by adding storage items.
 
