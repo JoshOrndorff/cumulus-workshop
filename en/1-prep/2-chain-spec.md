@@ -250,7 +250,7 @@ In case of sr25519 and ed25519 crypto, the account ID matches its public key, he
 account-id address is the same as SS58 public key encoding.
 
 In case of ECDSA, we apply blake2 algorithm to the public key to get the address (due to the size
-difference between 33 vs 32 bytes), so the SS58 encoding was different.
+difference between 33 vs 32 bytes), so the SS58 encoding is different.
 
 Default serialization / deserialization implementation for public keys is using SS58 encoding,
 hence every time we use public keys in encoded form we are going to need it's SS58 encoding. A
