@@ -68,7 +68,7 @@ polkadot build-spec --chain rococo-local --disable-default-bootnode > rococo-cus
 That file contains most of the information we need already. Rococo is a permissioned chain, so
 we just need to add an authority and its session keys. The snippet below shows the relevant part of
 the generated spec file. All keys in the generated file belong to the usual well known accounts used
-in other tutorials (Alice and Bob in the case of the `rococo-custom-plain.json`).
+in other tutorials (Alice and Bob in the case of the `rococo-custom-plain.json` file).
 
 ```json
 "session": {
