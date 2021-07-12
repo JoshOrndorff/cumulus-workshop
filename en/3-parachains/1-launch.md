@@ -67,7 +67,9 @@ Remember to change the collator-specific values if you are executing these instr
 time for a second parachain. You will use the same relay chain chain spec, but need different ports
 exposed.
 
-Currently, a parachain node is consisted of a parachain collator with a relay chain validator node.
+Currently, a parachain node runs both a parachain collator (or full node) tightly coupled with a relay chain full node in the same process.
+There is presently no way to run a parachain node without the embedded relay chain node, but it is expected
+that this will become possible for non-collator nodes eventually.
 
 ## Is It Working?
 
