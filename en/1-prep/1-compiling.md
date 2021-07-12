@@ -67,8 +67,3 @@ cargo build --release
 If the help page is printed, you have succeeded in building a Cumulus-based parachain collator.
 
 For the rest of this workshop we will refer to it simply as `parachain-collator`.
-
-## Building Your Custom Parachain
-
-If you plan to build your own custom parachain, you can make use of this Parachain Template as your
-basis to make your life easier.

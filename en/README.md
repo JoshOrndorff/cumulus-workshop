@@ -64,7 +64,7 @@ This workshop has been tested on commits:
 #### Polkadot Testnet Compatibility
 
 We are doing our best to keep the parachain template & this workshop updated presently
-with the latest release of Polkadot. Please check with us in the [Rococo matrix channel](https://matrix.to/#/#rococo:matrix.parity.io)
+with the latest release of Polkadot. Please check with us in the [Parachain Technical matrix channel](https://matrix.to/#/#parachain-technical:matrix.parity.io)
 when breaking changes and testnet resets occur.
 
 ## Learn More
