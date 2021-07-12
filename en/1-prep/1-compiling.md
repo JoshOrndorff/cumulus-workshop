@@ -41,9 +41,9 @@ For the rest of this workshop, we will refer to this binary simply as `polkadot`
 
 ## Building the Parachain Template
 
-We maintains a [**Parachain Template**](https://github.com/substrate-developer-hub/substrate-parachain-template)
+We will use the [**Parachain Template**](https://github.com/substrate-developer-hub/substrate-parachain-template)
 (similar to the [Node Template](https://github.com/substrate-developer-hub/substrate-node-template))
-that we will use to launch our first parachain and make cross-chain asset transfers. Later, we will
+to launch our first parachain and make cross-chain asset transfers. Later, we will
 use it as the starting point for developing our own parachains. Perform these steps in your typical
 workspace directory.
 
